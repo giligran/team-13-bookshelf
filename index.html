@@ -7,8 +7,8 @@
     <title>Bookchelf</title>
 
     
-    <script type="module" crossorigin src="/team-13-bookshelf/assets/index-44ab36cc.js"></script>
-    <link rel="stylesheet" href="/team-13-bookshelf/assets/index-3efd519c.css">
+    <script type="module" crossorigin src="/team-13-bookshelf/assets/index-6cd4d7fa.js"></script>
+    <link rel="stylesheet" href="/team-13-bookshelf/assets/index-8fa2797f.css">
   </head>
   <body>
     <header>
@@ -21,7 +21,46 @@
 </div>
 
 <div class="backdrop">
-  <div class="modal-authorization"><p>test</p></div>
+  <div class="modal-authorization">
+    <form action="#" method="POST" class="sign-up-form">
+      <button>
+        <svg>
+          <use href="/src/img/"></use>
+        </svg>
+      </button>
+      <label for="name" class="visually-hidden">name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="name"
+        required
+        class="sign-up-form-input"
+      />
+
+      <label for="email" class="visually-hidden">eMAIL</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="eMAIL"
+        required
+        class="sign-up-form-input"
+      />
+
+      <label for="password" class="visually-hidden">pASSWORD</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="pASSWORD"
+        required
+        class="sign-up-form-input"
+      />
+
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
 </div>
 
 <button class="heder-modal-login">sing up</button>
