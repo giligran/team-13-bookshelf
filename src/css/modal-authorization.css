@@ -8,27 +8,40 @@
   transition-timing-function: var(--cubic);
   background-color: #4f2ee8;
 }
-
+/* 
 .modal-authorization {
-}
+} */
 
 .modal-authorization {
   position: absolute;
   transform: translate(-50%, -50%) scale(1);
-
   top: 50%;
   left: 50%;
   width: 579px;
   height: 516px;
-  padding-top: 80px;
+  padding: 24px 40px 40px;
   background: #f6f6f6;
   border-radius: 18px;
   border: 2px solid #111;
 }
 
+.modal-authorization-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  stroke: black;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: none;
+  background-color: transparent;
+}
+
 .sign-up-form {
   display: flex;
   flex-direction: column;
+  margin-top: 28px;
   align-items: center;
   gap: 28px;
 }
