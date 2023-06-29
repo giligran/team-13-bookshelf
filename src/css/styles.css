@@ -6,7 +6,7 @@
 */
 /* @import 'modern-normalize.css'; */
 @import url('./reset.css');
-@import url('./vite-promo.css');
+@import url('./base.css');
 @import url('./header.css');
 @import url('./home.css');
 
