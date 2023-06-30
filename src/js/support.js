@@ -47,10 +47,10 @@ const funds = [
   },
 ]
 
-function test (items) {
-    for (items of funds) {
-        console.log(items.url)
-    }
-}
+// function test (items) {
+//     for (items of funds) {
+//         console.log(items.url)
+//     }
+// }
 
-test()
+// test()
