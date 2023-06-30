@@ -33,6 +33,13 @@
   height: 0;
   display: none;
 }
+.right-conteiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 .block-menu {
   width: 82px;
   height: 28px;
@@ -41,6 +48,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+#switch {
+  background-color: transparent;
+  border: none;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -118,6 +129,11 @@ input:checked + .slider:before {
 .icon-menu-svg {
   stroke: #f3f3f3;
 }
+.user-info {
+  width: 0;
+  height: 0;
+  display: none;
+}
 /*  table */
 @media screen and (min-width: 768px) {
   .header-container {
@@ -160,5 +176,39 @@ input:checked + .slider:before {
     justify-content: space-between;
     align-items: center;
     gap: 50px;
+  }
+  .user-info {
+    width: 184px;
+    height: 45px;
+    box-sizing: border-box;
+    background-color: #4f2ee8;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .user-photo {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #eac645, #ffffff);
+  }
+  .arow-down {
+    fill: #ffffff;
+  }
+}
+@media screen and (min-width: 1199px) {
+  .header-container {
+    width: 1199px;
+    height: 72px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header-container {
+    width: 1440px;
+    height: 72px;
   }
 }
