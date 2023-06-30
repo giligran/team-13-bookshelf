@@ -1,13 +1,57 @@
-/* body {
-  background-color: red;
-} */
+body {
+  background-color: #f6f6f6;
+}
 .headline-shopping {
   font-size: 32px;
   line-height: 38px;
 }
+li {
+  list-style: none;
+}
 
 .is-hidden {
   display: none;
+}
+.shopping-list {
+  width: 375px;
+}
+.book-list {
+}
+.book-item {
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 12px;
+}
+.book-card {
+  margin-top: 10px;
+  width: 335px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.book-info {
+}
+.book-title {
+  margin-top: 0;
+  font-size: 16px;
+}
+.book-category {
+  font-size: 12px;
+  line-height: 14px;
+  color: #b4afaf;
+}
+.book-description {
+  font-size: 14px;
+  line-height: 18px;
+}
+.book-author {
+  font-size: 12px;
+  line-height: 14px;
+}
+.book-retailers {
+}
+.remove-button {
 }
 
 .empty-list-png {

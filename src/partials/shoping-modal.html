@@ -10,7 +10,6 @@
   <body>
     <header></header>
     <main>
-      <section></section>
       <h1 class="headline-shopping">Shopping <span>List</span></h1>
       <div>
         <img
@@ -20,20 +19,33 @@
         />
       </div>
       <section class="shopping-list">
-        <div class="book-card">
-          <img src="" alt="Зображення обгортки книги" />
-          <h2 class="book-title">Назва книги</h2>
-          <h3 class="book-category">Категорія книги</h3>
-          <p class="book-description">Короткий опис змісту книги</p>
-          <p class="book-author">Автор: Ім'я Автора</p>
-          <ul class="book-retailers">
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-          </ul>
-          <button class="remove-button"></button>
-        </div>
+        <ul class="book-list">
+          <li class="book-item">
+            <div class="book-card">
+              <div>
+                <img src="../img/test.png" alt="Зображення обгортки книги" />
+              </div>
+              <div class="book-description">
+                <h2 class="book-title">Назва книги</h2>
+                <h3 class="book-category">Категорія книги</h3>
+                <p class="book-description">Короткий опис змісту книги</p>
+
+                <div>
+                  <p class="book-author">Автор: Ім'я Автора</p>
+                  <ul class="book-retailers">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- <button class="remove-button"></button> -->
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
+    <script></script>
   </body>
 </html>
