@@ -1,21 +1,117 @@
-.header {
-  padding: 20px 0;
-}
-
-.nav-list {
+.header-container {
+  width: 375px;
+  height: 64px;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  padding: 18px 20px;
+  background-color: #111111;
+  border: 2px solid #ffffff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-.nav-link {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+.block-logo {
+  width: 109px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-title-svg {
+  stroke: #f3f3f3;
+  fill: #ffffff;
+}
+.icon-svg {
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.block-menu {
+  width: 82px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, #4f2ee8, #686868);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-image: linear-gradient(to bottom, #4f2ee8, #686868);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.menu-btn {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+  padding: 0;
+}
+.switcher {
+}
+.menu-icon {
+}
+.icon-menu-svg {
+  stroke: #f3f3f3;
 }
