@@ -1,10 +1,21 @@
 /* body {
   background-color: red;
 } */
-.header-shopping {
+.headline-shopping {
   font-size: 32px;
   line-height: 38px;
 }
+
 .is-hidden {
   display: none;
+}
+
+.empty-list-png {
+  width: 265px;
+  height: 248px;
+}
+
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 768px) and (max-width: 1159px) {
 }
