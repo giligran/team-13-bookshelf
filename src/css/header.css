@@ -1,13 +1,14 @@
 .header-container {
   width: 375px;
   height: 64px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 100px;
+  justify-content: space-between;
   align-items: center;
-  /* padding: 0px 20px; */
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #111111;
   border: 2px solid #ffffff;
   border-bottom-left-radius: 8px;
@@ -27,9 +28,11 @@
   stroke: #f3f3f3;
   fill: #ffffff;
 }
-.icon-svg {
+.table-menu {
+  width: 0;
+  height: 0;
+  display: none;
 }
-
 .block-menu {
   width: 82px;
   height: 28px;
@@ -82,7 +85,10 @@
 input:checked + .slider {
   background-image: linear-gradient(to bottom, #4f2ee8, #686868);
 }
-
+.checkbox:checked + .header-container {
+  background-color: #ffffff;
+  border-color: #111111;
+}
 input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
@@ -101,7 +107,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.menu-btn {
+.mobile-menu-btn {
   width: 28px;
   height: 28px;
   background-color: transparent;
@@ -109,10 +115,50 @@ input:checked + .slider:before {
   border: none;
   padding: 0;
 }
-.switcher {
-}
-.menu-icon {
-}
 .icon-menu-svg {
   stroke: #f3f3f3;
+}
+/*  table */
+@media screen and (min-width: 768px) {
+  .header-container {
+    width: 768px;
+    height: 72px;
+  }
+  .table-menu {
+    /* background-color: #ffffff; */
+    width: 220px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home-link {
+    color: #ffffff;
+  }
+  .shop-link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 156px;
+    height: 34px;
+    padding: 5px;
+    background-color: #eac645;
+    border-radius: 36px;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+  .table-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
 }
