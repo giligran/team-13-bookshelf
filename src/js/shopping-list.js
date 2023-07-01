@@ -1,8 +1,17 @@
+import { shoppingListBooks } from '../js/home';
+
 const bookList = document.getElementById('book-list');
 
-const savedBooks = JSON.parse(localStorage.getItem('shoppingListBooks'));
+const savedBooks = JSON.parse(localStorage.getItem(shoppingListBooks));
+
+function getBooksForCurrentPage(currentPage, itemsPerPage, savedBooks) {
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  return savedBooks.slice(startIndex, endIndex);
+}
 
 if (savedBooks && savedBooks.length > 0) {
+  const booksOnPage = getBooksForCurrentPage(1, 10, savedBooks);
   // Проходимося по кожній збереженій книзі
   savedBooks.forEach(book => {
     const bookElement = document.createElement('div');
