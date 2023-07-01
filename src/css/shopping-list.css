@@ -23,19 +23,19 @@ main {
   max-width: 375px;
   margin: 0 auto;
 }
-.book-list {
+/* .book-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
 .book-item {
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px 10px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  margin: 0 auto;
   max-width: 335px;
   width: 100%;
   box-sizing: border-box;
@@ -43,17 +43,27 @@ main {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .book-card {
-  margin-top: 10px;
-  margin-bottom: -10px;
+  margin-top: 14px;
+  margin-bottom: -14px;
   width: 335px;
   height: 170px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
-  gap: 10px;
+  gap: 14px;
 }
 .img-title-book {
   display: block;
+}
+
+.buying-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.retailer-logo {
+  filter: grayscale(100%);
 }
 .book-info {
 }
@@ -77,10 +87,25 @@ main {
   color: #b4afaf;
 }
 .book-retailers {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
 }
 .remove-button {
 }
-
+.amazon-logo {
+  width: 32px;
+  height: 11px;
+}
+.ibook-logo {
+  width: 16px;
+  height: 16px;
+}
+.bookshop-logo {
+  width: 16px;
+  height: 16px;
+}
 .empty-list-png {
   width: 265px;
   height: 248px;
