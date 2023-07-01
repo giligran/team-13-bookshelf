@@ -5,7 +5,7 @@
         <use href="./img/symbol-defs.svg#icon-x-close"></use>
       </svg>
     </button>
-    <form action="#" class="sign-up-form">
+    <form action="#" method="POST" class="sign-up-form">
       <label for="name" class="visually-hidden">name</label>
       <input
         type="text"
@@ -23,7 +23,7 @@
         name="email"
         placeholder="eMAIL"
         required
-        class="sign-up-form-input"
+        class="sign-up-form-input email hide"
       />
 
       <label for="password" class="visually-hidden">pASSWORD</label>
@@ -36,7 +36,13 @@
         class="sign-up-form-input"
       />
 
-      <button type="submit">Sign up</button>
+      <button type="submit" class="submit-btn" id="submit">Sign up</button>
     </form>
+    <!--  -->
+    <div class="sign-conteiner">
+      <button class="sign-btn active" id="upBtn">Sign in</button>
+      <button class="sign-btn" id="InBtn">Sign up</button>
+    </div>
+    <!--  -->
   </div>
 </div>
