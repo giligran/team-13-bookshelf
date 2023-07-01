@@ -1,3 +1,15 @@
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 .section-home{
     background-color:#F6F6F6;
     margin-left: 20px;
@@ -13,7 +25,7 @@
     max-height: 485px;
     border-radius: 8px;
 }
-.home-h2{
+.home-title{
     margin-right: auto;
     margin-bottom: 40px;
     font-size: 32px;
@@ -21,7 +33,7 @@
     line-height: 38px;
     letter-spacing: -0.04em;
 }
-.home-h2-second-color{
+.home-title-second-color{
     color: #4F2EE8;
 }
 .popular-books-list{
@@ -75,7 +87,13 @@
     line-height: 18px;
     letter-spacing: -0.01em;
 }
-
+.category-navigation{
+    overflow: scroll;
+    height: 228px;
+}
+.book-card{
+    list-style: none;
+}
 @media screen and (min-width: 768px){
     .section-home{
         margin-left: 32px;
@@ -83,9 +101,37 @@
     }
     .home-book-img{
         width: 100%;
+        height: 100%;
         max-width: 218px;
         max-height: 316px;
         border-radius: 8px;
+    }
+    .books-list{
+        display: flex;
+        
+    }
+    .top-book-title{
+        width: 172px;
+    }
+    .book-card{
+        margin-right: 25px;
+    }
+    .book-card:last-child{
+        margin-right: 0px;
+    }
+    .support{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 32px;
+        margin-left: 32px;
+    }
+    .category-navigation{
+        width: 337px;
+        height: 472px;
+    }
+    .category-item{
+        margin-bottom: 32px;
     }
 
 }
