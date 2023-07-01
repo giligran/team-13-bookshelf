@@ -27,3 +27,17 @@ refs.mobOpen.addEventListener('click', () => {
 refs.mobClose.addEventListener('click', () => {
   refs.mobMenu.classList.toggle('hidden');
 });
+
+
+// Authorizatiom 
+const link = {
+  backdrop: document.querySelector('#authorization'),
+  open: document.querySelector('.heder-modal-login'),
+  close: document.querySelector('.modal-authorization-close'),
+} ;
+link.open.addEventListener('click', () => {
+  link.backdrop.classList.toggle('visually-hidden');
+});
+link.close.addEventListener('click', () => {
+  link.backdrop.classList.toggle('visually-hidden');
+});
