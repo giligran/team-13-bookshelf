@@ -38,7 +38,7 @@
   background-color: transparent;
 }
 
-.sign-up-form {
+.sign-form {
   display: flex;
   min-height: 352px;
   flex-direction: column;
