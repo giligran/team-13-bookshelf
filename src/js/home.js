@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import BookApiService from './fetch-api';
 
 const bookApiService = new BookApiService();
@@ -57,4 +55,3 @@ function reduceByScreenSize(books) {
  // if (length === 1) {
  //   refs.btnSeeMore.style.display = 'flex';}
 //}
->>>>>>> Stashed changes
