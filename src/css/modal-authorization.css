@@ -71,3 +71,44 @@
   letter-spacing: -0.18px;
   text-transform: uppercase;
 }
+.submit-btn{
+  padding: 20px;
+  width: 499px;
+  color: #ffffff;
+  background-color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: 2px solid #111;
+}
+.sign-conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+.sign-btn {
+  color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  border: none;
+  background-color: transparent;
+}
+.sign-btn.active {
+  text-decoration: underline;
+  color: #4f2ee8;
+}
+
+.email.hide {
+  display: none;
+}
