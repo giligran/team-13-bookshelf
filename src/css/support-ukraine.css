@@ -36,6 +36,18 @@
     letter-spacing: -0.56px;
 }
 
+.support-item{}
+
+.support-link{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.support-img {
+    height:32px;
+}
+
 .support-btn-link {
     width: 32px;
     height: 32px;
@@ -50,6 +62,7 @@
 .support-btn-icon {
     fill: #4F2EE8;
 }
+
 
 
 
