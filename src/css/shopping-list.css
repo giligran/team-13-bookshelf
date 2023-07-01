@@ -30,6 +30,7 @@ main {
 } */
 
 .book-item {
+  position: relative;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
   /* display: flex;
@@ -109,6 +110,20 @@ main {
 .empty-list-png {
   width: 265px;
   height: 248px;
+}
+.remove-book {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  top: 14px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1159px) {
