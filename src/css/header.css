@@ -1,0 +1,233 @@
+.header-container {
+  margin: auto;
+  width: 375px;
+  height: 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  color: #111111;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.block-logo {
+  width: 109px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-title-svg {
+  stroke: #111111;
+  fill: #111111;
+}
+.table-menu {
+  width: 0;
+  height: 0;
+  display: none;
+}
+.right-conteiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.block-menu {
+  width: 82px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#switch {
+  background-color: transparent;
+  border: none;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, #4f2ee8, #686868);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-image: linear-gradient(to bottom, #4f2ee8, #686868);
+}
+.checkbox:checked + .header-container {
+  background-color: #ffffff;
+  border-color: #111111;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.mobile-menu-btn {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+  padding: 0;
+}
+.icon-menu-svg {
+  stroke: #111111;
+}
+.user-info {
+  width: 0;
+  height: 0;
+  display: none;
+}
+/*  table */
+@media screen and (min-width: 425px) {
+  .header-container {
+    width: 425px;
+    height: 72px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-container {
+    width: 768px;
+    height: 72px;
+  }
+  .table-menu {
+    width: 220px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shop-link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+  .table-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+  .user-info {
+    width: 184px;
+    height: 45px;
+    box-sizing: border-box;
+    background-color: #4f2ee8;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .user-photo {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #eac645, #ffffff);
+  }
+  .arow-down {
+    fill: #111111;
+    stroke: #111111;
+  }
+}
+@media screen and (min-width: 1199px) {
+  .header-container {
+    width: 1199px;
+    height: 72px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header-container {
+    width: 1440px;
+    height: 72px;
+  }
+}
+.header-container.dark {
+  background-color: #111111;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.icon-title-svg.dark,
+.shop-icon-svg.dark,
+.icon-menu-svg.dark {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+.home-link.active,
+.shop-link.active {
+  display: flex;
+  padding: 6px 12px;
+  background-color: #eac645;
+  color: #111111;
+  border-radius: 36px;
+}

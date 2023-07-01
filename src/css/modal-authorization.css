@@ -1,0 +1,141 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition-property: opacity visibility;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
+  background-color: #4f2ee8;
+}
+/* 
+.modal-authorization {
+} */
+
+.modal-authorization {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  top: 50%;
+  left: 50%;
+  width: 579px;
+  height: 516px;
+  padding: 24px 40px 40px;
+  background: #f6f6f6;
+  border-radius: 18px;
+  border: 2px solid #111;
+}
+
+.modal-authorization-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  stroke: black;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.sign-up-form {
+  display: flex;
+  min-height: 352px;
+  flex-direction: column;
+  margin-top: 28px;
+  align-items: center;
+  gap: 28px;
+}
+
+.sign-up-form-input {
+  padding: 20px 173px 20px 40px;
+  width: 499px;
+  color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: 2px solid #111;
+}
+
+.sign-up-form-input::placeholder {
+  color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+}
+.submit-btn {
+  padding: 20px;
+  width: 499px;
+  color: #ffffff;
+  background-color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: 2px solid #111;
+}
+
+.sign-conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.sign-conteiner input[type='radio'] {
+  display: none;
+}
+
+.sign-conteiner input[type='radio'] + label {
+  position: relative;
+  padding-left: 25px;
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sign-conteiner input[type='radio']:checked + label {
+  color: #4f2ee8;
+  text-decoration-line: underline;
+}
+
+/* 
+.sign-btn {
+  color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  border: none;
+  background-color: transparent;
+}
+.sign-btn.active {
+  text-decoration: underline;
+  color: #4f2ee8;
+}
+
+.name.hide {
+  display: none;
+} */
