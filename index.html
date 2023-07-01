@@ -7,8 +7,8 @@
     <title>Bookchelf</title>
 
     
-    <script type="module" crossorigin src="/team-13-bookshelf/assets/index-8b9367ae.js"></script>
-    <link rel="stylesheet" href="/team-13-bookshelf/assets/index-c3944ad9.css">
+    <script type="module" crossorigin src="/team-13-bookshelf/assets/index-7e0ffec6.js"></script>
+    <link rel="stylesheet" href="/team-13-bookshelf/assets/index-68f6a38e.css">
   </head>
   <body>
     <header>
@@ -29,10 +29,13 @@
         </a>
       </div>
       <div class="table-menu">
-        <a href="../index.html" class="home-link">HOME</a>
+        <a href="../index.html" class="home-link active">HOME</a>
         <a href="" class="shop-link"
           >SHOPING LIST<svg class="heder-shop-icon" width="20" height="20">
-            <use class="shop-icon-svg" href="../img/header.svg#icon-uil_cart"></use>
+            <use
+              class="shop-icon-svg"
+              href="../img/header.svg#icon-uil_cart"
+            ></use>
           </svg>
         </a>
       </div>
@@ -45,7 +48,7 @@
             <span class="slider round"></span>
           </label>
         </button>
-        <button type="button" class="mobile-menu-btn">
+        <button type="button" class="mobile-menu-btn" id="mob-menu-open">
           <svg class="menu-icon" width="28" height="28">
             <use
               class="icon-menu-svg"
@@ -54,25 +57,24 @@
           </svg>
         </button>
       </div>
-      <!-- <div class="user-info"> -->
-        <button class="heder-modal-login user-info">
-          <div class="user-photo"></div>
-          <p class="user-name">sing up</p>
-          <svg class="arow-down" width="23" height="26">
-            <use href="../img/header.svg#icon-fi-ss-caret-down"></use>
-          </svg>
-        </button>
-      <!-- </div> -->
+      <button class="heder-modal-login user-info">
+        <!-- <div class="user-photo"></div> -->
+        <p class="user-name">sing up</p>
+        <svg class="arow-down" width="23" height="26">
+          <use href="../img/header.svg#icon-arrow-narrow-right"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
 
 
-<div>
+<div id="mobile-menu" class="mobile-menu hidden">
   <p>menu/burger</p>
+  <button type="button" id="mob-menu-close">X</button>
 </div>
 
-<div class="backdrop visually-hidden">
+<div class="backdrop visually-hidden" id="authorization">
   <div class="modal-authorization">
     <button type="button" class="modal-authorization-close">
       <svg width="28" height="28" class="modal-authorization-icon">
@@ -114,6 +116,7 @@
     </form>
   </div>
 </div>
+
 
     </header>
     <main>
