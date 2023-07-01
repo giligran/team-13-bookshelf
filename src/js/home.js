@@ -96,6 +96,7 @@ function renderSingleCategoryBooks(categoryName){
 
 
 
+<<<<<<< Updated upstream
 
 
 
@@ -106,6 +107,8 @@ function renderSingleCategoryBooks(categoryName){
 
 
 
+=======
+>>>>>>> Stashed changes
 
 // Shavala
 //для мобільної версії до п. 20 з ТЗ, якщо є деякі додаткові дані
