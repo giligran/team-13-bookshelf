@@ -1,8 +1,10 @@
 .section-home{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 100%;
-    max-width: 375px;
-    height: 228px;
     background-color:#F6F6F6;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.home-book-img{
+    width: 335px;
+    max-height: 485px;
+    border-radius: 8px;
 }
