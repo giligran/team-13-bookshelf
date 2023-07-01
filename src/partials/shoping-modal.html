@@ -8,32 +8,47 @@
     <title>Shopping list</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <load ="./partials/header.html" />
+    </header>
     <main>
-      <section></section>
-      <h1 class="headline-shopping">Shopping <span>List</span></h1>
-      <div>
-        <img
-          class="empty-list-png is-hidden"
-          src="../img/blocks.png"
-          alt="list is empty"
-        />
-      </div>
-      <section class="shopping-list">
-        <div class="book-card">
-          <img src="" alt="Зображення обгортки книги" />
-          <h2 class="book-title">Назва книги</h2>
-          <h3 class="book-category">Категорія книги</h3>
-          <p class="book-description">Короткий опис змісту книги</p>
-          <p class="book-author">Автор: Ім'я Автора</p>
-          <ul class="book-retailers">
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-          </ul>
-          <button class="remove-button"></button>
+      <div class="shopping-list">
+        <h1 class="headline-shopping">Shopping <span>List</span></h1>
+        <div>
+          <img
+            class="empty-list-png is-hidden"
+            src="../img/blocks.png"
+            alt="list is empty"
+          />
         </div>
-      </section>
+
+        <ul class="book-list">
+          <li class="book-item">
+            <div class="book-card">
+              <div class="img-title-book">
+                <img src="../img/test.png" alt="Зображення обгортки книги" />
+              </div>
+              <div class="book-info">
+                <h2 class="book-title">Назва книги</h2>
+                <h3 class="book-category">Категорія книги</h3>
+                <p class="book-description">Короткий опис змісту книги</p>
+
+                <div class="bying-list">
+                  <p class="book-author">Автор: Ім'я Автора</p>
+                  <ul class="book-retailers">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- <button class="remove-button"></button> -->
+            </div>
+          </li>
+        </ul>
+      </div>
     </main>
+    <script></script>
   </body>
 </html>
