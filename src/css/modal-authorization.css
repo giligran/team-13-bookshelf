@@ -40,6 +40,7 @@
 
 .sign-up-form {
   display: flex;
+  min-height: 352px;
   flex-direction: column;
   margin-top: 28px;
   align-items: center;
@@ -71,7 +72,7 @@
   letter-spacing: -0.18px;
   text-transform: uppercase;
 }
-.submit-btn{
+.submit-btn {
   padding: 20px;
   width: 499px;
   color: #ffffff;
@@ -86,6 +87,7 @@
   border-radius: 40px;
   border: 2px solid #111;
 }
+
 .sign-conteiner {
   display: flex;
   flex-direction: row;
@@ -93,6 +95,31 @@
   gap: 40px;
   margin-top: 30px;
 }
+
+.sign-conteiner input[type='radio'] {
+  display: none;
+}
+
+.sign-conteiner input[type='radio'] + label {
+  position: relative;
+  padding-left: 25px;
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sign-conteiner input[type='radio']:checked + label {
+  color: #4f2ee8;
+  text-decoration-line: underline;
+}
+
+/* 
 .sign-btn {
   color: #111;
   font-size: 18px;
@@ -111,4 +138,4 @@
 
 .name.hide {
   display: none;
-}
+} */
