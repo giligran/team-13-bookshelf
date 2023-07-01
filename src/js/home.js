@@ -12,10 +12,10 @@ function renderMarkup(popularBooks) {
       const bookInfo = reduceByScreenSize(books).map(
         ({ author, book_image, title }) => {
           return `<img src="${book_image}" alt="${title}" class ="home-book-img"/>
-      <p>${title}</p><p>${author}</p>`;
+      <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p>`;
         }
       );
-      return `<li><p>${list_name}</p>${bookInfo}</li>`;
+      return `<li class="home-card-book"><p class = "category-name-book">${list_name.toUpperCase()}</p>${bookInfo}</li><button class="top-book-button">SEE MORE</button>`;
     })
     .join('');
 
