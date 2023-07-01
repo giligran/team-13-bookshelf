@@ -5,30 +5,55 @@ body {
   font-size: 32px;
   line-height: 38px;
 }
+ul {
+  padding-inline-start: 0;
+}
 li {
   list-style: none;
 }
-
+main {
+}
 .is-hidden {
   display: none;
 }
 .shopping-list {
-  width: 375px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: block;
+  max-width: 375px;
+  margin: 0 auto;
 }
 .book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .book-item {
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px 10px;
+  max-width: 335px;
+  width: 100%;
+  box-sizing: border-box;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .book-card {
   margin-top: 10px;
+  margin-bottom: -10px;
   width: 335px;
   height: 170px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: row;
   gap: 10px;
+}
+.img-title-book {
+  display: block;
 }
 .book-info {
 }
@@ -44,10 +69,12 @@ li {
 .book-description {
   font-size: 14px;
   line-height: 18px;
+  margin-bottom: 20px;
 }
 .book-author {
   font-size: 12px;
   line-height: 14px;
+  color: #b4afaf;
 }
 .book-retailers {
 }
@@ -59,7 +86,8 @@ li {
   height: 248px;
 }
 
-@media screen and (min-width: 1200px) {
-}
 @media screen and (min-width: 768px) and (max-width: 1159px) {
+}
+
+@media screen and (min-width: 1200px) {
 }

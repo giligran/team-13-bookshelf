@@ -8,29 +8,32 @@
     <title>Shopping list</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <load ="./partials/header.html" />
+    </header>
     <main>
-      <h1 class="headline-shopping">Shopping <span>List</span></h1>
-      <div>
-        <img
-          class="empty-list-png is-hidden"
-          src="../img/blocks.png"
-          alt="list is empty"
-        />
-      </div>
-      <section class="shopping-list">
+      <div class="shopping-list">
+        <h1 class="headline-shopping">Shopping <span>List</span></h1>
+        <div>
+          <img
+            class="empty-list-png is-hidden"
+            src="../img/blocks.png"
+            alt="list is empty"
+          />
+        </div>
+
         <ul class="book-list">
           <li class="book-item">
             <div class="book-card">
-              <div>
+              <div class="img-title-book">
                 <img src="../img/test.png" alt="Зображення обгортки книги" />
               </div>
-              <div class="book-description">
+              <div class="book-info">
                 <h2 class="book-title">Назва книги</h2>
                 <h3 class="book-category">Категорія книги</h3>
                 <p class="book-description">Короткий опис змісту книги</p>
 
-                <div>
+                <div class="bying-list">
                   <p class="book-author">Автор: Ім'я Автора</p>
                   <ul class="book-retailers">
                     <li><a href=""></a></li>
@@ -44,7 +47,7 @@
             </div>
           </li>
         </ul>
-      </section>
+      </div>
     </main>
     <script></script>
   </body>
