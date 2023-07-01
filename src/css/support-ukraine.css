@@ -36,6 +36,18 @@
     letter-spacing: -0.56px;
 }
 
+.support-item{}
+
+.support-link{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.support-img {
+    height:32px;
+}
+
 .support-btn-link {
     width: 32px;
     height: 32px;
@@ -53,6 +65,23 @@
 
 
 
+
 @media screen and (min-width: 480px) {}
-@media screen and (min-width: 768px) {}
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 768px) {
+    .support-container {
+        width: 335px;
+        height: 472px;
+    }
+
+    .support-btn-link {
+        width: 38px;
+        height: 38px;
+        border-radius: 38px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .support-container {
+        width: 356px;
+        height: 490px;
+    }
+}
