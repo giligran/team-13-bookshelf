@@ -48,8 +48,8 @@ const funds = [
 ]
 
 const fundsList = document.getElementById('funds-list');
-const supportPrevBtn = document.querySelector('.support-prev');
-const supportNextBtn = document.querySelector('.support-next');
+const supportPrevBtn = document.querySelector('.support-btn-prev');
+const supportNextBtn = document.querySelector('.support-btn-next');
 const visibleItemCount = 4; 
 let currentSlideIndex = 0;
 

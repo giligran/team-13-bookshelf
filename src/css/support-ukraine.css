@@ -60,11 +60,28 @@
 }
 
 .support-navigation {
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin-top: 10px;
+    padding: 0;
 }
 
-.support-btn {
+.support-btn-prev {
+    display: block;
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    rotate: 180deg;
+}
+
+.support-btn-next{
     display: block;
     margin: 0 auto;
     width: 32px;
