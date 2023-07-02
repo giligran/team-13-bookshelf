@@ -8,23 +8,34 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  updateProfile,
 } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
 const localKey = 'user';
 
 const app = initializeApp(firebaseConfig);
-console.log(getApp());
 export const auth = getAuth(app);
 const database = getDatabase(app);
 
 const user = auth.currentUser;
 export const signUpUser = async (name, email, password) => {
   const newUser = await createUserWithEmailAndPassword(auth, email, password);
-  const userCredential = await newUser;
+  await updateUserName(newUser.user, name);
   signInUser(email, password);
   localStorage.setItem(localKey + '-' + name, userCredential.user);
-  console.log(userCredential);
+  console.log(newUser);
+};
+
+const updateUserName = async (user, name) => {
+  try {
+    await updateProfile(user, {
+      displayName: name,
+    });
+    console.log('User name updated successfully');
+  } catch (error) {
+    console.log('Error updating user name:', error);
+  }
 };
 
 export const signInUser = async (email, password) => {
@@ -38,7 +49,7 @@ export const checkAuth = async () => {
   onAuthStateChanged(auth, user => {
     if (user) {
       const uid = user.uid;
-      // console.log('вы авторизовались ', user);
+      console.log('вы авторизовались ', user);
     } else {
       // console.log('вы не авторизованы ');
     }
