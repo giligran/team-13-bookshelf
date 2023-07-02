@@ -1,64 +1,347 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.4);
+}
+
+.backdrop.is-hidden .card {
+  transform: translate(-50%, -50%) scaleX(0) rotate(80deg);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+  border: 2px solid #111;
+  border-radius: 18px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 250ms var(--cubic);
+}
+
+.card-close {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: none;
+  padding: 0;
+  border-style: none;
+  position: relative;
+  top: 6px;
+  left: 288px;
+  right: 12px;
+  bottom: 4px;
+}
+
+.card-close:is(:hover) {
+  fill: rgba(79, 46, 232, 1);
+}
+
+.book-img {
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 5px;
+  width: 287px;
+  padding-bottom: 24px;
+}
+
+.description {
+  padding: 0 14px;
+}
+
+.book-title {
+  color: #111;
+  font-size: 16px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  padding-bottom: 2px;
+}
+
+.author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+  padding-bottom: 18px;
+}
+
+.text-card {
+  color: #111;
+  font-size: 14px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+
+.book-shop {
+  display: flex;
+  gap: 20px;
+  width: 173px;
+  height: 36px;
+  padding-top: 14px;
+}
+
+.card-button {
+  position: relative;
+  top: 42px;
+  left: 62px;
+  right: 62px;
+  margin: 0 auto;
+  width: 211px;
+  height: 46px;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+}
+
+.card-button:focus,
+.card-button:hover {
+  cursor: pointer;
+  color: #ffff;
+  background: #4f2ee8;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) {
+  .card {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    width: 335px;
-    height: 762px;
-    border-radius: 18px;
+    position: relative;
+    width: 579px;
+    height: 465px;
+    background: #fafafa;
     border: 2px solid #111;
-    background: rgba(255, 255, 255, 0.87);
+    border-radius: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 250ms var(--cubic);
   }
-  
-  .title-author {
-  
-  
+
+  .card-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: none;
+    padding: 0;
+    border-style: none;
+    position: relative;
+    top: 24px;
+    left: 527px;
+    right: 24px;
+    z-index: 2;
   }
-  
-  .book-title {
+
+  .card-close:is(:hover) {
+    fill: rgba(79, 46, 232, 1);
   }
-  
-  .book-author {
+
+  .card-close:is(:hover) {
+    fill: rgba(79, 46, 232, 1);
+  }
+
+  .book-img {
+    padding-top: 5px;
+    width: 192px;
+    height: 281px;
+    padding-top: 40px;
+  }
+
+  .book-titel {
+    color: #111;
+    font-size: 16px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.64px;
+    padding-top: 40px;
+    padding-bottom: 2px;
+  }
+
+  .author {
     color: #b4afaf;
-    font-size: 14px;
+    font-size: 12px;
     font-family: DM Sans;
     font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    padding-bottom: 18px;
+  }
+
+  .text-card {
+    width: 279px;  
+    color: #111;
+    font-size: 14px;
+    font-family: DM Sans;
+    font-style: normal;
     font-weight: 400;
     line-height: 18px;
     letter-spacing: -0.56px;
   }
-  
-  .text-card {
-    width: 279px;
-    height: 70px;
-  }
-  
-  .description {
-  display: flex;
-  width: 279px;
-  height: 70px;
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 44px;
-  padding-bottom: 20px;
-  }
-  
-  .img-title {
-      
-  
-  }
-  
-  .btn-card {
-  }
-  
-  .btn {
+
+  .book-shop {
     display: flex;
-    width: 499px;
-    background-color: rgba(255, 255, 255, 0.87);
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 40px;
-    border: 2px solid #4f2ee8;
-    padding: 20px 173px;
+    gap: 20px;
+    width: 173px;
+    height: 36px;
+    padding-top: 14px;
   }
-  
+
+  .amazon-shop {
+    padding-top: 6px;
+  }
+
+  .card-button {
+    position: absolute;
+    top: 361px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    width: 499px;
+    height: 64px;
+    background-color: #ffff;
+    border: 2px solid #4f2ee8;
+    border-radius: 40px;
+  }
+
+  .card-button:focus,
+  .card-button:hover {
+    cursor: pointer;
+    color: #ffff;
+    background: #4f2ee8;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1200px) {
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 579px;
+    height: 465px;
+    background: #fafafa;
+    border: 2px solid #111;
+    border-radius: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 250ms var(--cubic);
+  }
+
+  .card-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: none;
+    padding: 0;
+    border-style: none;
+    position: relative;
+    top: 24px;
+    left: 527px;
+    right: 24px;
+    z-index: 2;
+  }
+
+  .card-close:is(:hover) {
+    fill: rgba(79, 46, 232, 1);
+  }
+
+  .card-close:is(:hover) {
+    fill: rgba(79, 46, 232, 1);
+  }
+
+  .book-img {
+    padding-top: 5px;
+    width: 192px;
+    height: 281px;
+    padding-top: 40px;
+  }
+
+  .book-titel {
+    color: #111;
+    font-size: 16px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.64px;
+    padding-top: 40px;
+    padding-bottom: 2px;
+  }
+
+  .author {
+    color: #b4afaf;
+    font-size: 12px;
+    font-family: DM Sans;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    padding-bottom: 18px;
+  }
+
+  .text-card {
+    width: 279px;  
+    color: #111;
+    font-size: 14px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+  }
+
+  .book-shop {
+    display: flex;
+    gap: 20px;
+    width: 173px;
+    height: 36px;
+    padding-top: 14px;
+  }
+
+  .amazon-shop {
+    padding-top: 6px;
+  }
+
+  .card-button {
+    position: absolute;
+    top: 361px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    width: 499px;
+    height: 64px;
+    background-color: #ffff;
+    border: 2px solid #4f2ee8;
+    border-radius: 40px;
+  }
+
+  .card-button:focus,
+  .card-button:hover {
+    cursor: pointer;
+    color: #ffff;
+    background: #4f2ee8;
+  } 
+}
