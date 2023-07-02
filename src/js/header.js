@@ -10,14 +10,35 @@ const refs = {
   mobOpen: document.querySelector('#mob-menu-open'),
   mobClose: document.querySelector('#mob-menu-close'),
 };
+
+console.log(localStorage.getItem('mode'));
+if (localStorage.getItem('mode') === 'dark') {
+  refs.container.classList.add('dark');
+  refs.logo.classList.add('dark');
+  refs.shop.classList.add('dark');
+  refs.burger.classList.add('dark');
+}
+
 function themasChanger(evt) {
   if (evt.target.nodeName === 'INPUT') {
     refs.container.classList.toggle('dark');
     refs.logo.classList.toggle('dark');
     refs.shop.classList.toggle('dark');
     refs.burger.classList.toggle('dark');
+    if (refs.container.classList.contains('dark')) {
+      localStorage.setItem('mode', 'dark');
+      const theme = localStorage.getItem('mode');
+      console.log(theme);
+    } else {
+      localStorage.removeItem('mode');
+      const theme = localStorage.getItem('mode');
+      console.log(theme);
+    }
   }
 }
+
+
+
 refs.switcherRef.addEventListener('click', themasChanger);
 
 // Open mobile menu
@@ -28,13 +49,12 @@ refs.mobClose.addEventListener('click', () => {
   refs.mobMenu.classList.toggle('hidden');
 });
 
-
-// Authorizatiom 
+// Authorizatiom
 const link = {
   backdrop: document.querySelector('#authorization'),
   open: document.querySelector('.heder-modal-login'),
   close: document.querySelector('.modal-authorization-close'),
-} ;
+};
 link.open.addEventListener('click', () => {
   link.backdrop.classList.toggle('visually-hidden');
 });
