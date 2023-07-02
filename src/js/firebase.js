@@ -15,6 +15,7 @@ import {
   arrayUnion,
   arrayRemove,
 } from 'firebase/firestore';
+import { authModal } from './header.js';
 
 const app = initializeApp(firebaseConfig);
 
@@ -48,8 +49,10 @@ export const firebaseAuth = {
       await this.updateUserName(userCredential.user, name);
       console.log(userCredential.user);
       await this.signIn(email, password);
+      await this.checkAuth();
+      return userCredential;
     } catch (error) {
-      console.error('Помилка при реєстрації користувача:', error);
+      console.error('Помилка при реєстрації користувача:', error, error.code);
       throw new Error('Не вдалося зареєструвати користувача.');
     }
   },
@@ -70,7 +73,12 @@ export const firebaseAuth = {
     ) {
       throw new Error('Невірний тип даних вхідних параметрів.');
     }
-    return signInWithEmailAndPassword(this.auth, email, password);
+    try {
+      signInWithEmailAndPassword(this.auth, email, password);
+      return this.checkAuth();
+    } catch {
+      throw new Error('Не вдалося авторизувати користувача.');
+    }
   },
   async updateUserName(user, name) {
     try {
@@ -81,6 +89,16 @@ export const firebaseAuth = {
     } catch (error) {
       console.log('Error updating user name:', error);
     }
+  },
+  checkAuth() {
+    return onAuthStateChanged(this.auth, user => {
+      if (user) {
+        authModal.togleModalAuth();
+        console.dir(user);
+      } else {
+        authModal.togleModalAuth();
+      }
+    });
   },
 };
 

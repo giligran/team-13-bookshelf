@@ -59,9 +59,13 @@ const link = {
   open: document.querySelector('.heder-modal-login'),
   close: document.querySelector('.modal-authorization-close'),
 };
-link.open.addEventListener('click', () => {
+link.open.addEventListener('click', togleModalAuth);
+link.close.addEventListener('click', togleModalAuth);
+
+function togleModalAuth() {
   link.backdrop.classList.toggle('visually-hidden');
-});
-link.close.addEventListener('click', () => {
-  link.backdrop.classList.toggle('visually-hidden');
-});
+}
+
+// export function onCloseModalAuth() {
+//   link.backdrop.classList.toggle('visually-hidden');
+// }
