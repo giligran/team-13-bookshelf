@@ -89,13 +89,13 @@ export const firebaseAuth = {
       console.log('Error updating user name:', error);
     }
   },
-  checkAuth() {
+  checkAuth(callback) {
     return onAuthStateChanged(this.auth, user => {
       if (user) {
-        authModal.togleModalAuth();
         console.dir(user);
+        return callback(user);
       } else {
-        authModal.togleModalAuth();
+        return callback(user);
       }
     });
   },
