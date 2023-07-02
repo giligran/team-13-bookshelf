@@ -11,7 +11,141 @@
     <link rel="stylesheet" href="/team-13-bookshelf/assets/styles-33ed9315.css">
   </head>
   <body class="page-mode">
-    <header></header>
+    <header>
+      <div class="header-container">
+  <div class="table-block">
+    <div class="block-logo">
+      <a href="./index.html">
+        <svg class="logo-icon" width="24" height="24">
+          <use class="icon-svg" href="/team-13-bookshelf/assets/header-fe1d4ca2.svg#icon-logo"></use>
+        </svg>
+        <svg class="logo-title" width="77" height="14">
+          <use
+            class="icon-title-svg"
+            href="/team-13-bookshelf/assets/header-fe1d4ca2.svg#icon-Bookshelf"
+          ></use>
+        </svg>
+      </a>
+    </div>
+    <div class="table-menu">
+      <a href="./index.html" class="home-link active">HOME</a>
+      <a href="./shopping.html" class="shop-link"
+        >SHOPING LIST<svg class="heder-shop-icon" width="20" height="20">
+          <use
+            class="shop-icon-svg"
+            href="/team-13-bookshelf/assets/header-fe1d4ca2.svg#icon-uil_cart"
+          ></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="right-conteiner">
+    <div class="block-menu">
+      <button type="button" id="switch">
+        <label class="switch">
+          <input class="checkbox" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </button>
+      <button type="button" class="mobile-menu-btn" id="mob-menu-open">
+        <svg class="menu-icon" width="28" height="28">
+          <use
+            class="icon-menu-svg"
+            href="/team-13-bookshelf/assets/header-fe1d4ca2.svg#icon-align-left"
+          ></use>
+        </svg>
+      </button>
+    </div>
+    <button class="heder-modal-login user-info">
+      <div class="user-photo"></div>
+      <p class="user-name">sign up</p>
+      <svg class="arow-down" width="23" height="26">
+        <use href="/team-13-bookshelf/assets/header-fe1d4ca2.svg#icon-arrow-narrow-right"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="backdrop visually-hidden" id="authorization">
+  <div class="modal-authorization">
+    <button type="button" class="modal-authorization-close">
+      <svg width="28" height="28" class="modal-authorization-icon">
+        <use href="/team-13-bookshelf/assets/symbol-defs-07af4f7d.svg#icon-x-close"></use>
+      </svg>
+    </button>
+    <form action="#" class="sign-form">
+      <label for="name" class="visually-hidden">name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="name"
+        required
+        class="sign-up-form-input name hide"
+      />
+      <label for="email" class="visually-hidden">eMAIL</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="eMAIL"
+        required
+        class="sign-up-form-input"
+      />
+      <label for="password" class="visually-hidden">pASSWORD</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="pASSWORD"
+        required
+        class="sign-up-form-input"
+      />
+      <button type="submit" class="submit-btn" id="submit">Sign up</button>
+    </form>
+    <div class="sign-conteiner">
+      <input type="radio" id="sign-up" name="myRadio" value="sign-up" checked />
+      <label for="sign-up">Sign up</label>
+
+      <input type="radio" id="sign-in" name="myRadio" value="sign-in" />
+      <label for="sign-in">Sign in</label>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="mobile-menu" class="mobile-menu hidden" >
+  <div class="modal-menu">
+    <button type="button" id="mob-menu-close">X</button>
+      <h1 class="modal-mob-text"></h1>
+    </div>
+      <div class="blok-avatar">
+        <img class="avatar" src="../img/stephan2x-min.png" alt="users-logo" width="37" height="37">
+        <p class="user-name">Stephen</p>
+      </div>
+              </h1>
+              <div class="blok-link">
+                <a href="../index.html" class="btn-home">HOME</a>
+                <a href="" class="btn-shop-list" data-shopping-list>Shopping list
+                  <svg class="icon-bag" width="16" height="16">
+              <use href="../img/header.svg#icon-uil_cart"></use>
+            </svg>
+                </a>
+              </div>
+              
+              <div class="media">
+                  <div class="view">
+                      <img class="modal-image" src="./img/" alt="">
+                  </div>
+              </div>
+          <button id="logout-button" class="logout-text">Log out
+            <svg class="icon-arrow" width="20" height="20">
+              <use href="../img/symbol-defs.svg#icon-arrow-narrow-right"></use>
+            </svg>
+   
+</div>
+ -->
+
+    </header>
     <main>
       
       
