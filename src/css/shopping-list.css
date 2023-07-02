@@ -6,6 +6,9 @@ body {
   line-height: 38px;
   letter-spacing: -1.28px;
 }
+.purple-header-word {
+  color: #4f2ee8;
+}
 ul {
   padding-inline-start: 0;
 }
@@ -136,7 +139,7 @@ main {
   border-radius: 50%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1159px) {
+@media screen and (min-width: 768px) {
   .book-card {
     width: 704px;
     height: 213px;
@@ -181,5 +184,9 @@ main {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1159px) {
+  .book-card {
+    width: 996px;
+    height: 213px;
+  }
 }
