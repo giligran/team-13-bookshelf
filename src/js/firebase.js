@@ -46,7 +46,7 @@ export const firebaseAuth = {
         password
       );
       await this.updateUserName(userCredential.user, name);
-
+      console.log(userCredential.user);
       await this.signIn(email, password);
     } catch (error) {
       console.error('Помилка при реєстрації користувача:', error);
