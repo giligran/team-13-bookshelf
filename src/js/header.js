@@ -9,14 +9,18 @@ const refs = {
   mobMenu: document.querySelector('#mobile-menu'),
   mobOpen: document.querySelector('#mob-menu-open'),
   mobClose: document.querySelector('#mob-menu-close'),
+  page: document.querySelector('.page-mode'),
+  home: document.querySelector('.section-home'),
 };
 
-console.log(localStorage.getItem('mode'));
+// console.log(localStorage.getItem('mode'));
 if (localStorage.getItem('mode') === 'dark') {
   refs.container.classList.add('dark');
   refs.logo.classList.add('dark');
   refs.shop.classList.add('dark');
   refs.burger.classList.add('dark');
+  refs.page.classList.add('dark');
+  refs.home.classList.add('dark');
 }
 
 function themasChanger(evt) {
@@ -25,19 +29,19 @@ function themasChanger(evt) {
     refs.logo.classList.toggle('dark');
     refs.shop.classList.toggle('dark');
     refs.burger.classList.toggle('dark');
+    refs.page.classList.toggle('dark');
+    refs.home.classList.toggle('dark');
     if (refs.container.classList.contains('dark')) {
       localStorage.setItem('mode', 'dark');
       const theme = localStorage.getItem('mode');
-      console.log(theme);
+      // console.log(theme);
     } else {
       localStorage.removeItem('mode');
       const theme = localStorage.getItem('mode');
-      console.log(theme);
+      // console.log(theme);
     }
   }
 }
-
-
 
 refs.switcherRef.addEventListener('click', themasChanger);
 
