@@ -15,7 +15,6 @@ import {
   arrayUnion,
   arrayRemove,
 } from 'firebase/firestore';
-import { authModal } from './header.js';
 
 const app = initializeApp(firebaseConfig);
 
