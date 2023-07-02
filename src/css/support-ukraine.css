@@ -26,7 +26,14 @@
     fill: #FFFFFF
 }
 
+.support-slider {
+    overflow-y: auto;
+    max-height: 188px;
+}
+
 .support-list {
+    display: block;
+    margin: 0;
     list-style-type: decimal-leading-zero;
     padding-left: 20px;
     color: #FFF;
@@ -34,21 +41,31 @@
     font-family: DM Sans;
     line-height: 18px;
     letter-spacing: -0.56px;
+    max-width: 245px;
+    max-height: 188px;
+    overflow: hidden;
 }
 
-.support-item{}
-
-.support-link{
-    display: flex;
+.support-link {
+    display: block;
     align-items: center;
     padding-bottom: 20px;
 }
 
+
 .support-img {
-    height:32px;
+    max-width: 100%;
+    height: 32px;
 }
 
-.support-btn-link {
+.support-navigation {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.support-btn {
+    display: block;
+    margin: 0 auto;
     width: 32px;
     height: 32px;
     border-radius: 32px;
@@ -56,13 +73,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    border: none;
 }
 
 .support-btn-icon {
+    display: block;
     fill: #4F2EE8;
 }
-
 
 
 
@@ -73,7 +90,7 @@
         height: 472px;
     }
 
-    .support-btn-link {
+    .support-btn {
         width: 38px;
         height: 38px;
         border-radius: 38px;
