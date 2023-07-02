@@ -1,6 +1,6 @@
 import '../css/modal-authorization.css';
 
-import { signUpUser, signInUser } from './firebase';
+import { firebaseAuth } from './firebase';
 
 const form = document.querySelector('.sign-form');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -23,10 +23,10 @@ function onSubmitForm(e) {
   e.preventDefault();
   const { name = null, email, password } = form;
   if (name) {
-    signUpUser(name.value, email.value, password.value);
+    firebaseAuth.signUp(name.value, email.value, password.value);
     form.reset();
   } else {
-    signInUser(email.value, password.value);
+    firebaseAuth.signIn(email.value, password.value);
     form.reset();
   }
 }
