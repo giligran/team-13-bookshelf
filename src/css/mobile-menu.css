@@ -28,7 +28,9 @@
 }
 
 .user-name {
-  color: #0f0f0f;
+  display: block;
+  color: #fff;
+  text-align: center;
   font-size: 22px;
   font-family: DM Sans;
   font-style: normal;
@@ -60,20 +62,31 @@
 }
 
 .blok-avatar {
-  margin-top: auto;
-  left: 20px;
-  top: 40px;
+  margin-top: 72px;
+  margin-left: 20px;
   display: flex;
   text-align: center;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
 }
 .blok-link {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-left: 129px;
   justify-content: center;
+  flex-direction: column;
+  gap: 17px;
   margin-top: 130px;
 }
+
+.link-shop-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .btn-shop-list {
+  display: inline-flex;
   color: #fff;
   font-size: 14px;
   font-family: DM Sans;
@@ -85,6 +98,8 @@
 }
 
 .icon-bag {
+  margin-left: 4px;
+  display: block;
   fill: #fff;
 }
 
@@ -105,12 +120,12 @@
   display: flex;
   margin-top: auto;
   position: absolute;
+  left: 20px;
   bottom: 20px;
   right: auto;
 
   width: 118px;
   height: 48px;
-  flex-shrink: 0;
   border-radius: 18px;
   border: 1.5px solid #111;
   background: #fff;
@@ -121,4 +136,29 @@
   margin-left: auto;
   top: 20px;
   left: 20px;
+}
+
+.media {
+  display: flex;
+  position: relative;
+  width: 450px;
+  height: 439px;
+  overflow: hidden;
+}
+
+.view {
+  width: 65%;
+}
+.view img,
+.popup img {
+  max-width: 100%;
+}
+
+.modal-image {
+  position: absolute;
+  width: 450px;
+  height: 439px;
+  left: 0px;
+  top: 120px;
+  transform: rotate(-15deg);
 }
