@@ -3,8 +3,6 @@ import '../css/modal-authorization.css';
 const form = document.querySelector('.sign-form');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 
-// console.log(radioButtons);
-
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('change', () => {
     if (radioButton.value === 'sign-in') {
