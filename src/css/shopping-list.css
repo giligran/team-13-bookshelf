@@ -4,6 +4,7 @@ body {
 .headline-shopping {
   font-size: 32px;
   line-height: 38px;
+  letter-spacing: -1.28px;
 }
 ul {
   padding-inline-start: 0;
@@ -17,10 +18,10 @@ main {
   display: none;
 }
 .shopping-list {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: block;
-  max-width: 375px;
+  /* max-width: 375px; */
   margin: 0 auto;
 }
 /* .book-list {
@@ -30,6 +31,7 @@ main {
 } */
 
 .book-item {
+  background-color: #fff;
   position: relative;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
@@ -37,10 +39,8 @@ main {
   justify-content: space-between;
   align-items: center; */
   margin: 0 auto;
-  max-width: 335px;
   width: 100%;
   box-sizing: border-box;
-
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .book-card {
@@ -55,36 +55,46 @@ main {
 }
 .img-title-book {
   display: block;
+  width: 100px;
+  height: 142px;
 }
 
 .buying-list {
   margin-top: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .retailer-logo {
   filter: grayscale(100%);
 }
 .book-info {
+  display: flex;
+  flex-direction: column;
 }
 .book-title {
-  margin-top: 0;
+  margin: 0;
   font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.64px;
 }
 .book-category {
   font-size: 12px;
   line-height: 14px;
+  letter-spacing: 0.36px;
   color: #b4afaf;
 }
 .book-description {
+  margin: 0;
   font-size: 14px;
   line-height: 18px;
-  margin-bottom: 20px;
+  letter-spacing: -0.56px;
+  /* margin-bottom: 20px; */
 }
 .book-author {
   font-size: 12px;
   line-height: 14px;
+  letter-spacing: -0.48px;
   color: #b4afaf;
 }
 .book-retailers {
@@ -127,6 +137,48 @@ main {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1159px) {
+  .book-card {
+    width: 704px;
+    height: 213px;
+  }
+  .headline-shopping {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+  }
+  .shopping-list {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  .book-card {
+    justify-content: flex-start;
+    margin-top: 24px;
+    margin-bottom: -24px;
+    margin-right: 24px;
+    margin-left: 24px;
+  }
+  .img-title-book {
+    width: 116px;
+    height: 165px;
+  }
+  .amazon-logo {
+    margin-top: 8px;
+    width: 48px;
+    height: 15px;
+  }
+
+  .ibook-logo {
+    width: 28px;
+    height: 27px;
+  }
+  .bookshop-logo {
+    width: 32px;
+    height: 30px;
+  }
+  .buying-list {
+    margin-top: 60px;
+    gap: 300px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
