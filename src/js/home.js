@@ -39,7 +39,7 @@ function renderMarkup(popularBooks) {
 
 function reduceByScreenSize(books) {
   let limitedBooks = books;
-  if (window.screen.width < 1024 && window.screen.width >= 768) {
+  if (window.screen.width < 1200 && window.screen.width >= 768) {
     limitedBooks = books.slice(0, 3);
     return limitedBooks;
   } else if (window.screen.width < 768) {
@@ -65,7 +65,7 @@ function renderListCategory(category) {
 
 function renderSingleCategoryBooks(categoryName) {
   categoryTitle.classList.add('visually-hidden');
-  popularBooksList.innerHTML = `<h2>${categoryName}</h2>`;
+  popularBooksList.innerHTML = `<h2 class="category-title">${categoryName}</h2>`;
   bookApiService
     .fetchBooksByCategory(categoryName)
     .then(books => {
@@ -86,6 +86,7 @@ function renderSingleCategoryBooks(categoryName) {
       Notiflix.Notify.warning(error.message);
     });
 }
+
 // Shavala
 //для мобільної версії до п. 20 з ТЗ, якщо є деякі додаткові дані
 
