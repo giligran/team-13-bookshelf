@@ -57,7 +57,7 @@ function reduceLimitCategory(category) {
 function renderListCategory(category) {
   const markup = category
     .map(({ list_name }) => {
-      return `<li class='category-item'><a href="" data-list='${list_name}'>${list_name}</a></li>`;
+      return `<li class='category-item'><a href="" data-list='${list_name}' class="category-list-link">${list_name}</a></li>`;
     })
     .join('');
   categotyList.insertAdjacentHTML('beforeend', markup);
@@ -86,7 +86,6 @@ function renderSingleCategoryBooks(categoryName) {
       Notiflix.Notify.warning(error.message);
     });
 }
-
 // Shavala
 //для мобільної версії до п. 20 з ТЗ, якщо є деякі додаткові дані
 
