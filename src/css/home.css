@@ -12,21 +12,18 @@
 }
 .section-home{
     background-color:#F6F6F6;
-    margin-left: 20px;
-    margin-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .home-book-img{
-    width: 100%;
-    max-width: 335px;
+    height: 100%;
     max-height: 485px;
     border-radius: 8px;
 }
 .home-title{
-    margin-right: auto;
+    margin-top: 40px;
     margin-bottom: 40px;
     font-size: 32px;
     font-weight: 700;
@@ -90,9 +87,48 @@
 .category-navigation{
     overflow: scroll;
     height: 228px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 .book-card{
     list-style: none;
+}
+.category-list-link{
+    color: rgba(17, 17, 17, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.32px;
+}
+.category-all{
+    color: rgba(17, 17, 17, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.32px;
+}
+.support{
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.category-navigation-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 335px;
+    gap: 24px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.books-list{
+    width: 100%;
+    max-width: 335px;
 }
 @media screen and (min-width: 768px){
     .section-home{
@@ -121,6 +157,7 @@
     }
     .support{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         margin-right: 32px;
