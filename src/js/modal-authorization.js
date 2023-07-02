@@ -1,11 +1,9 @@
 import '../css/modal-authorization.css';
 
-import { registerNewUser } from './firebase';
-
-const form = document.querySelector('.sign-up-form');
+const form = document.querySelector('.sign-form');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 
-console.log(radioButtons);
+// console.log(radioButtons);
 
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('change', () => {
@@ -17,17 +15,21 @@ radioButtons.forEach(radioButton => {
   });
 });
 
-form.addEventListener('submit', onSubmit);
+form.addEventListener('submit', onSubmitForm);
 
-function onSubmit(e) {
+function onSubmitForm(e) {
   e.preventDefault();
-  const { name, email, password } = form;
-  registerNewUser(name.value, email.value, password.value);
-  form.reset();
+  const { name = null, email, password } = form;
+  if (name) {
+    // signUpUser(name.value, email.value, password.value);
+    form.reset();
+  } else {
+    // signInUser(email.value, password.value);
+    form.reset();
+  }
 }
 
 function renderFormSignUp() {
-  console.log('passed singIn function');
   form.innerHTML = `<label for="name" class="visually-hidden">name</label>
       <input
         type="text"
@@ -61,7 +63,6 @@ function renderFormSignUp() {
       <button type="submit" class="submit-btn" id="submit">Sign up</button>`;
 }
 function renderFormSignIn() {
-  console.log('passed singUp function');
   form.innerHTML = `<label for="email" class="visually-hidden">eMAIL</label>
   <input
     type="email"

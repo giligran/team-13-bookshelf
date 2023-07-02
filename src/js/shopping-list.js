@@ -1,4 +1,4 @@
-import { shoppingListBooks } from '../js/home';
+// import { shoppingListBooks } from './js/home';
 
 const bookList = document.getElementById('book-list');
 
