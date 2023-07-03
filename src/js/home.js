@@ -1,24 +1,58 @@
 import BookApiService from './fetch-api';
+import Notiflix from 'notiflix';
+
 
 const bookApiService = new BookApiService();
 
 const popularBooksList = document.querySelector('.popular-books-list');
+const categoryList = document.querySelector('.category-navigation');
+const singleCategoryBooks = document.querySelector('.single-category-list');
+const bookList = document.querySelector('.single-category-item');
+const categoryItem = document.querySelector('.category-list-link');
+const loader = document.querySelector('.loader');
+const support = document.querySelector('support');
 
-bookApiService.fetchPopularBooks().then(renderMarkup);
+bookApiService.fetchPopularBooks().then((books) => {
+  renderMarkup(books);
+  hideElement(loader);
+});
+
+bookApiService.fetchCategoryList().then(renderListCategory);
+
+categoryList.addEventListener('click', event => {
+  event.preventDefault();
+  if (event.target.nodeName !== "A") {
+    return;
+  };
+  if(categoryItem.classList.contains('current')){
+    categoryItem.classList.remove('current');
+  }
+  event.target.classList.toggle('current');
+  const selectedCategory = event.target.dataset.list;
+  renderSingleCategoryBooks(selectedCategory);
+});
+
+popularBooksList.addEventListener('click', event => {
+  if (event.target.nodeName !== "BUTTON") {
+    return;
+  };
+  const selectedCategory = event.target.dataset.list;
+  renderSingleCategoryBooks(selectedCategory);
+});
 
 function renderMarkup(popularBooks) {
-  const markup = popularBooks
+  showElement(loader);
+  const markup = reduceLimitCategory(popularBooks)
     .map(({ list_name, books }) => {
       const bookInfo = reduceByScreenSize(books).map(
         ({ author, book_image, title }) => {
-          return `<img src="${book_image}" alt="${title}" class ="home-book-img"/>
-      <p>${title}</p><p>${author}</p>`;
+          return `<li class="book-card"><img src="${book_image}" alt="${title}" class ="home-book-img"/>
+      <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p></li>`;
         }
-      );
-      return `<li><p>${list_name}</p>${bookInfo}</li>`;
+      ).join('');
+      return `<p class = "category-name-book">${list_name.toUpperCase()}</p><ul class="books-list">${bookInfo}</ul><button type='button' class="top-book-button" data-list='${list_name}'>SEE MORE</button>`;
     })
     .join('');
-
   popularBooksList.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -34,24 +68,47 @@ function reduceByScreenSize(books) {
     return limitedBooks;
   }
 }
+function reduceLimitCategory(category) {
+  const limitedCategory = category.slice(0, 4);
+  return limitedCategory;
+}
 
-// Shavala
-//для мобільної версії до п. 20 з ТЗ, якщо є деякі додаткові дані
+function renderListCategory(category) {
+  const markup = category
+    .map(({ list_name }) => {
+      return `<li class='category-item'><a href="" data-list='${list_name}' class="category-list-link">${list_name}</a></li>`;
+    })
+    .join('');
+  categoryList.insertAdjacentHTML('beforeend', markup);
+}
 
-// import Notiflix from 'notiflix';
-// const refs = {
-// btnSeeMore: document.querySelector('.see-more'),
-//};
+function renderSingleCategoryBooks(categoryName) {
+  popularBooksList.classList.add('visually-hidden');
+  singleCategoryBooks.classList.remove('visually-hidden');
+  singleCategoryBooks.insertAdjacentHTML('afterbegin', `<h2 class="category-title">${categoryName}</h2>`);
+  bookApiService
+    .fetchBooksByCategory(categoryName)
+    .then(books => {
+      if (books.length === 0) {
+        throw new Error('No books in this category');
+        return;
+      }
+      const booksMarkup = books
+        .map(({ author, book_image, title }) => {
+          return `<li class="book-card"><img src="${book_image}" alt="${title}" class ="home-book-img"/>
+      <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p></li>`;
+        })
+        .join('');
+        bookList.insertAdjacentHTML('beforeend', booksMarkup);
+    })
+    .catch(error => {
+      Notiflix.Notify.warning(error.message);
+    });
+}
+function hideElement(elem){
+  elem.classList.add('visually-hidden');
+}
 
-// refs.btnSeeMore.addEventListener('click', onBtnSeeMore);
-// function ?
-// {
-// if (length ===0) {
-// refs.btnSeeMore.style.display = 'none';
-
-// Notiflix.Notify.info("No books was found.");
-// }
-
-// if (length === 1) {
-//   refs.btnSeeMore.style.display = 'flex';}
-//}
+function showElement(elem){
+  elem.classList.remove('visually-hidden');
+}

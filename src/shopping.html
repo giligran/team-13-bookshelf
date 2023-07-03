@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/shopping-list.css" />
+  </head>
+  <body>
+    <header>
+      <load src="./partials/header.html" />
+    </header>
+    <main>
+      <div class="shopping-list" id="shopLs">
+        <h1 class="headline-shopping">
+          Shopping <span class="purple-header-word">List</span>
+        </h1>
+        <div>
+          <img
+            class="empty-list-png is-hidden"
+            src="./img/blocks.png"
+            alt="list is empty"
+          />
+        </div>
+
+        <ul class="book-list">
+          <li class="book-item">
+            <div class="book-card">
+              <div>
+                <img
+                  src="./img/test.png"
+                  alt="Зображення обгортки книги"
+                  class="img-title-book"
+                />
+              </div>
+              <div class="book-info">
+                <h2 class="book-title">Назва книги</h2>
+                <h3 class="book-category">Категорія книги</h3>
+                <p class="book-description">Короткий опис змісту книги</p>
+
+                <div class="buying-list">
+                  <p class="book-author">Ім'я Автора</p>
+                  <ul class="book-retailers">
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="./img/logo-partners/amazon.png"
+                          class="retailer-logo amazon-logo"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="./img/logo-partners/ibook.png"
+                          class="retailer-logo ibook-logo"
+                      /></a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><img
+                          src="./img/logo-partners/bookshop.png"
+                          class="retailer-logo bookshop-logo"
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- <button class="remove-button"></button> -->
+            </div>
+            <button type="button" class="remove-book" data-item-remove>
+              <svg class="remove-book-item" width="28" height="28">
+                <use href="./img/symbol-defs.svg#icon-dump"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <!-- <script type="module" src="./js/shopping-list.js"></script> -->
+    <script type="module" src="./js/heder-shop-ls.js"></script>
+  </body>
+</html>
