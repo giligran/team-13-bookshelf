@@ -50,41 +50,28 @@ const funds = [
 const fundsList = document.getElementById('funds-list');
 const supportPrevBtn = document.querySelector('.support-btn-prev');
 const supportNextBtn = document.querySelector('.support-btn-next');
-const visibleItemCount = 4; 
+const visibleItemCount = 4;
 let currentSlideIndex = 0;
 
-function showNextItems() {
-  const nextSlideIndex = currentSlideIndex + visibleItemCount;
-  fundsList.innerHTML = ''; 
-  for (let i = currentSlideIndex; i < nextSlideIndex && i < funds.length; i++) {
-    const fund = funds[i];
-    const item = document.createElement('li');
-    const link = document.createElement('a');
-    const img = document.createElement('img');
-
-    link.target = '_blank';
-    link.rel = 'noreferrer noopener';
-
-    item.classList.add('support-item');
-    link.classList.add('support-link');
-    img.classList.add('support-img');
-
-    link.href = fund.url;
-    img.src = fund.img;
-
-    link.appendChild(img);
-    item.appendChild(link);
-    fundsList.appendChild(item);
-
-    link.dataset.slideIndex = i;
-  }
-  currentSlideIndex = nextSlideIndex;
-}
 
 function showPreviousItems() {
   const prevSlideIndex = Math.max(currentSlideIndex - visibleItemCount, 0);
-  fundsList.innerHTML = ''; 
-  for (let i = prevSlideIndex; i < currentSlideIndex; i++) {
+  currentSlideIndex = prevSlideIndex;
+  fundsList.innerHTML = '';
+  createItems(currentSlideIndex, currentSlideIndex + visibleItemCount);
+  updateButtonVisibility();
+}
+
+function showNextItems() {
+  const nextSlideIndex = Math.min(currentSlideIndex + visibleItemCount, funds.length - visibleItemCount);
+  currentSlideIndex = nextSlideIndex;
+  fundsList.innerHTML = '';
+  createItems(currentSlideIndex, currentSlideIndex + visibleItemCount);
+  updateButtonVisibility();
+}
+
+function createItems(startIndex, endIndex) {
+  for (let i = startIndex; i < endIndex && i < funds.length; i++) {
     const fund = funds[i];
     const item = document.createElement('li');
     const link = document.createElement('a');
@@ -106,18 +93,30 @@ function showPreviousItems() {
 
     link.dataset.slideIndex = i;
   }
-  currentSlideIndex = prevSlideIndex;
+}
+
+function updateButtonVisibility() {
+  if (currentSlideIndex === 0) {
+    supportPrevBtn.classList.add('visually-hidden');
+    supportNextBtn.classList.remove('visually-hidden');
+  } else if (currentSlideIndex + visibleItemCount >= funds.length) {
+    supportPrevBtn.classList.remove('visually-hidden');
+    supportNextBtn.classList.add('visually-hidden');
+  } else {
+    supportPrevBtn.classList.remove('visually-hidden');
+    supportNextBtn.classList.remove('visually-hidden');
+  }
 }
 
 supportNextBtn.addEventListener('click', (event) => {
-  event.preventDefault(); 
+  event.preventDefault();
   showNextItems();
 });
 
 supportPrevBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  showPreviousItems(); 
+  showPreviousItems();
 });
 
-showNextItems();
-
+createItems(currentSlideIndex, currentSlideIndex + visibleItemCount);
+updateButtonVisibility();
