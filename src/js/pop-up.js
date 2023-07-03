@@ -60,4 +60,21 @@
     });
   
   }
+
+  
+const addButton = document.querySelector('.card-button');
+
+addButton.addEventListener('click', toggleBook);
+
+function toggleBook() {
+  const bookId = 'bookid'; 
+  
+  if (localStorage.getItem(bookId)) {    
+    localStorage.removeItem(bookId);
+    addButton.textContent = 'Remove from shopping list'; 
+  } else {    
+    localStorage.setItem(bookId, 'true');
+    addButton.textContent = 'Add to shopping list'; 
+  }
+}
   
