@@ -345,3 +345,12 @@
     background: #4f2ee8;
   } 
 }
+
+/* Dark mode */
+.dark-mode{
+border: 2px solid #FFF;
+background: #202024;
+
+
+
+}

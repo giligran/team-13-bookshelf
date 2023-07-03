@@ -75,6 +75,8 @@ function toggleBook() {
   } else {    
     localStorage.setItem(bookId, 'true');
     addButton.textContent = 'Add to shopping list'; 
+
+
   }
 }
   
