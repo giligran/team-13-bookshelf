@@ -41,8 +41,6 @@
     font-family: DM Sans;
     line-height: 18px;
     letter-spacing: -0.56px;
-    max-width: 245px;
-    max-height: 188px;
 }
 
 .support-link {
@@ -59,7 +57,6 @@
 
 .support-navigation {
     display: flex;
-    justify-content: center;
     margin-top: 10px;
 }
 
