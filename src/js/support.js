@@ -79,7 +79,6 @@ function showNextItems() {
     link.dataset.slideIndex = i;
   }
   currentSlideIndex = nextSlideIndex;
-  updateNavigationButtons();
 }
 
 function showPreviousItems() {
@@ -108,12 +107,6 @@ function showPreviousItems() {
     link.dataset.slideIndex = i;
   }
   currentSlideIndex = prevSlideIndex;
-  updateNavigationButtons();
-}
-
-function updateNavigationButtons() {
-  supportPrevBtn.disabled = currentSlideIndex === 0;
-  supportNextBtn.disabled = currentSlideIndex + visibleItemCount >= funds.length;
 }
 
 supportNextBtn.addEventListener('click', (event) => {
@@ -122,7 +115,9 @@ supportNextBtn.addEventListener('click', (event) => {
 });
 
 supportPrevBtn.addEventListener('click', (event) => {
-  event.preventDefault(); 
+  event.preventDefault();
+  showPreviousItems(); 
 });
 
 showNextItems();
+
