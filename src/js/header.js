@@ -1,4 +1,5 @@
-import { doc } from "firebase/firestore";
+// import { doc } from "firebase/firestore";
+// keep login i 
 import { loginCheck } from './firebase.js'
 const authExist = localStorage.getItem('exist')
 if (authExist) {
@@ -7,7 +8,6 @@ if (authExist) {
 
 const shopLink = document.querySelector('.shop-link');
 const homeLink = document.querySelector('.home-link');
-
 shopLink.classList.remove('active');
 homeLink.classList.add('active');
 
