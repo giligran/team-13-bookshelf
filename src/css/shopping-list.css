@@ -1,5 +1,6 @@
 body {
   background-color: #f6f6f6;
+  margin: 0;
 }
 .headline-shopping {
   font-size: 32px;
@@ -26,6 +27,10 @@ main {
   display: block;
   /* max-width: 375px; */
   margin: 0 auto;
+}
+.shopping-list.dark {
+  background-color: #202024;
+  color: #ffffff;
 }
 /* .book-list {
   display: flex;
