@@ -9,7 +9,6 @@ export default class BookApiService {
     return fetch(url)
       .then(res => res.json())
       .then(categoryArray => {
-        // console.log(categoryArray);
         return categoryArray;
       });
   }

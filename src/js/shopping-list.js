@@ -9,6 +9,17 @@ function getBooksForCurrentPage(currentPage, itemsPerPage, savedBooks) {
   const endIndex = startIndex + itemsPerPage;
   return savedBooks.slice(startIndex, endIndex);
 }
+function removeBookElement(element) {
+  const bookItem = element.closest('.book-item');
+  const siblings = Array.from(bookItem.parentNode.children);
+  const index = siblings.indexOf(bookItem);
+  bookItem.remove();
+  siblings.forEach((sibling, i) => {
+    if (i >= index) {
+      sibling.style.transform = `translateY(${sibling.offsetHeight}px)`;
+    }
+  });
+}
 
 if (savedBooks && savedBooks.length > 0) {
   const booksOnPage = getBooksForCurrentPage(1, 3, savedBooks);
@@ -67,19 +78,20 @@ if (savedBooks && savedBooks.length > 0) {
             </button>
           </li>
 
-      <img src="${book.image}" alt="Зображення обгортки книги">
-      <h2 class="book-title">${book.title}</h2>
-      <h3 class="book-category">${book.category}</h3>
-      <p class="book-description">${book.description}</p>
-      <p class="book-author">${book.author}</p>
+          
       <ul class="book-retailers">
         ${book.retailers
           .map(retailer => `<li><a href="${retailer.link}"></a></li>`)
           .join('')}
-      </ul>
-      <button class="remove-button">Видалити зі списку покупок</button>
-      
+     </ul>
     `;
+    //треба відредагувати залежно від того що буде приходити з бекенду
+
+    const removeBtn = bookElement.querySelector('.remove-book');
+    removeBtn.addEventListener('click', () => {
+      removeBookElement(removeBtn);
+    });
+
     bookList.appendChild(bookElement);
   });
 } else {

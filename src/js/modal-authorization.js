@@ -1,9 +1,7 @@
 import '../css/modal-authorization.css';
-
+import { firebaseAuth } from './firebase';
 const form = document.querySelector('.sign-form');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
-
-// console.log(radioButtons);
 
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('change', () => {
@@ -21,10 +19,12 @@ function onSubmitForm(e) {
   e.preventDefault();
   const { name = null, email, password } = form;
   if (name) {
-    // signUpUser(name.value, email.value, password.value);
+    firebaseAuth
+      .signUp(name.value, email.value, password.value)
+      .then(data => {});
     form.reset();
   } else {
-    // signInUser(email.value, password.value);
+    signInUser(email.value, password.value);
     form.reset();
   }
 }
@@ -85,25 +85,3 @@ function renderFormSignIn() {
 
   <button type="submit" class="submit-btn" id="submit">Sign in</button>`;
 }
-
-// Sign Up / Sign in
-// const inBtn = document.getElementById('InBtn');
-// const upBtn = document.getElementById('upBtn');
-// const nameBox = document.getElementById('name');
-// const subBtn = document.getElementById('submit');
-
-// function regOn(evt) {
-//   nameBox.classList.remove('hide');
-//   inBtn.classList.add('active');
-//   upBtn.classList.remove('active');
-//   subBtn.textContent = 'Sign In';
-// }
-// function regOff(evt) {
-//   nameBox.classList.add('hide');
-//   inBtn.classList.remove('active');
-//   upBtn.classList.add('active');
-//   subBtn.textContent = 'Sign Up';
-// }
-
-// inBtn.addEventListener('click', regOn);
-// upBtn.addEventListener('click', regOff);
