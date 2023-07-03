@@ -20,7 +20,7 @@ const backDrop = document.querySelector('#authorization');
 
 const app = initializeApp(firebaseConfig);
 
-function loginCheck () {
+export function loginCheck () {
   const userBtn = document.querySelector('.user-name');
   const userPhoto = document.querySelector('#userPhoto');
   const arrow = document.querySelector('#arrow');
@@ -30,6 +30,8 @@ function loginCheck () {
   arrow.style.fill = '#ffffff';
   arrow.style.stroke = '#ffffff'
 };
+
+// loginCheck();
 
 export const firebaseAuth = {
   auth: getAuth(app),
@@ -109,6 +111,7 @@ export const firebaseAuth = {
         console.dir(user);
         backDrop.classList.add('visually-hidden');
         localStorage.setItem('uid', user.uid);
+        localStorage.setItem('exist', true);
         localStorage.setItem('name', user.displayName);
         loginCheck ();
         // return callback(user);
