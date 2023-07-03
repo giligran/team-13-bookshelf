@@ -28,7 +28,7 @@
 
 .support-slider {
     overflow-y: auto;
-    max-height: 188px;
+    height: 188px;
 }
 
 .support-list {
@@ -43,7 +43,6 @@
     letter-spacing: -0.56px;
     max-width: 245px;
     max-height: 188px;
-    overflow: hidden;
 }
 
 .support-link {
@@ -71,9 +70,6 @@
     height: 32px;
     border-radius: 32px;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: none;
     rotate: 180deg;
 }
@@ -85,9 +81,6 @@
     height: 32px;
     border-radius: 32px;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: none;
 }
 
@@ -107,7 +100,7 @@
     }
 
     .support-slider {
-        max-height: 295px;
+        height: 295px;
     }
 
     .support-btn {
