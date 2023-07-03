@@ -8,6 +8,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: glob.sync('./src/*.html'),
+      output: {
+        manualChunks: undefined, // Вимкнути автоматичну генерацію чанків
+      },
     },
     outDir: '../dist',
   },

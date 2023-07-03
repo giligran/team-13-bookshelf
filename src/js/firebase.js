@@ -7,20 +7,18 @@ import {
   updateProfile,
   onAuthStateChanged,
 } from 'firebase/auth';
-import {
-  getFirestore,
-  doc,
-  setDoc,
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
-} from 'firebase/firestore';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
+
+// import BookApiService from './fetch-api.js';
 
 const backDrop = document.querySelector('#authorization');
 
 const app = initializeApp(firebaseConfig);
 
-export function loginCheck () {
+let currentUser = null;
+
+// Viktor
+export function loginCheck() {
   const userBtn = document.querySelector('.user-name');
   const userPhoto = document.querySelector('#userPhoto');
   const arrow = document.querySelector('#arrow');
@@ -28,10 +26,8 @@ export function loginCheck () {
   userBtn.textContent = `${userName}`;
   userPhoto.classList.remove('inactive');
   arrow.style.fill = '#ffffff';
-  arrow.style.stroke = '#ffffff'
-};
-
-// loginCheck();
+  arrow.style.stroke = '#ffffff';
+}
 
 export const firebaseAuth = {
   auth: getAuth(app),
@@ -104,19 +100,12 @@ export const firebaseAuth = {
       console.log('Error updating user name:', error);
     }
   },
-  checkAuth(callback) {
+  checkAuth() {
     return onAuthStateChanged(this.auth, user => {
       if (user) {
-        localStorage.clear();
-        console.dir(user);
-        backDrop.classList.add('visually-hidden');
-        localStorage.setItem('uid', user.uid);
-        localStorage.setItem('exist', true);
-        localStorage.setItem('name', user.displayName);
-        loginCheck ();
-        // return callback(user);
+        console.log(user);
+        return user.uid;
       } else {
-        // return callback(user);
       }
     });
   },
@@ -125,74 +114,20 @@ export const firebaseAuth = {
 export const firebaseFirestore = {
   db: getFirestore(app),
 
-  /**
-   * Створення колекції книг для користувача.
-   * @param {string} userId - Ідентифікатор користувача.
-   * @param {string} collectionName - Назва колекції книг.
-   * @returns {Promise} - Promise, що виконується при успішному створенні колекції.
-   * @throws {Error} - Викидає помилку, якщо вхідні параметри неправильного типу.
-   */
-  createBookCollection(userId, collectionName) {
-    if (typeof userId !== 'string' || typeof collectionName !== 'string') {
-      throw new Error('Невірний тип даних вхідних параметрів.');
+  async createUserCollection() {
+    try {
+      const docRef = await addDoc(collection(this.db, 'users'), {
+        first: 'Alan',
+        middle: 'Mathison',
+        last: 'Turing',
+        born: 1912,
+      });
+
+      console.log('Document written with ID: ', docRef.id);
+    } catch (e) {
+      console.error('Error adding document: ', e);
     }
-    const collectionRef = doc(
-      this.db,
-      'users',
-      userId,
-      'books',
-      collectionName
-    );
-
-    return setDoc(collectionRef, {});
-  },
-
-  /**
-   * Додавання книги до колекції користувача.
-   * @param {string} userId - Ідентифікатор користувача.
-   * @param {string} collectionName - Назва колекції книг.
-   * @param {object} book - Об'єкт, що представляє книгу.
-   * @returns {Promise} - Promise, що виконується при успішному додаванні книги.
-   * @throws {Error} - Викидає помилку, якщо вхідні параметри неправильного типу.
-   */
-  addBookToCollection(userId, collectionName, book) {
-    if (typeof userId !== 'string' || typeof collectionName !== 'string') {
-      throw new Error('Не вдалося додати книгу до колекції');
-    }
-    const collectionRef = doc(
-      this.db,
-      'users',
-      userId,
-      'books',
-      collectionName
-    );
-    return updateDoc(collectionRef, {
-      books: arrayUnion(book),
-    });
-  },
-
-  /**
-   * Видалення книги з колекції користувача.
-   * @param {string} userId - Ідентифікатор користувача.
-   * @param {string} collectionName - Назва колекції книг.
-   * @param {object} book - Об'єкт, що представляє книгу.
-   * @returns {Promise} - Promise, що виконується при успішному видаленні книги.
-   * @throws {Error} - Викидає помилку, якщо вхідні параметри неправильного типу.
-   */
-  removeBookFromCollection(userId, collectionName, book) {
-    if (typeof userId !== 'string' || typeof collectionName !== 'string') {
-      throw new Error('Невірний тип даних вхідних параметрів.');
-    }
-    const collectionRef = doc(
-      this.db,
-      'users',
-      userId,
-      'books',
-      collectionName
-    );
-
-    return updateDoc(collectionRef, {
-      books: arrayRemove(book),
-    });
   },
 };
+
+firebaseFirestore.createUserCollection();
