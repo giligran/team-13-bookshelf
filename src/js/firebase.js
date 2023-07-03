@@ -16,7 +16,20 @@ import {
   arrayRemove,
 } from 'firebase/firestore';
 
+const backDrop = document.querySelector('#authorization');
+
 const app = initializeApp(firebaseConfig);
+
+function loginCheck () {
+  const userBtn = document.querySelector('.user-name');
+  const userPhoto = document.querySelector('#userPhoto');
+  const arrow = document.querySelector('#arrow');
+  const userName = localStorage.getItem('name');
+  userBtn.textContent = `${userName}`;
+  userPhoto.classList.remove('inactive');
+  arrow.style.fill = '#ffffff';
+  arrow.style.stroke = '#ffffff'
+};
 
 export const firebaseAuth = {
   auth: getAuth(app),
@@ -92,10 +105,15 @@ export const firebaseAuth = {
   checkAuth(callback) {
     return onAuthStateChanged(this.auth, user => {
       if (user) {
+        localStorage.clear();
         console.dir(user);
-        return callback(user);
+        backDrop.classList.add('visually-hidden');
+        localStorage.setItem('uid', user.uid);
+        localStorage.setItem('name', user.displayName);
+        loginCheck ();
+        // return callback(user);
       } else {
-        return callback(user);
+        // return callback(user);
       }
     });
   },

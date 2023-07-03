@@ -24,7 +24,8 @@ function onSubmitForm(e) {
       .then(data => {});
     form.reset();
   } else {
-    signInUser(email.value, password.value);
+    firebaseAuth
+      .signIn (email.value, password.value);
     form.reset();
   }
 }
