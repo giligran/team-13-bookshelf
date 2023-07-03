@@ -2,9 +2,22 @@ import BookApiService from './fetch-api';
 
 const fetch = new BookApiService();
 
+function savedBooks() {
+  fetch.fetchBooksByCategory('Young Adult Paperback Monthly').then(data => {
+    {
+      data.map(item => callbackForMap(item));
+    }
+  });
+}
+
+savedBooks();
+function callbackForMap(obj) {
+  console.log(`Item id = ${obj._id}`);
+}
+
 const bookList = document.getElementById('book-list');
 
-const savedBooks = JSON.parse(localStorage.getItem(shoppingListBooks));
+// const savedBooks = JSON.parse(localStorage.getItem(shoppingListBooks));
 
 function getBooksForCurrentPage(currentPage, itemsPerPage, savedBooks) {
   const startIndex = (currentPage - 1) * itemsPerPage;
