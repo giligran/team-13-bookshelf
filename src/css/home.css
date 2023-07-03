@@ -205,6 +205,24 @@
     text-transform: uppercase;
 }
 
+
+/*
+Shavala
+.top-book-button{
+    cursor: pointer;
+}
+
+.top-book-button:hover{
+color: #4F2EE8;
+}
+
+.top-book-button:focus{
+color: #4F2EE8;
+}
+
+*/
+
+
 @media screen and (min-width: 768px){
     .section-home{
         margin-left: 32px;
@@ -320,3 +338,5 @@
     
     
 }
+
+
