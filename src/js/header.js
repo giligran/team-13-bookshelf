@@ -1,3 +1,5 @@
+import { doc } from "firebase/firestore";
+
 //  Thema Changer
 const refs = {
   switcherRef: document.querySelector('.switch'),
@@ -66,6 +68,8 @@ function togleModalAuth() {
   link.backdrop.classList.toggle('visually-hidden');
 }
 
-// export function onCloseModalAuth() {
-//   link.backdrop.classList.toggle('visually-hidden');
-// }
+export function loginCheck () {
+  const userBtn = document.querySelector('.user-name');
+  const userName = localStorage.getItem('name');
+  userBtn.textContent = `${userName}`;
+};

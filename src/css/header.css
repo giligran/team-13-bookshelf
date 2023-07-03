@@ -190,10 +190,14 @@ input:checked + .slider:before {
     align-items: center;
   }
   .user-photo {
+    display: block;
     width: 37px;
     height: 37px;
     border-radius: 50%;
-    background-image: linear-gradient(to top, #eac645, #ffffff);
+    background-color: transparent;
+  }
+  .user-photo.inactive{
+    display: none;
   }
   .arow-down {
     fill: #111111;
