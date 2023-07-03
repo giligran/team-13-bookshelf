@@ -225,6 +225,7 @@ input:checked + .slider:before {
   color: #ffffff;
 }
 .section-home.dark,
+.support.dark,
 .page-mode.dark {
   background-color: #202024;
   color: #ffffff;
