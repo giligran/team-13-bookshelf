@@ -19,6 +19,7 @@ fetch
   .fetchBooksByCategory('Young Adult Paperback Monthly')
   .then(data => {
     const savedBooks = data;
+    console.log(data);
 
     if (savedBooks.length > 0) {
       savedBooks.forEach(book => {
@@ -27,7 +28,7 @@ fetch
         bookElement.innerHTML = `
           <div class="book-card">
             <div>
-              <img src="${book.image}" alt="Зображення обгортки книги" class="img-title-book" />
+              <img src="${book.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
             <div class="book-info">
               <h2 class="book-title">${book.title}</h2>
@@ -38,7 +39,7 @@ fetch
                 <ul class="book-retailers">
                   
                   <li>
-                    <a href=""><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
+                    <a href="${book.amazon_product_url}"><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
                     <a href=""><img src="../img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
