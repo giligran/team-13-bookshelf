@@ -8,7 +8,9 @@
   z-index: 10;
   transform: translateX(0);
   transition: transform 300ms ease-in-out 300ms;
+  overflow: hidden;
 }
+
 .mobile-menu.hidden {
   /* display: none; */
   /* width: 0;
@@ -53,13 +55,24 @@
   transition: background-color 0.3s ease;
 }
 
-.btn-home:hover {
+.btn-home-text {
+  color: #111;
+  font-size: 14px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+
+/* .btn-home:hover {
   background-color: #cccccc;
 }
 
 .btn-home:active {
   background-color: #b3b3b3;
-}
+} */
 
 .blok-avatar {
   margin-top: 72px;
@@ -103,9 +116,30 @@
   fill: #fff;
 }
 
-/* .icon-arrow {
+.icon-arrow {
   fill: #eac645;
-} */
+}
+
+.icon-close {
+  fill: #000;
+}
+
+#logout-button {
+  display: flex;
+  margin-top: auto;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  right: auto;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 48px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
+}
+
 .logout-text {
   color: #111;
   font-size: 14px;
@@ -116,19 +150,10 @@
   letter-spacing: -0.56px;
 }
 
-#logout-button {
+.blok-logout {
   display: flex;
-  margin-top: auto;
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  right: auto;
-
-  width: 118px;
-  height: 48px;
-  border-radius: 18px;
-  border: 1.5px solid #111;
-  background: #fff;
+  flex-direction: row;
+  gap: 4px;
 }
 
 #mob-menu-close {
@@ -136,6 +161,7 @@
   margin-left: auto;
   top: 20px;
   left: 20px;
+  background: none;
 }
 
 .media {
