@@ -1,4 +1,6 @@
-import { shoppingListBooks } from '../js/home';
+import BookApiService from './fetch-api';
+
+const fetch = new BookApiService();
 
 const bookList = document.getElementById('book-list');
 
@@ -44,6 +46,8 @@ if (savedBooks && savedBooks.length > 0) {
                 <p class="book-description">${book.description}</p>
                 <div class="buying-list">
                   <p class="book-author">${book.author}</p>
+                  
+
                   <ul class="book-retailers">
                   ${boor.retailers.map(retailer => ``)}
                     <li>
