@@ -27,20 +27,26 @@
 }
 
 .support-slider {
-    overflow-y: auto;
     height: 188px;
 }
 
 .support-list {
     display: block;
     margin: 0;
-    list-style-type: decimal-leading-zero;
-    padding-left: 23px;
     color: #FFF;
     font-size: 14px;
     font-family: DM Sans;
     line-height: 18px;
     letter-spacing: -0.56px;
+}
+
+.support-item {
+    display: flex;
+    align-items: center;
+}
+
+.support-number {
+    margin-right: 10px;
 }
 
 .support-link {
