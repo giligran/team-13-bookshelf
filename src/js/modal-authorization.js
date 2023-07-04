@@ -3,6 +3,38 @@ import { firebaseAuth } from './firebase';
 const form = document.querySelector('.sign-form');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 
+const link = {
+  backdrop: document.querySelector('#authorization'),
+  open: document.querySelector('.heder-modal-login'),
+  close: document.querySelector('.modal-authorization-close'),
+  logoutBtn: document.querySelector('#logOut'),
+};
+link.open.addEventListener('click', togleModalAuth);
+link.close.addEventListener('click', togleModalAuth);
+
+if (localStorage.getItem('exist')) {
+  link.open.removeEventListener('click', togleModalAuth);
+  link.open.addEventListener('click', onlogOutBtn);
+  link.logoutBtn.addEventListener('click', logOut);
+} else {
+  link.open.addEventListener('click', togleModalAuth);
+  link.open.removeEventListener('click', onlogOutBtn);
+}
+console.log(localStorage.getItem('exist'));
+
+function togleModalAuth() {
+  link.backdrop.classList.toggle('visually-hidden');
+}
+
+function onlogOutBtn() {
+  link.logoutBtn.classList.toggle('active');
+}
+function logOut(e) {
+  e.preventDefault();
+  localStorage.clear();
+  location.reload();
+}
+
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('change', () => {
     if (radioButton.value === 'sign-in') {
@@ -24,10 +56,12 @@ function onSubmitForm(e) {
       .then(data => {});
     form.reset();
   } else {
-    firebaseAuth
-      .signIn (email.value, password.value);
+    firebaseAuth.signIn(email.value, password.value);
     form.reset();
   }
+  link.open.removeEventListener('click', togleModalAuth);
+  link.open.addEventListener('click', onlogOutBtn);
+  link.logoutBtn.addEventListener('click', logOut);
 }
 
 function renderFormSignUp() {

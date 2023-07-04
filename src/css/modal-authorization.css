@@ -49,6 +49,7 @@
 }
 
 .sign-up-form-input {
+  box-sizing: border-box;
   padding: 20px 173px 20px 40px;
   width: 499px;
   color: #111;
