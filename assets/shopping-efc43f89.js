@@ -1,4 +1,4 @@
-import{B as i,l as n}from"./modal-authorization-916cfcd3.js";const d=document.querySelector(".book-list"),m=new i;function g(t){const s=t.closest(".book-item"),o=Array.from(s.parentNode.children),c=o.indexOf(s);s.remove(),o.forEach((r,l)=>{l>=c&&(r.style.transform=`translateY(${r.offsetHeight}px)`)})}m.fetchBooksByCategory("Young Adult Paperback Monthly").then(t=>{const s=t;s.length>0?s.forEach(o=>{const c=document.createElement("li");c.classList.add("book-item"),c.innerHTML=`
+import{B as i,l as n}from"./modal-authorization-22a4dd36.js";const d=document.querySelector(".book-list"),m=new i;function g(t){const s=t.closest(".book-item"),o=Array.from(s.parentNode.children),c=o.indexOf(s);s.remove(),o.forEach((r,l)=>{l>=c&&(r.style.transform=`translateY(${r.offsetHeight}px)`)})}m.fetchBooksByCategory("Young Adult Paperback Monthly").then(t=>{const s=t;s.length>0?s.forEach(o=>{const c=document.createElement("li");c.classList.add("book-item"),c.innerHTML=`
           <div class="book-card">
             <div>
               <img src="${o.image}" alt="Зображення обгортки книги" class="img-title-book" />
