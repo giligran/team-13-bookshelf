@@ -1,9 +1,9 @@
 // import { doc } from "firebase/firestore";
-// keep login i 
-import { loginCheck } from './firebase.js'
-const authExist = localStorage.getItem('exist')
+// keep login i
+import { loginCheck } from './firebase.js';
+const authExist = localStorage.getItem('exist');
 if (authExist) {
-    loginCheck();
+  loginCheck();
 }
 
 const shopLink = document.querySelector('.shop-link');
@@ -19,12 +19,14 @@ const refs = {
   shop: document.querySelector('.shop-icon-svg'),
   arrow: document.querySelector('.arow-down'),
   burger: document.querySelector('.icon-menu-svg'),
+  x: document.querySelector('.x-icon-menu-svg'),
   mobMenu: document.querySelector('#mobile-menu'),
   mobOpen: document.querySelector('#mob-menu-open'),
-  mobClose: document.querySelector('#mob-menu-close'),
+  mobClose: document.querySelector('#m-close'),
   page: document.querySelector('.page-mode'),
   home: document.querySelector('.section-home'),
   support: document.querySelector('.support'),
+  homeTitle: document.querySelector('.home-title'),
 };
 
 // console.log(localStorage.getItem('mode'));
@@ -33,9 +35,11 @@ if (localStorage.getItem('mode') === 'dark') {
   refs.logo.classList.add('dark');
   refs.shop.classList.add('dark');
   refs.burger.classList.add('dark');
+  refs.x.classList.add('dark');
   refs.page.classList.add('dark');
   refs.home.classList.add('dark');
   refs.support.classList.add('dark');
+  refs.homeTitle.classList.add('dark');
 }
 
 function themasChanger(evt) {
@@ -44,9 +48,11 @@ function themasChanger(evt) {
     refs.logo.classList.toggle('dark');
     refs.shop.classList.toggle('dark');
     refs.burger.classList.toggle('dark');
+    refs.x.classList.toggle('dark');
     refs.page.classList.toggle('dark');
     refs.home.classList.toggle('dark');
     refs.support.classList.toggle('dark');
+    refs.homeTitle.classList.toggle('dark');
     if (refs.container.classList.contains('dark')) {
       localStorage.setItem('mode', 'dark');
       const theme = localStorage.getItem('mode');
@@ -62,22 +68,12 @@ function themasChanger(evt) {
 refs.switcherRef.addEventListener('click', themasChanger);
 
 // Open mobile menu
-refs.mobOpen.addEventListener('click', () => {
+function toggleBtn() {
   refs.mobMenu.classList.toggle('hidden');
-});
-refs.mobClose.addEventListener('click', () => {
-  refs.mobMenu.classList.toggle('hidden');
-});
-
-// Authorizatiom
-const link = {
-  backdrop: document.querySelector('#authorization'),
-  open: document.querySelector('.heder-modal-login'),
-  close: document.querySelector('.modal-authorization-close'),
-};
-link.open.addEventListener('click', togleModalAuth);
-link.close.addEventListener('click', togleModalAuth);
-
-function togleModalAuth() {
-  link.backdrop.classList.toggle('visually-hidden');
+  refs.container.classList.toggle('fixed');
+  refs.mobOpen.classList.toggle('inactive');
+  refs.mobClose.classList.toggle('active');
 }
+
+refs.mobOpen.addEventListener('click', toggleBtn);
+refs.mobClose.addEventListener('click', toggleBtn);

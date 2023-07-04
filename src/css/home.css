@@ -74,6 +74,9 @@
   line-height: 38px;
   letter-spacing: -0.04em;
 }
+.home-title.dark {
+  color: #ffffff;
+}
 .home-title-second-color{
   color: #4F2EE8;
 }
@@ -137,7 +140,7 @@
   list-style: none;
 }
 .category-list-link{
-  color: rgba(17, 17, 17, 0.60);
+  color: #B4AFAF;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -145,7 +148,7 @@
   letter-spacing: -0.32px;
 }
 .category-all{
-  color: rgba(17, 17, 17, 0.60);
+  color: #B4AFAF;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -311,8 +314,3 @@
   
   
 }
-/* Dark mode */
-/* .support.dark {
-  background-color: #202024;
-  color: #ffffff;
-} */
