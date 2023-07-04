@@ -23,7 +23,7 @@ const funds = [
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: "./img/logo-partners/msf@2x.png",
+    img: './img/logo-partners/msf.png',
   },
   {
     title: 'RAZOM',
@@ -52,7 +52,6 @@ const supportPrevBtn = document.querySelector('.support-btn-prev');
 const supportNextBtn = document.querySelector('.support-btn-next');
 const visibleItemCount = window.innerWidth >= 768 ? 6 : 4;
 let currentSlideIndex = 0;
-
 
 function showPreviousItems() {
   const prevSlideIndex = Math.max(currentSlideIndex - visibleItemCount, 0);
@@ -85,10 +84,18 @@ function createItems(startIndex, endIndex) {
     img.classList.add('support-img');
 
     link.href = fund.url;
-    img.src = fund.img;
+    const paddedIndex = (i + 1).toString().padStart(2, '0');
 
-    link.appendChild(img);
+    const numberElement = document.createElement('span');
+    numberElement.classList.add('support-number');
+    numberElement.innerText = paddedIndex;
+
+    item.appendChild(numberElement);
     item.appendChild(link);
+
+    img.src = fund.img;
+    link.appendChild(img);
+
     fundsList.appendChild(item);
 
     link.dataset.slideIndex = i;
