@@ -10,6 +10,19 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F6F6F6;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #E0E0E0;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #F6F6F6;
+}
 .loader {
   width: 48px;
   height: 48px;
