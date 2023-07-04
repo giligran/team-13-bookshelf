@@ -2,9 +2,13 @@
 import { loginCheck } from './firebase.js';
 const shopLink = document.querySelector('.shop-link');
 const homeLink = document.querySelector('.home-link');
+const shopLinkMb = document.querySelector('.btn-shop-mb');
+const homeLinkMb = document.querySelector('.btn-home-mb');
 
 homeLink.classList.remove('active');
 shopLink.classList.add('active');
+homeLinkMb.classList.remove('active');
+shopLinkMb.classList.add('active');
 
 const authExist = localStorage.getItem('exist');
 if (authExist) {

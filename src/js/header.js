@@ -8,6 +8,10 @@ if (authExist) {
 
 const shopLink = document.querySelector('.shop-link');
 const homeLink = document.querySelector('.home-link');
+const shopLinkMb = document.querySelector('.btn-shop-mb');
+const homeLinkMb = document.querySelector('.btn-home-mb');
+shopLinkMb.classList.remove('active');
+homeLinkMb.classList.add('active');
 shopLink.classList.remove('active');
 homeLink.classList.add('active');
 
