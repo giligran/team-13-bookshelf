@@ -7,12 +7,24 @@ function removeBookElement(element) {
   const bookItem = element.closest('.book-item');
   const siblings = Array.from(bookItem.parentNode.children);
   const index = siblings.indexOf(bookItem);
+
+  // Видалення елемента з DOM
   bookItem.remove();
+
+  // Оновлення індексів та схлопування дірки
   siblings.forEach((sibling, i) => {
     if (i >= index) {
-      sibling.style.transform = `translateY(${sibling.offsetHeight}px)`;
+      sibling.style.transform = `translateY(-${bookItem.offsetHeight}px)`;
     }
   });
+
+  const remainingBooks = Array.from(document.querySelectorAll('.book-item'));
+  if (remainingBooks.length === 0) {
+    const noBooksImage = document.createElement('img');
+    noBooksImage.src = '../img/blocks.png';
+    noBooksImage.alt = 'Зображення порожнього списку покупок';
+    bookList.appendChild(noBooksImage);
+  }
 }
 
 fetch
@@ -66,8 +78,11 @@ fetch
         bookList.appendChild(bookElement);
       });
     } else {
-      const noBooksImage = document.querySelector('.empty-list-png');
-      noBooksImage.classList.remove('.is-hidden');
+      const noBooksImage = document.createElement('img');
+      noBooksImage.src = '../img/blocks.png';
+      noBooksImage.classList.add('empty-list-png');
+      noBooksImage.alt = 'Зображення порожнього списку покупок';
+      bookList.appendChild(noBooksImage);
     }
   })
   .catch(error => {
