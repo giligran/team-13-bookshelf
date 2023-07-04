@@ -23,12 +23,12 @@ const funds = [
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: './img/logo-partners/msf.png',
+    img: '/img/logo-partners/msf.png',
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: "./img/logo-partners/razom@2x.png",
+    img: "../img/logo-partners/razom.png",
   },
   {
     title: 'Action against hunger',
@@ -127,3 +127,4 @@ supportPrevBtn.addEventListener('click', (event) => {
 
 createItems(currentSlideIndex, currentSlideIndex + visibleItemCount);
 updateButtonVisibility();
+
