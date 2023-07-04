@@ -20,8 +20,8 @@ ul {
 li {
   list-style: none;
 }
-main {
-}
+/* main {
+} */
 .is-hidden {
   display: none;
 }
@@ -132,8 +132,8 @@ main {
   gap: 8px;
   margin-top: 10px;
 }
-.remove-button {
-}
+/* .remove-button {
+} */
 .amazon-logo {
   width: 32px;
   height: 11px;
