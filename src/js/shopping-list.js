@@ -51,13 +51,13 @@ fetch
                 <ul class="book-retailers">
                   
                   <li>
-                    <a href="${book.amazon_product_url}"><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
+                    <a href="${book.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
@@ -65,7 +65,7 @@ fetch
           </div>
           <button type="button" class="remove-book" data-item-remove>
             <svg class="remove-book-item" width="28" height="28">
-              <use href="../img/symbol-defs.svg#icon-dump"></use>
+              <use href="./img/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
         `;
