@@ -106,11 +106,10 @@
 }
 
 .section-home {
-  padding-top: 72px;
   background-color: #f6f6f6;
-  color: #111;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 112px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,7 +146,7 @@
 .category-name-book {
   margin-right: auto;
   margin-bottom: 18px;
-  color: inherit;
+  color: #b4afaf;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -157,7 +156,7 @@
 .top-book-title {
   margin-top: 14px;
   margin-bottom: 4px;
-  color: inherit;
+  color: #9c9494;
   font-size: 16px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -187,7 +186,6 @@
   white-space: nowrap;
 }
 .top-book-button {
-  color: inherit;
   white-space: nowrap;
   display: flex;
   justify-content: center;
@@ -218,7 +216,7 @@
   list-style: none;
 }
 .category-list-link {
-  color: inherit;
+  color: #b4afaf;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -226,7 +224,7 @@
   letter-spacing: -0.32px;
 }
 .category-all {
-  color: inherit;
+  color: #b4afaf;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -252,16 +250,14 @@
 .category-block {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  width: 100%;
-  height: 100%;
   max-height: 228px;
   max-width: 335px;
+  width: 100%;
+  height: 100%;
   margin-bottom: 40px;
-  margin-top: 40px;
 }
 .category-item {
-  color: inherit;
+  color: rgba(17, 17, 17, 0.6);
   font-size: 16px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -270,7 +266,7 @@
   letter-spacing: -0.32px;
 }
 .category-title {
-  color: inherit;
+  color: #111;
   font-size: 32px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -299,10 +295,12 @@
 .popular-books-list {
   position: relative;
 }
+
 @media screen and (min-width: 768px) {
   .section-home {
-    margin-left: 32px;
-    margin-right: 32px;
+    padding-top: 112px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   .loader {
     left: 5px;
@@ -348,7 +346,6 @@
     flex-direction: row;
     justify-content: start;
     align-items: start;
-    margin-top: 40px;
   }
   .category-block {
     display: block;
@@ -362,7 +359,7 @@
     height: 472px;
   }
   .category-item {
-    color: inherit;
+    color: rgba(17, 17, 17, 0.6);
     font-size: 18px;
     font-family: 'DM Sans';
     font-style: normal;
@@ -393,16 +390,25 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .section-home {
     flex-direction: row;
+    gap: 40px;
     align-items: start;
+    padding-top: 112px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
   }
-  .support {
-    margin-right: 40px;
-    margin-left: 24px;
+  .support{
     flex-direction: column;
-    justify-content: start;
+  }
+  .home-title{
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  .category-block{
+    max-height: 472px;
   }
   .category-block {
     margin: 0;
@@ -422,18 +428,8 @@
   .top-book-button {
     margin-top: 32px;
   }
-  .loader-wrap {
-    width: 996px;
-  }
   .single-category-list {
     max-width: 996px;
-  }
-  .single-category-item {
-    max-width: 996px;
-  }
-  .loader {
-    top: 300px;
-    left: 100px;
   }
   .book-card {
     width: auto;
@@ -449,6 +445,6 @@
 }
 /* Dark mode
 .support.dark {
-  background-color: #202024;
-  color: #ffffff;
+background-color: #202024;
+color: #ffffff;
 } */
