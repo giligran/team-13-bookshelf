@@ -20,8 +20,8 @@ ul {
 li {
   list-style: none;
 }
-main {
-}
+/* main {
+} */
 .is-hidden {
   display: none;
 }
@@ -62,7 +62,8 @@ main {
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -92,6 +93,9 @@ main {
 }
 .retailer-logo {
   filter: grayscale(100%);
+}
+.retailer-logo:hover {
+  filter: drop-shadow(0px 3px 3px 0px rgba(0, 0, 0, 0.15));
 }
 .book-info {
   display: flex;
@@ -128,8 +132,8 @@ main {
   gap: 8px;
   margin-top: 10px;
 }
-.remove-button {
-}
+/* .remove-button {
+} */
 .amazon-logo {
   width: 32px;
   height: 11px;
@@ -159,6 +163,11 @@ main {
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+}
+
+.remove-book-item {
+  stroke: white;
+  fill: #4f2ee8;
 }
 
 @media screen and (min-width: 768px) {
