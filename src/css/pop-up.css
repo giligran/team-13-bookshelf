@@ -53,9 +53,7 @@
 .book-img {
   padding-left: 14px;
   padding-right: 14px;
-  padding-top: 5px;
   width: 287px;
-  padding-bottom: 24px;
 }
 
 .description {
@@ -92,14 +90,6 @@
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.56px;
-}
-
-.book-shop {
-  display: flex;
-  gap: 20px;
-  width: 173px;
-  height: 36px;
-  padding-top: 14px;
 }
 
 .card-button {
@@ -200,18 +190,12 @@
     line-height: 18px;
     letter-spacing: -0.56px;
   }
-  .book-shop img {
-  }
-  .book-shop {
-    display: flex;
-    gap: 20px;
-    width: 173px;
-    height: 36px;
-    padding-top: 14px;
-  }
 
-  .amazon-shop {
-    padding-top: 6px;
+  .book-shop {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    gap: 20px;
   }
 
   .card-button {
@@ -315,18 +299,6 @@
     letter-spacing: -0.56px;
   }
 
-  .book-shop {
-    display: flex;
-    gap: 20px;
-    width: 173px;
-    height: 36px;
-    padding-top: 14px;
-  }
-
-  .amazon-shop {
-    padding-top: 6px;
-  }
-
   .card-button {
     position: absolute;
     top: 361px;
@@ -348,9 +320,34 @@
   }
 }
 
-.wrap-bookhops {
+.book-link {
   display: flex;
-  justify-content: center;
+  align-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.amazon-shop {
+  display: inline-block;
+  width: 62px;
+  height: 19px;
+  background: url('../img/logo-partners/amazon.png'),
+    0.741px 0px / 97.61% 100% no-repeat;
+  filter: grayscale(100%);
+}
+
+.ibook-shop {
   width: 33px;
+  height: 32px;
+  background: url('../img/logo-partners/ibook.png'),
+    0px -0.889px / 100% 105.556% no-repeat;
+  filter: grayscale(100%);
+}
+.bookshop-shop {
+  width: 38px;
+  height: 36px;
+  background: url('../img/logo-partners/bookshop.png'),
+    -21.848px -19.981px / 218.432% 251.292% no-repeat;
+  filter: grayscale(100%);
 }

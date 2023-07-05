@@ -1,5 +1,6 @@
 //  change page
 import { loginCheck } from './firebase.js';
+import { mobileAuthChek } from './menu.js';
 const shopLink = document.querySelector('.shop-link');
 const homeLink = document.querySelector('.home-link');
 const shopLinkMb = document.querySelector('.btn-shop-mb');
@@ -61,6 +62,7 @@ refs.switcherRef.addEventListener('click', themasChanger);
 
 // Open mobile menu
 function toggleBtn() {
+  mobileAuthChek ();
   refs.mobMenu.classList.toggle('hidden');
   refs.container.classList.toggle('fixed');
   refs.mobOpen.classList.toggle('inactive');
@@ -69,4 +71,3 @@ function toggleBtn() {
 
 refs.mobOpen.addEventListener('click', toggleBtn);
 refs.mobClose.addEventListener('click', toggleBtn);
-

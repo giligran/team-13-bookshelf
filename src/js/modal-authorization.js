@@ -20,7 +20,7 @@ if (localStorage.getItem('exist')) {
   link.open.addEventListener('click', togleModalAuth);
   link.open.removeEventListener('click', onlogOutBtn);
 }
-console.log(localStorage.getItem('exist'));
+// console.log(localStorage.getItem('exist'));
 
 function togleModalAuth() {
   link.backdrop.classList.toggle('visually-hidden');

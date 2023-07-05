@@ -1,7 +1,9 @@
+
 .header-container {
-  position: relative;
+  position: fixed;
   margin: auto;
   height: 72px;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
