@@ -338,6 +338,7 @@
 }
 
 .ibook-shop {
+  display: inline-block;
   width: 33px;
   height: 32px;
   background: url('../img/logo-partners/ibook.png'),
@@ -345,6 +346,7 @@
   filter: grayscale(100%);
 }
 .bookshop-shop {
+  display: inline-block;
   width: 38px;
   height: 36px;
   background: url('../img/logo-partners/bookshop.png'),
