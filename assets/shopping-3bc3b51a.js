@@ -12,13 +12,13 @@ import{B as m,l as d}from"./modal-authorization-22a4dd36.js";const a=document.qu
                 <ul class="book-retailers">
                   
                   <li>
-                    <a href="${o.amazon_product_url}"><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
+                    <a href="${o.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
@@ -26,7 +26,7 @@ import{B as m,l as d}from"./modal-authorization-22a4dd36.js";const a=document.qu
           </div>
           <button type="button" class="remove-book" data-item-remove>
             <svg class="remove-book-item" width="28" height="28">
-              <use href="../img/symbol-defs.svg#icon-dump"></use>
+              <use href="./img/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
         `;const r=c.querySelector(".remove-book");r.addEventListener("click",()=>{u(r)}),a.appendChild(c)});else{const o=document.createElement("img");o.src="../img/blocks.png",o.classList.add("empty-list-png"),o.alt="Зображення порожнього списку покупок",a.appendChild(o)}}).catch(t=>{console.error(t)});const k=document.querySelector(".shop-link"),h=document.querySelector(".home-link"),b=document.querySelector(".btn-shop-mb"),p=document.querySelector(".btn-home-mb");h.classList.remove("active");k.classList.add("active");p.classList.remove("active");b.classList.add("active");const v=localStorage.getItem("exist");v&&d();const e={switcherRef:document.querySelector(".switch"),container:document.querySelector(".header-container"),logo:document.querySelector(".icon-title-svg"),shop:document.querySelector(".shop-icon-svg"),arrow:document.querySelector(".arow-down"),burger:document.querySelector(".icon-menu-svg"),x:document.querySelector(".x-icon-menu-svg"),mobMenu:document.querySelector("#mobile-menu"),mobOpen:document.querySelector("#mob-menu-open"),mobClose:document.querySelector("#m-close"),shopLs:document.querySelector("body"),bookItem:document.querySelector(".book-list")};localStorage.getItem("mode")==="dark"&&(e.container.classList.add("dark"),e.logo.classList.add("dark"),e.burger.classList.add("dark"),e.x.classList.add("dark"),e.shopLs.classList.add("dark"),e.bookItem.classList.add("dark"));function L(t){t.target.nodeName==="INPUT"&&(e.container.classList.toggle("dark"),e.logo.classList.toggle("dark"),e.burger.classList.toggle("dark"),e.x.classList.toggle("dark"),e.shopLs.classList.toggle("dark"),e.bookItem.classList.toggle("dark"),e.container.classList.contains("dark")?(localStorage.setItem("mode","dark"),localStorage.getItem("mode")):(localStorage.removeItem("mode"),localStorage.getItem("mode")))}e.switcherRef.addEventListener("click",L);function i(){e.mobMenu.classList.toggle("hidden"),e.container.classList.toggle("fixed"),e.mobOpen.classList.toggle("inactive"),e.mobClose.classList.toggle("active")}e.mobOpen.addEventListener("click",i);e.mobClose.addEventListener("click",i);
