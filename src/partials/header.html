@@ -1,4 +1,4 @@
-<section>
+<header class="header">
   <div class="header-container">
     <div class="table-block">
       <div class="block-logo">
@@ -16,7 +16,7 @@
       </div>
       <div class="table-menu">
         <a href="./index.html" class="home-link active">HOME</a>
-        <a href="" class="shop-link"
+        <a href="./shopping.html" class="shop-link"
           >SHOPING LIST<svg class="heder-shop-icon" width="20" height="20">
             <use
               class="shop-icon-svg"
@@ -30,7 +30,7 @@
       <div class="block-menu">
         <button type="button" id="switch">
           <label class="switch">
-            <input type="checkbox" />
+            <input class="checkbox" type="checkbox" />
             <span class="slider round"></span>
           </label>
         </button>
@@ -42,17 +42,29 @@
             ></use>
           </svg>
         </button>
+        <button type="button" id="m-close" class="m-close">
+          <svg class="menu-icon" width="28" height="28">
+            <use
+              class="x-icon-menu-svg"
+              href="./img/header.svg#icon-x-close"
+            ></use>
+          </svg>
+        </button>
       </div>
       <button class="heder-modal-login user-info">
-        <!-- <div class="user-photo"></div> -->
-        <p class="user-name">sign up</p>
-        <svg class="arow-down" width="23" height="26">
+        <div class="user-photo inactive" id="userPhoto">
+          <img src="./img/stephan1x-min.png" alt="" />
+        </div>
+        <p class="user-name user-tab">sign up</p>
+        <svg class="arow-down" width="23" height="26" id="arrow">
           <use href="./img/header.svg#icon-arrow-narrow-right"></use>
         </svg>
       </button>
     </div>
   </div>
-</section>
 
-<load ="/partials/menu.html" />
-<load ="/partials/modal-form-authorization.html" />
+  <button type="button" id="logOut" class="log-out">Log Out</button>
+
+  <load src="/partials/modal-form-authorization.html" />
+  <load src="/partials/menu.html" />
+</header>

@@ -2,28 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./img/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookchelf</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
-    <header>
-      <load src="./partials/header.html" />
-    </header>
+  <body class="page-mode">
+    <load src="./partials/header.html" />
     <main>
       <load src="./partials/navigation.html" />
       <load src="./partials/support.html" />
       <load src="./partials/home.html" />
-      <load src="./partials/categories.html" />
     </main>
     <script type="module" src="/main.js"></script>
     <script type="module" src="./js/firebase.js"></script>
     <script type="module" src="./js/header.js"></script>
     <script type="module" src="./js/home.js"></script>
+    <script type="module" src="./js/support.js"></script>
     <script type="module" src="./js/menu.js"></script>
     <script type="module" src="./js/modal-authorization.js"></script>
-    <script type="module" src="./js/support.js"></script>
+    <script type="module" src="./js/pop-up.js"></script>
   </body>
 </html>

@@ -1,11 +1,39 @@
 import '../css/modal-authorization.css';
-
-import { registerNewUser } from './firebase';
-
-const form = document.querySelector('.sign-up-form');
+import { firebaseAuth } from './firebase';
+const form = document.querySelector('.sign-form');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 
-console.log(radioButtons);
+const link = {
+  backdrop: document.querySelector('#authorization'),
+  open: document.querySelector('.heder-modal-login'),
+  close: document.querySelector('.modal-authorization-close'),
+  logoutBtn: document.querySelector('#logOut'),
+};
+link.open.addEventListener('click', togleModalAuth);
+link.close.addEventListener('click', togleModalAuth);
+
+if (localStorage.getItem('exist')) {
+  link.open.removeEventListener('click', togleModalAuth);
+  link.open.addEventListener('click', onlogOutBtn);
+  link.logoutBtn.addEventListener('click', logOut);
+} else {
+  link.open.addEventListener('click', togleModalAuth);
+  link.open.removeEventListener('click', onlogOutBtn);
+}
+console.log(localStorage.getItem('exist'));
+
+function togleModalAuth() {
+  link.backdrop.classList.toggle('visually-hidden');
+}
+
+function onlogOutBtn() {
+  link.logoutBtn.classList.toggle('active');
+}
+function logOut(e) {
+  e.preventDefault();
+  localStorage.clear();
+  location.reload();
+}
 
 radioButtons.forEach(radioButton => {
   radioButton.addEventListener('change', () => {
@@ -17,17 +45,26 @@ radioButtons.forEach(radioButton => {
   });
 });
 
-form.addEventListener('submit', onSubmit);
+form.addEventListener('submit', onSubmitForm);
 
-function onSubmit(e) {
+function onSubmitForm(e) {
   e.preventDefault();
-  const { name, email, password } = form;
-  registerNewUser(name.value, email.value, password.value);
-  form.reset();
+  const { name = null, email, password } = form;
+  if (name) {
+    firebaseAuth
+      .signUp(name.value, email.value, password.value)
+      .then(data => {});
+    form.reset();
+  } else {
+    firebaseAuth.signIn(email.value, password.value);
+    form.reset();
+  }
+  link.open.removeEventListener('click', togleModalAuth);
+  link.open.addEventListener('click', onlogOutBtn);
+  link.logoutBtn.addEventListener('click', logOut);
 }
 
 function renderFormSignUp() {
-  console.log('passed singIn function');
   form.innerHTML = `<label for="name" class="visually-hidden">name</label>
       <input
         type="text"
@@ -61,7 +98,6 @@ function renderFormSignUp() {
       <button type="submit" class="submit-btn" id="submit">Sign up</button>`;
 }
 function renderFormSignIn() {
-  console.log('passed singUp function');
   form.innerHTML = `<label for="email" class="visually-hidden">eMAIL</label>
   <input
     type="email"
@@ -84,25 +120,3 @@ function renderFormSignIn() {
 
   <button type="submit" class="submit-btn" id="submit">Sign in</button>`;
 }
-
-// Sign Up / Sign in
-// const inBtn = document.getElementById('InBtn');
-// const upBtn = document.getElementById('upBtn');
-// const nameBox = document.getElementById('name');
-// const subBtn = document.getElementById('submit');
-
-// function regOn(evt) {
-//   nameBox.classList.remove('hide');
-//   inBtn.classList.add('active');
-//   upBtn.classList.remove('active');
-//   subBtn.textContent = 'Sign In';
-// }
-// function regOff(evt) {
-//   nameBox.classList.add('hide');
-//   inBtn.classList.remove('active');
-//   upBtn.classList.add('active');
-//   subBtn.textContent = 'Sign Up';
-// }
-
-// inBtn.addEventListener('click', regOn);
-// upBtn.addEventListener('click', regOff);

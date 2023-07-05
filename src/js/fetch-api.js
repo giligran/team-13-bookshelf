@@ -9,7 +9,6 @@ export default class BookApiService {
     return fetch(url)
       .then(res => res.json())
       .then(categoryArray => {
-        console.log(categoryArray);
         return categoryArray;
       });
   }
@@ -20,7 +19,7 @@ export default class BookApiService {
     return fetch(url)
       .then(res => res.json())
       .then(popularBooks => {
-        console.log(popularBooks);
+        // console.log(popularBooks);
         return popularBooks;
       });
   }
@@ -31,7 +30,7 @@ export default class BookApiService {
     return fetch(url)
       .then(res => res.json())
       .then(books => {
-        console.log(books);
+        // console.log(books);
         return books;
       });
   }
@@ -42,8 +41,17 @@ export default class BookApiService {
     return fetch(url)
       .then(res => res.json())
       .then(book => {
-        console.log(book);
+        // console.log(book);
         return book;
       });
   }
 }
+
+// const fetchApi = new BookApiService();
+
+// fetchApi
+//   .fetchCategoryList()
+//   .then(response => {
+//     return response.forEach(item => item.list_name);
+//   })
+//   .then(data => console.log(data));
