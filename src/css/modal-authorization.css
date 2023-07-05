@@ -120,6 +120,20 @@
   color: #4f2ee8;
   text-decoration-line: underline;
 }
+.auth-icon {
+  position: absolute;
+    top: 128px;
+  right: 48px;
+  /* fill: white; */
+  stroke: white;
+}
+.loc-icon {
+  position: absolute;
+    top: 202px;
+  right: 48px;
+  /* fill: white; */
+  stroke: white;
+}
 
 @media screen and (min-width: 768px) {
   .modal-authorization {
@@ -133,6 +147,14 @@
   .submit-btn {
     padding: 20px 0px 20px 40px;
   }
+  .auth-icon {
+    top: 166px;
+  right: 100px;
+   }
+   .loc-icon {
+    top: 263px;
+  right: 100px;
+   }
 }
 
 /* 
