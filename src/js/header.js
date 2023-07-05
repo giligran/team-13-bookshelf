@@ -1,6 +1,7 @@
 // import { doc } from "firebase/firestore";
 // keep login i
 import { loginCheck } from './firebase.js';
+import { mobileAuthChek } from './menu.js'
 const authExist = localStorage.getItem('exist');
 if (authExist) {
   loginCheck();
@@ -73,6 +74,7 @@ refs.switcherRef.addEventListener('click', themasChanger);
 
 // Open mobile menu
 function toggleBtn() {
+  mobileAuthChek ();
   refs.mobMenu.classList.toggle('hidden');
   refs.container.classList.toggle('fixed');
   refs.mobOpen.classList.toggle('inactive');

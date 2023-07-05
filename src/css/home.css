@@ -124,6 +124,9 @@
   line-height: 38px;
   letter-spacing: -0.04em;
 }
+.home-title.dark {
+  color: #F6F6F6;
+}
 .home-title-second-color{
   color: #4F2EE8;
 }
@@ -146,7 +149,7 @@
 .top-book-title{
   margin-top: 14px;
   margin-bottom: 4px;
-  color: #111;
+  color: #9c9494;
   font-size: 16px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -158,6 +161,9 @@
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
+}
+.top-book-title.dark {
+  color: #f6f6f6;
 }
 .top-book-author{
   font-size: 12px;
@@ -203,7 +209,7 @@
   list-style: none;
 }
 .category-list-link{
-  color: rgba(17, 17, 17, 0.60);
+  color: #B4AFAF;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -211,7 +217,7 @@
   letter-spacing: -0.32px;
 }
 .category-all{
-  color: rgba(17, 17, 17, 0.60);
+  color: #B4AFAF;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

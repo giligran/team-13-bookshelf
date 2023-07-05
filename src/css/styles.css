@@ -6,8 +6,8 @@
 */
 /* @import 'modern-normalize.css'; */
 @import url('./reset.css');
-@import url('./header.css');
 @import url('./mobile-menu.css');
+@import url('./header.css');
 @import url('./modal-authorization.css');
 @import url('./home.css');
 @import url('./support-ukraine.css');
