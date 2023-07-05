@@ -11,6 +11,7 @@
 @import url('./modal-authorization.css');
 @import url('./home.css');
 @import url('./support-ukraine.css');
+@import url('./pop-up.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;

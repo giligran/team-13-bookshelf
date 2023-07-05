@@ -46,3 +46,12 @@ export default class BookApiService {
       });
   }
 }
+
+// const fetchApi = new BookApiService();
+
+// fetchApi
+//   .fetchCategoryList()
+//   .then(response => {
+//     return response.forEach(item => item.list_name);
+//   })
+//   .then(data => console.log(data));

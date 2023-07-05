@@ -12,10 +12,22 @@ const loader = document.querySelector('.loader');
 const categoryTitle = document.querySelector('.category-title');
 const firstListLink = document.querySelector('.first-list-link');
 
-bookApiService.fetchPopularBooks().then(books => {
-  renderMarkup(books);
-  hideElement(loader);
-});
+bookApiService
+  .fetchPopularBooks()
+  .then(books => {
+    renderMarkup(books);
+    hideElement(loader);
+  })
+  .finally(() => {
+    const cards = document.querySelectorAll('.book-card');
+    cards.forEach(li => {
+      li.addEventListener('click', handleClick);
+    });
+    function handleClick(e) {
+      const dataAttribute = e.currentTarget.getAttribute('data-id');
+      console.log(dataAttribute);
+    }
+  });
 
 bookApiService.fetchCategoryList().then(renderListCategory);
 
@@ -28,15 +40,15 @@ categoryList.addEventListener('click', event => {
   event.preventDefault();
 
   if (currentCategory) {
-     currentCategory.classList.remove('current');
-   }
+    currentCategory.classList.remove('current');
+  }
 
-   if (currentCategory !== event.target) {
-     event.target.classList.add('current');
-     currentCategory = event.target;
-   } else {
-     currentCategory = null;
-   }
+  if (currentCategory !== event.target) {
+    event.target.classList.add('current');
+    currentCategory = event.target;
+  } else {
+    currentCategory = null;
+  }
   if (event.target.classList.contains('all-categories')) {
     bookApiService.fetchPopularBooks().then(books => {
       renderMarkup(books);
@@ -66,8 +78,8 @@ function renderMarkup(popularBooks) {
   const markup = reduceLimitCategory(popularBooks)
     .map(({ list_name, books }) => {
       const bookInfo = reduceByScreenSize(books)
-        .map(({ author, book_image, title }) => {
-          return `<li class="book-card"><img src="${book_image}" alt="${title}" class ="home-book-img"/>
+        .map(({ author, book_image, title, _id }) => {
+          return `<li class="book-card" data-id=${_id}><img src="${book_image}" alt="${title}" class ="home-book-img"/>
       <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p></li>`;
         })
         .join('');
@@ -137,3 +149,11 @@ function hideElement(elem) {
 function showElement(elem) {
   elem.classList.remove('visually-hidden');
 }
+
+// const categorysMenu = document.querySelector('.popular-books-list');
+
+// categorysMenu.addEventListener('click', e => {
+//   if (e.target.closest('.book-card')) {
+//     console.log(e.target);
+//   }
+// });
