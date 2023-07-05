@@ -18,8 +18,8 @@
   transform: translate(-50%, -50%) scale(1);
   top: 50%;
   left: 50%;
-  width: 579px;
-  height: 516px;
+  width: 80%;
+  height: 70%;
   padding: 24px 40px 40px;
   background: #f6f6f6;
   border-radius: 18px;
@@ -51,7 +51,7 @@
 .sign-up-form-input {
   box-sizing: border-box;
   padding: 20px 173px 20px 40px;
-  width: 499px;
+  width: 90%;
   color: #111;
   font-size: 18px;
   font-family: DM Sans;
@@ -76,7 +76,7 @@
 }
 .submit-btn {
   padding: 20px;
-  width: 499px;
+  width: 90%;
   color: #ffffff;
   background-color: #111;
   font-size: 18px;

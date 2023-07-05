@@ -1,7 +1,6 @@
 .header-container {
   position: relative;
   margin: auto;
-  max-width: 375px;
   height: 72px;
   box-sizing: border-box;
   display: flex;
@@ -194,7 +193,7 @@ input:checked + .slider:before {
   .table-block {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     gap: 50px;
@@ -207,12 +206,15 @@ input:checked + .slider:before {
     border-radius: 36px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
   }
   .user-photo {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 37px;
     height: 37px;
     border-radius: 50%;
@@ -220,6 +222,10 @@ input:checked + .slider:before {
   }
   .user-photo.inactive {
     display: none;
+  }
+  .user-tab {
+    padding: 2px;
+    font-size: 15px;
   }
   .arow-down {
     fill: #111111;
