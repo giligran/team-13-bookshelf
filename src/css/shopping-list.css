@@ -10,6 +10,8 @@ body.dark {
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -1.28px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .purple-header-word {
   color: #4f2ee8;
@@ -80,16 +82,17 @@ li {
   gap: 14px;
 }
 .img-title-book {
+  border-radius: 12px;
   display: block;
   width: 100px;
   height: 142px;
 }
 
 .buying-list {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .retailer-logo {
   filter: grayscale(100%);
@@ -114,6 +117,10 @@ li {
   color: #b4afaf;
 }
 .book-description {
+  max-width: 193px;
+  max-height: 68px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
   font-size: 14px;
   line-height: 18px;
@@ -130,7 +137,6 @@ li {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  margin-top: 10px;
 }
 /* .remove-button {
 } */
@@ -171,6 +177,10 @@ li {
 }
 
 @media screen and (min-width: 768px) {
+  .book-description {
+    max-width: 508px;
+    max-height: 53px;
+  }
   .book-card {
     width: 704px;
     height: 213px;
@@ -219,5 +229,9 @@ li {
   .book-card {
     width: 996px;
     height: 213px;
+  }
+  .book-description {
+    max-width: 808px;
+    max-height: 53px;
   }
 }
