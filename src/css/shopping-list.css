@@ -31,7 +31,7 @@ li {
   padding-left: 20px;
   padding-right: 20px;
   display: block;
-  /* max-width: 375px; */
+  max-width: 375px;
   margin: 0 auto;
 }
 /* .shopping-list.dark {
@@ -39,6 +39,9 @@ li {
   color: #ffffff;
 } */
 .book-list {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #fff;
   color: #111111;
   fill: #ffffff;
@@ -55,26 +58,19 @@ li {
   stroke: #ffffff;
 }
 .book-item {
-  margin-top: 10px;
+  display: flex;
+  width: 335px;
+  min-height: 170px;
+  padding: 14px;
   box-sizing: border-box;
   background-color: inherit;
   position: relative;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-  margin: 0 auto;
-  margin-bottom: 20px;
-  width: 100%;
-  box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .book-card {
-  margin-top: 14px;
-  width: 335px;
-  height: 170px;
   display: flex;
   justify-content: center;
   flex-direction: row;

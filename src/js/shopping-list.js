@@ -35,14 +35,18 @@ fetch
     if (savedBooks.length > 0) {
       savedBooks
         .map(book => {
-          const titleForRender =
+          let titleForRender;
+          titleForRender =
             book.title.length > 16
               ? book.title.slice(0, 15) + '...'
               : book.title;
+          if (window.screen.width >= 768) {
+            titleForRender = book.title;
+          }
+
           const bookElement = document.createElement('li');
           bookElement.classList.add('book-item');
           bookElement.innerHTML = `
-          <div class="book-card">
             <div>
               <img src="${book.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
@@ -68,7 +72,6 @@ fetch
                 </ul>
               </div>
             </div>
-          </div>
           <button type="button" class="remove-book" data-item-remove>
             <svg class="remove-book-item" width="28" height="28">
               <use href="./img/symbol-defs.svg#icon-dump"></use>
