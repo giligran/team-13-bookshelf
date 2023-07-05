@@ -45,7 +45,10 @@ fetch
             <div class="book-info">
               <h2 class="book-title">${book.title}</h2>
               <h3 class="book-category">${book.category}</h3>
-              <p class="book-description">${book.description}</p>
+              <p class="book-description">David Burroughs was once a devoted father to his three-year-old son Matthew,
+              living a dream life just a short drive away from the working-class suburb where he and his wife,
+              Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David
+              was asleep just down the hall.</p>
               <div class="buying-list">
                 <p class="book-author">${book.author}</p>
                 <ul class="book-retailers">
@@ -89,19 +92,19 @@ fetch
     console.error(error);
   });
 
-const refsShopping = {
-  switcherRef: document.querySelector('.switch'),
-  shoppingCard: document.querySelectorAll('.book-card'),
-  bookTitle: document.querySelectorAll('.book-title'),
-};
+// const refsShopping = {
+//   switcherRef: document.querySelector('.switch'),
+//   shoppingCard: document.querySelectorAll('.book-card'),
+//   bookTitle: document.querySelectorAll('.book-title'),
+// };
 
-function colorChanger(evt) {
-  if (evt.target.nodeName === 'INPUT') {
-    refsShopping.shoppingCard.forEach(card => {
-      card.classList.toggle('dark');
-    });
-    // refsShopping .shoppingCard.classList.toggle('dark');
-    // refsShopping .bookTitle.classList.toggle('dark');
-  }
-}
-refsShopping.switcherRef.addEventListener('click', colorChanger);
+// function colorChanger(evt) {
+//   if (evt.target.nodeName === 'INPUT') {
+//     refsShopping.shoppingCard.forEach(card => {
+//       card.classList.toggle('dark');
+//     });
+//     // refsShopping .shoppingCard.classList.toggle('dark');
+//     // refsShopping .bookTitle.classList.toggle('dark');
+//   }
+// }
+// refsShopping.switcherRef.addEventListener('click', colorChanger);
