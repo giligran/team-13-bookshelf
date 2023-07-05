@@ -11,23 +11,11 @@ const categoryItem = document.querySelector('.category-list-link');
 const loader = document.querySelector('.loader');
 const categoryTitle = document.querySelector('.category-title');
 const firstListLink = document.querySelector('.first-list-link');
-
-bookApiService
-  .fetchPopularBooks()
-  .then(books => {
-    renderMarkup(books);
-    hideElement(loader);
-  })
-  .finally(() => {
-    const cards = document.querySelectorAll('.book-card');
-    cards.forEach(li => {
-      li.addEventListener('click', handleClick);
-    });
-    function handleClick(e) {
-      const dataAttribute = e.currentTarget.getAttribute('data-id');
-      console.log(dataAttribute);
-    }
-  });
+const popUpRef = document.querySelector('.pop-up');
+bookApiService.fetchPopularBooks().then(books => {
+  renderMarkup(books);
+  hideElement(loader);
+});
 
 bookApiService.fetchCategoryList().then(renderListCategory);
 
@@ -130,8 +118,8 @@ function renderSingleCategoryBooks(categoryName) {
       }
 
       const booksMarkup = books
-        .map(({ author, book_image, title }) => {
-          return `<li class="book-card"><img src="${book_image}" alt="${title}" class ="home-book-img"/>
+        .map(({ author, book_image, title, _id }) => {
+          return `<li class="book-card" data-id=${_id}><img src="${book_image}" alt="${title}" class ="home-book-img"/>
       <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p></li>`;
         })
         .join('');
@@ -150,10 +138,50 @@ function showElement(elem) {
   elem.classList.remove('visually-hidden');
 }
 
-// const categorysMenu = document.querySelector('.popular-books-list');
+const categorysMenu = document.querySelector('.popular-books-list');
+const listByCategory = document.querySelector('.single-category-list');
 
-// categorysMenu.addEventListener('click', e => {
-//   if (e.target.closest('.book-card')) {
-//     console.log(e.target);
-//   }
-// });
+listByCategory.addEventListener('click', e => {
+  if (e.target.closest('.book-card')) {
+    openPopUp(e.target.closest('.book-card').getAttribute('data-id'));
+  }
+});
+
+categorysMenu.addEventListener('click', e => {
+  if (e.target.closest('.book-card')) {
+    openPopUp(e.target.closest('.book-card').getAttribute('data-id'));
+  }
+});
+
+function openPopUp(id) {
+  bookApiService.fetchBookById(id).then(item => createPopUp(item));
+}
+
+function createPopUp(item) {
+  console.log(item);
+  const backdrop = document.querySelector('[data-card]');
+  const bookTitle = document.querySelector('.book-title');
+  const authorName = document.querySelector('.author');
+  const bookDescription = document.querySelector('.info-book');
+  const bookShopImages = document.querySelectorAll('.book-shop img');
+  const titelImg = document.querySelector('.book-img img');
+  bookTitle.textContent = item.title;
+  authorName.textContent = item.author;
+  bookDescription.textContent = item.description;
+  titelImg.setAttribute('src', item.book_image);
+  backdrop.classList.remove('is-hidden');
+}
+
+const refs = {
+  // openCardBtn: document.querySelectorAll('[data-card-open]'),
+  closeCardBtn: document.querySelector('[data-card-close]'),
+  card: document.querySelector('[data-card]'),
+};
+(() => {
+  // refs.openCardBtn.addEventListener('click', toggleCard);
+  refs.closeCardBtn.addEventListener('click', toggleCard);
+  function toggleCard() {
+    refs.card.classList.toggle('is-hidden');
+    document.body.classList.toggle('no-scroll');
+  }
+})();
