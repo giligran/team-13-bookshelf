@@ -18,9 +18,9 @@
   transform: translate(-50%, -50%) scale(1);
   top: 50%;
   left: 50%;
-  width: 80%;
-  height: 70%;
-  padding: 24px 40px 40px;
+  width: 335px;
+  height: 384px;
+  padding: 10px;
   background: #f6f6f6;
   border-radius: 18px;
   border: 2px solid #111;
@@ -41,16 +41,16 @@
 
 .sign-form {
   display: flex;
-  min-height: 352px;
+  /* min-height: 352px; */
   flex-direction: column;
-  margin-top: 28px;
+  /* margin-top: 28px; */
   align-items: center;
   gap: 28px;
 }
 
 .sign-up-form-input {
   box-sizing: border-box;
-  padding: 20px 173px 20px 40px;
+  padding: 10px 0px 10px 40px;
   width: 90%;
   color: #111;
   font-size: 18px;
@@ -75,7 +75,7 @@
   text-transform: uppercase;
 }
 .submit-btn {
-  padding: 20px;
+  padding: 10px;
   width: 90%;
   color: #ffffff;
   background-color: #111;
@@ -119,6 +119,42 @@
 .sign-conteiner input[type='radio']:checked + label {
   color: #4f2ee8;
   text-decoration-line: underline;
+}
+.auth-icon {
+  position: absolute;
+    top: 128px;
+  right: 48px;
+  /* fill: white; */
+  stroke: white;
+}
+.loc-icon {
+  position: absolute;
+    top: 202px;
+  right: 48px;
+  /* fill: white; */
+  stroke: white;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-authorization {
+    width: 579px;
+    height: 516px;
+    padding: 24px 40px 40px;
+  }
+  .sign-up-form-input {
+    padding: 20px 0px 20px 40px;
+  }
+  .submit-btn {
+    padding: 20px 0px 20px 40px;
+  }
+  .auth-icon {
+    top: 166px;
+  right: 100px;
+   }
+   .loc-icon {
+    top: 263px;
+  right: 100px;
+   }
 }
 
 /* 
