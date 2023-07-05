@@ -200,8 +200,8 @@ function renderPopUp(item) {
       <p class="text-card info-book">${item.description}</p>
       <ul class="book-shop">
         <li class="amazon-shop"><a href=${item.buy_links[0].url} target="_blank" rel="noreferrer noopener" class='amazon-shop'></a></li>
-        <li class="ibook-shop"><a href=${item.buy_links[1]} target="_blank" rel="noreferrer noopener" class='ibook-shop'></a></li>
-        <li class="bookshop-shop"><a href=${item.buy_links[4]} target="_blank" rel="noreferrer noopener" class='bookshop-shop></a></li>
+        <li class="ibook-shop"><a href=${item.buy_links[1].url} target="_blank" rel="noreferrer noopener" class='ibook-shop'></a></li>
+        <li class="bookshop-shop"><a href=${item.buy_links[4].url} target="_blank" rel="noreferrer noopener" class='bookshop-shop></a></li>
       </ul>
     </div>
     <button type="submit" class="card-button">ADD TO SHOPPING LIST</button>
