@@ -5,6 +5,8 @@ body {
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -1.28px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .purple-header-word {
   color: #4f2ee8;
@@ -62,6 +64,8 @@ main {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .img-title-book {
+  border-radius: 8px;
+  margin: 14px;
   display: block;
   width: 100px;
   height: 142px;
@@ -71,10 +75,11 @@ main {
 .buying-list {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
   margin-top: 10px;
+  margin-right: 14px;
 }
 .retailer-logo {
   filter: grayscale(100%);
@@ -154,11 +159,11 @@ main {
   fill: #4f2ee8;
 }
 
-@media screen and (min-width: 768px) {
-  .book-card {
+@media screen and (min-width: 768px) and (max-width: 1159px) {
+  /* .book-card {
     width: 704px;
     height: 213px;
-  }
+  } */
   .headline-shopping {
     font-size: 48px;
     line-height: 52px;
@@ -168,13 +173,13 @@ main {
     padding-right: 32px;
     padding-left: 32px;
   }
-  .book-card {
+  /* .book-card {
     justify-content: space-between;
     margin-top: 24px;
     margin-bottom: -24px;
     margin-right: 24px;
     margin-left: 24px;
-  }
+  } */
   .img-title-book {
     width: 116px;
     height: 165px;
@@ -196,13 +201,12 @@ main {
   .buying-list {
     margin-top: 60px;
     gap: 10px;
-    justify-content: flex-end;
   }
 }
 
 @media screen and (min-width: 1159px) {
   .book-card {
-    width: 996px;
-    height: 213px;
+    /* width: 996px;
+    height: 213px; */
   }
 }
