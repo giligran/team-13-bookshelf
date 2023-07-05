@@ -13,7 +13,7 @@ if (localStorage.getItem('exist')) {
   logoutButton.addEventListener('click', logOut);
 } else {
   const avatar = document.querySelector('#avatar');
-  avatar.textContent = 'Pleas Log in first';
+  avatar.textContent = '';
   logoutButton.textContent = 'Log In';
   logoutButton.removeEventListener('click', logOut);
   logoutButton.addEventListener('click', logIN);
