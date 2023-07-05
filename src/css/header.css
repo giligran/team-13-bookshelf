@@ -1,7 +1,7 @@
 .header-container {
   position: relative;
   margin: auto;
-  width: 100%;
+  max-width: 375px;
   height: 72px;
   box-sizing: border-box;
   display: flex;
