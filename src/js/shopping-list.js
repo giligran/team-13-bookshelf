@@ -32,18 +32,22 @@ fetch
   .then(data => {
     const savedBooks = data;
     console.log(data);
-
     if (savedBooks.length > 0) {
-      savedBooks.forEach(book => {
-        const bookElement = document.createElement('li');
-        bookElement.classList.add('book-item');
-        bookElement.innerHTML = `
+      savedBooks
+        .map(book => {
+          const titleForRender =
+            book.title.length > 16
+              ? book.title.slice(0, 15) + '...'
+              : book.title;
+          const bookElement = document.createElement('li');
+          bookElement.classList.add('book-item');
+          bookElement.innerHTML = `
           <div class="book-card">
             <div>
               <img src="${book.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
             <div class="book-info">
-              <h2 class="book-title">${book.title}</h2>
+              <h2 class="book-title">${titleForRender}</h2>
               <h3 class="book-category">${book.category}</h3>
               <p class="book-description">David Burroughs was once a devoted father to his three-year-old son Matthew,
               living a dream life just a short drive away from the working-class suburb where he and his wife,
@@ -52,7 +56,6 @@ fetch
               <div class="buying-list">
                 <p class="book-author">${book.author}</p>
                 <ul class="book-retailers">
-                  
                   <li>
                     <a href="${book.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
@@ -73,13 +76,14 @@ fetch
           </button>
         `;
 
-        const removeBtn = bookElement.querySelector('.remove-book');
-        removeBtn.addEventListener('click', () => {
-          removeBookElement(removeBtn);
-        });
+          const removeBtn = bookElement.querySelector('.remove-book');
+          removeBtn.addEventListener('click', () => {
+            removeBookElement(removeBtn);
+          });
 
-        bookList.appendChild(bookElement);
-      });
+          bookList.appendChild(bookElement);
+        })
+        .join('');
     } else {
       const noBooksImage = document.createElement('img');
       noBooksImage.src = '../img/blocks.png';

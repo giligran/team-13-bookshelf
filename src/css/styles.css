@@ -6,6 +6,7 @@
 */
 /* @import 'modern-normalize.css'; */
 @import url('./reset.css');
+@import url('./shopping-list.css');
 @import url('./mobile-menu.css');
 @import url('./header.css');
 @import url('./modal-authorization.css');
