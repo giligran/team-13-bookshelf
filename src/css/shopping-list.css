@@ -34,40 +34,47 @@ main {
 } */
 
 .book-item {
-  background-color: #fff;
+  /* background-color: #fff; */
   position: relative;
+  /* border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);* */
+}
+.book-card {
+  background-color: #fff;
+  /* position: relative; */
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  align-items: center; */
+  align-items: center;
   margin: 0 auto;
   margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-.book-card {
-  margin-top: 14px;
-  margin-bottom: -14px;
-  width: 335px;
-  height: 170px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  gap: 14px;
-}
 .img-title-book {
   display: block;
   width: 100px;
   height: 142px;
+  /* object-fit: cover; */
 }
 
 .buying-list {
-  margin-top: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
 }
 .retailer-logo {
   filter: grayscale(100%);
@@ -76,8 +83,7 @@ main {
   filter: drop-shadow(0px 3px 3px 0px rgba(0, 0, 0, 0.15));
 }
 .book-info {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
 }
 .book-title {
   margin: 0;
@@ -163,7 +169,7 @@ main {
     padding-left: 32px;
   }
   .book-card {
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-top: 24px;
     margin-bottom: -24px;
     margin-right: 24px;
@@ -189,7 +195,8 @@ main {
   }
   .buying-list {
     margin-top: 60px;
-    gap: 300px;
+    gap: 10px;
+    justify-content: flex-end;
   }
 }
 
