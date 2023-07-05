@@ -88,3 +88,20 @@ fetch
   .catch(error => {
     console.error(error);
   });
+
+const refsShopping = {
+  switcherRef: document.querySelector('.switch'),
+  shoppingCard: document.querySelectorAll('.book-card'),
+  bookTitle: document.querySelectorAll('.book-title'),
+};
+
+function colorChanger(evt) {
+  if (evt.target.nodeName === 'INPUT') {
+    refsShopping.shoppingCard.forEach(card => {
+      card.classList.toggle('dark');
+    });
+    // refsShopping .shoppingCard.classList.toggle('dark');
+    // refsShopping .bookTitle.classList.toggle('dark');
+  }
+}
+refsShopping.switcherRef.addEventListener('click', colorChanger);
