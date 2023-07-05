@@ -1,12 +1,15 @@
 body {
   background-color: #f6f6f6;
+  margin: 0;
+}
+body.dark {
+  background-color: #202024;
+  color: #ffffff;
 }
 .headline-shopping {
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -1.28px;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 .purple-header-word {
   color: #4f2ee8;
@@ -17,8 +20,8 @@ ul {
 li {
   list-style: none;
 }
-main {
-}
+/* main {
+} */
 .is-hidden {
   display: none;
 }
@@ -29,57 +32,64 @@ main {
   /* max-width: 375px; */
   margin: 0 auto;
 }
-/* .book-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* .shopping-list.dark {
+  background-color: #202024;
+  color: #ffffff;
 } */
-
-.book-item {
-  /* background-color: #fff; */
-  position: relative;
-  /* border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  width: 100%;
-  box-sizing: border-box;
-  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);* */
-}
-.book-card {
+.book-list {
   background-color: #fff;
-  /* position: relative; */
+  color: #111111;
+  fill: #ffffff;
+  stroke: #4f2ee8;
+  box-sizing: border-box;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+.book-list.dark {
+  background-color: #202024;
+  color: #ffffff;
+  fill: #4f2ee8;
+  stroke: #ffffff;
+}
+.book-item {
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: inherit;
+  position: relative;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 12px;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   margin: 0 auto;
   margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.book-card {
+  margin-top: 14px;
+  margin-bottom: -14px;
+  width: 335px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 14px;
+}
 .img-title-book {
-  border-radius: 8px;
-  margin: 14px;
   display: block;
   width: 100px;
   height: 142px;
-  /* object-fit: cover; */
 }
 
 .buying-list {
+  margin-top: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  margin-right: 14px;
+  justify-content: space-around;
 }
 .retailer-logo {
   filter: grayscale(100%);
@@ -88,13 +98,11 @@ main {
   filter: drop-shadow(0px 3px 3px 0px rgba(0, 0, 0, 0.15));
 }
 .book-info {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 .book-title {
-  margin-bottom: 4px;
+  margin: 0;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: -0.64px;
@@ -124,8 +132,8 @@ main {
   gap: 8px;
   margin-top: 10px;
 }
-.remove-button {
-}
+/* .remove-button {
+} */
 .amazon-logo {
   width: 32px;
   height: 11px;
@@ -162,11 +170,11 @@ main {
   fill: #4f2ee8;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1159px) {
-  /* .book-card {
+@media screen and (min-width: 768px) {
+  .book-card {
     width: 704px;
     height: 213px;
-  } */
+  }
   .headline-shopping {
     font-size: 48px;
     line-height: 52px;
@@ -176,13 +184,13 @@ main {
     padding-right: 32px;
     padding-left: 32px;
   }
-  /* .book-card {
-    justify-content: space-between;
+  .book-card {
+    justify-content: flex-start;
     margin-top: 24px;
     margin-bottom: -24px;
     margin-right: 24px;
     margin-left: 24px;
-  } */
+  }
   .img-title-book {
     width: 116px;
     height: 165px;
@@ -203,13 +211,13 @@ main {
   }
   .buying-list {
     margin-top: 60px;
-    gap: 10px;
+    gap: 300px;
   }
 }
 
 @media screen and (min-width: 1159px) {
   .book-card {
-    /* width: 996px;
-    height: 213px; */
+    width: 996px;
+    height: 213px;
   }
 }
