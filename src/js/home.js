@@ -2,7 +2,6 @@ import BookApiService from './fetch-api';
 import Notiflix from 'notiflix';
 
 const bookApiService = new BookApiService();
-
 const popularBooksList = document.querySelector('.popular-books-list');
 const categoryList = document.querySelector('.category-navigation');
 const singleCategoryBooks = document.querySelector('.single-category-list');
@@ -11,11 +10,25 @@ const categoryItem = document.querySelector('.category-list-link');
 const loader = document.querySelector('.loader');
 const categoryTitle = document.querySelector('.category-title');
 const firstListLink = document.querySelector('.first-list-link');
-const popUpRef = document.querySelector('.pop-up');
+const addItemBtn = document.querySelector('.card-button');
+console.log(addItemBtn);
 bookApiService.fetchPopularBooks().then(books => {
   renderMarkup(books);
   hideElement(loader);
 });
+
+const localStorageKey = 'shoping-list';
+
+if (!localStorage.getItem(localStorageKey)) {
+  console.log(Boolean(localStorage.getItem(localStorageKey)));
+  localStorage.setItem(localStorageKey, JSON.stringify([]));
+}
+// const idForREmove = '643282b1e85766588626a0ba';
+// const data = JSON.parse(localStorage.getItem(localStorageKey));
+// data.map((item, index) => {
+//   console.log(item);
+//   console.log(item._id);
+// });
 
 bookApiService.fetchCategoryList().then(renderListCategory);
 
@@ -143,45 +156,54 @@ const listByCategory = document.querySelector('.single-category-list');
 
 listByCategory.addEventListener('click', e => {
   if (e.target.closest('.book-card')) {
-    openPopUp(e.target.closest('.book-card').getAttribute('data-id'));
+    fetchBook(e.target.closest('.book-card').getAttribute('data-id'));
   }
 });
 
 categorysMenu.addEventListener('click', e => {
   if (e.target.closest('.book-card')) {
-    openPopUp(e.target.closest('.book-card').getAttribute('data-id'));
+    fetchBook(e.target.closest('.book-card').getAttribute('data-id'));
   }
 });
 
-function openPopUp(id) {
-  bookApiService.fetchBookById(id).then(item => createPopUp(item));
+function fetchBook(id) {
+  bookApiService.fetchBookById(id).then(item => renderPopUp(item));
 }
 
-function createPopUp(item) {
-  console.log(item);
-  const backdrop = document.querySelector('[data-card]');
-  const bookTitle = document.querySelector('.book-title');
-  const authorName = document.querySelector('.author');
-  const bookDescription = document.querySelector('.info-book');
-  const bookShopImages = document.querySelectorAll('.book-shop img');
-  const titelImg = document.querySelector('.book-img img');
-  bookTitle.textContent = item.title;
-  authorName.textContent = item.author;
-  bookDescription.textContent = item.description;
-  titelImg.setAttribute('src', item.book_image);
-  backdrop.classList.remove('is-hidden');
+function renderPopUp(item) {
+  const refForPopUp = document.querySelector('.pop-up');
+  refForPopUp.classList.remove('is-hidden');
+  refForPopUp.innerHTML = `<div class="card book-select">
+    <button type="button" class="card-close" data-card-close>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6L6 18M6 6L18 18"
+          stroke="#111111"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>  
+    </button>
+    <div class="book-img">
+      <img src=${item.book_image} alt="title" width="287px" height="408px" />
+    </div>
+    <div class="description">
+      <h2 class="book-title">${item.title}</h2>
+      <h3 class="author">${item.author}</h3>
+      <p class="text-card info-book">${item.description}</p>
+      <ul class="book-shop">
+        <li class="amazon-shop"><a href=${item.buy_links[0].url} target="_blank" rel="noreferrer noopener" class='amazon-shop'></a></li>
+        <li class="ibook-shop"><a href=${item.buy_links[1]} target="_blank" rel="noreferrer noopener" class='ibook-shop'></a></li>
+        <li class="bookshop-shop"><a href=${item.buy_links[4]} target="_blank" rel="noreferrer noopener" class='bookshop-shop></a></li>
+      </ul>
+    </div>
+    <button type="submit" class="card-button">ADD TO SHOPPING LIST</button>
+  </div>`;
 }
-
-const refs = {
-  // openCardBtn: document.querySelectorAll('[data-card-open]'),
-  closeCardBtn: document.querySelector('[data-card-close]'),
-  card: document.querySelector('[data-card]'),
-};
-(() => {
-  // refs.openCardBtn.addEventListener('click', toggleCard);
-  refs.closeCardBtn.addEventListener('click', toggleCard);
-  function toggleCard() {
-    refs.card.classList.toggle('is-hidden');
-    document.body.classList.toggle('no-scroll');
-  }
-})();
