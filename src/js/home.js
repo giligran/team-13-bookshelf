@@ -92,7 +92,7 @@ function renderMarkup(popularBooks) {
 
 function reduceByScreenSize(books) {
   let limitedBooks = books;
-  if (window.screen.width < 1200 && window.screen.width >= 768) {
+  if (window.screen.width < 1440 && window.screen.width >= 768) {
     limitedBooks = books.slice(0, 3);
     return limitedBooks;
   } else if (window.screen.width < 768) {
