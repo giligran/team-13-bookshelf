@@ -80,7 +80,7 @@ function renderMarkup(popularBooks) {
     .map(({ list_name, books }) => {
       const bookInfo = reduceByScreenSize(books)
         .map(({ author, book_image, title, _id }) => {
-          return `<li class="book-card" data-id=${_id}><img src="${book_image}" alt="${title}" class ="home-book-img"/>
+          return `<li class="book-card-home" data-id=${_id}><img src="${book_image}" alt="${title}" class ="home-book-img"/>
       <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p></li>`;
         })
         .join('');
@@ -132,7 +132,7 @@ function renderSingleCategoryBooks(categoryName) {
 
       const booksMarkup = books
         .map(({ author, book_image, title, _id }) => {
-          return `<li class="book-card" data-id=${_id}><img src="${book_image}" alt="${title}" class ="home-book-img"/>
+          return `<li class="book-card-home" data-id=${_id}><img src="${book_image}" alt="${title}" class ="home-book-img"/>
       <p class="top-book-title">${title}</p><p class="top-book-author">${author}</p></li>`;
         })
         .join('');
