@@ -362,7 +362,7 @@
 
 .dark .card {
   border: 2px solid #fff;
-  background: rgb(20, 20, 22)
+  background: rgb(20, 20, 22);
 }
 
 .dark .book-title {
@@ -377,11 +377,19 @@
   color: rgba(255, 255, 255, 1);
 }
 
+.dark .card-button {
+  background-color: rgb(20, 20, 22);  
+}
+
 .dark .amazon-shop {
   display: inline-block;
   width: 62px;
   height: 19px;
   background: url('../img/logo-partners/amazon.png'),
     0.741px 0px / 97.61% 100% no-repeat;
-  filter: grayscale(0%);
+    filter: brightness(0) saturate(0) invert(1);
+}
+
+.dark .card-close {
+  
 }
