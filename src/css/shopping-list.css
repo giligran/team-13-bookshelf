@@ -42,14 +42,9 @@ li {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: #fff;
   color: #111111;
   fill: #ffffff;
-  stroke: #4f2ee8;
   box-sizing: border-box;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
 }
 .book-list.dark {
   background-color: #202024;
@@ -58,8 +53,10 @@ li {
   stroke: #ffffff;
 }
 .book-item {
+  margin-bottom: 20px;
   display: flex;
   width: 335px;
+  gap: 14px;
   min-height: 170px;
   padding: 14px;
   box-sizing: border-box;
@@ -174,24 +171,23 @@ li {
 }
 
 @media screen and (min-width: 768px) {
+  .shopping-list {
+    max-width: 768px;
+  }
   .book-description {
     max-width: 508px;
     max-height: 53px;
   }
-  .book-card {
+  .book-item {
     width: 704px;
-    height: 213px;
+    min-height: 213px;
   }
   .headline-shopping {
     font-size: 48px;
     line-height: 52px;
     letter-spacing: -1.92px;
   }
-  .shopping-list {
-    width: 375px;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+
   .book-card {
     justify-content: flex-start;
     margin-top: 24px;
@@ -223,10 +219,13 @@ li {
   }
 }
 
-@media screen and (min-width: 1159px) {
-  .book-card {
-    width: 996px;
-    height: 213px;
+@media screen and (min-width: 1440px) {
+  .shopping-list {
+    max-width: 768px;
+  }
+
+  .book-item {
+    width: 948px;
   }
   .book-description {
     max-width: 808px;
