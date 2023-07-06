@@ -1,6 +1,6 @@
 .pop-up {
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -39,7 +39,7 @@
   background: none;
   padding: 0;
   border-style: none;
-  position: relative;
+  position: absolute;
   top: 6px;
   left: 288px;
   right: 12px;
@@ -51,13 +51,15 @@
 }
 
 .book-img {
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 24px;
+  padding-right: 24px;
   width: 287px;
+  padding-top: 40px;
+  padding-bottom: 14px;
 }
 
 .description {
-  padding: 0 14px;
+  padding: 0 24px;
 }
 
 .book-title {
@@ -97,11 +99,12 @@
   top: 42px;
   left: 62px;
   right: 62px;
-  margin: 0 auto;
   width: 211px;
   height: 46px;
+  background: #fafafa;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
+  text-transform: uppercase;
 }
 
 .card-button:focus,
@@ -155,9 +158,10 @@
     width: 192px;
     height: 281px;
     padding-top: 40px;
+    padding-bottom: 14px;
   }
 
-  .book-titel {
+  .book-title {
     color: #111;
     font-size: 16px;
     font-family: DM Sans;
@@ -189,13 +193,6 @@
     font-weight: 400;
     line-height: 18px;
     letter-spacing: -0.56px;
-  }
-
-  .book-shop {
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-    gap: 20px;
   }
 
   .card-button {
@@ -320,6 +317,13 @@
   }
 }
 
+.book-shop {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 14px;
+}
+
 .book-link {
   display: flex;
   align-content: center;
@@ -354,3 +358,18 @@
     -21.848px -19.981px / 218.432% 251.292% no-repeat;
   filter: grayscale(100%);
 }
+
+/* Dark theme */
+
+/* .card.dark {
+  border: 2px solid #fff;
+  background-image: #202024;
+}
+
+.book-title.dark {
+  color: #fff;
+}
+
+.author.dark {
+  color: #fff;
+} */
