@@ -61,13 +61,13 @@ fetch
                 <p class="book-author">${book.author}</p>
                 <ul class="book-retailers">
                   <li>
-                    <a href="${book.amazon_product_url}"><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
+                    <a href="${book.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
