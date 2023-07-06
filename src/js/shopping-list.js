@@ -1,10 +1,6 @@
 import BookApiService from './fetch-api';
 import { localStorageKey } from './localKey';
 import imgBlockBooks from '../img/blocks.png';
-import sprite from '../img/symbol-defs.svg';
-import amazon from '../img/logo-partners/amazon.png';
-import ibook from '../img/logo-partners/ibook.png';
-import bookshop from '../img/logo-partners/bookshop.png';
 
 const bookList = document.querySelector('.book-list');
 const fetch = new BookApiService();
@@ -26,9 +22,13 @@ function removeBookElement(element) {
 
   const remainingBooks = Array.from(document.querySelectorAll('.book-item'));
   if (remainingBooks.length === 0) {
+    const noBookText = document.createElement('p');
+    noBookText.classList.add('empty-list-description');
+    noBookText.innerHTML = 'This page is empty, add some books and proceed to order.';
     const noBooksImage = document.createElement('img');
     noBooksImage.src = blocks;
     noBooksImage.alt = 'Зображення порожнього списку покупок';
+    bookList.appendChild(noBookText);
     bookList.appendChild(noBooksImage);
   }
 }
@@ -63,20 +63,20 @@ if (localData.length > 0) {
                 <p class="book-author">${book.author}</p>
                 <ul class="book-retailers">
                   <li>
-                    <a href="${book.amazon_product_url}"><img src="${amazon}" class="retailer-logo amazon-logo" /></a>
+                    <a href="${book.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="${ibook}" class="retailer-logo ibook-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="${bookshop}" class="retailer-logo bookshop-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
             </div>
           <button type="button" class="remove-book" data-id=${book._id}>
             <svg class="remove-book-item" width="28" height="28">
-              <use href="${sprite}#icon-dump"></use>
+              <use href="./img/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
         `;
@@ -100,9 +100,14 @@ if (localData.length > 0) {
     })
     .join('');
 } else {
+  const noBookText = document.createElement('p');
+  noBookText.classList.add('empty-list-description');
+  noBookText.innerHTML = 'This page is empty, add some books and proceed to order.';
   const noBooksImage = document.createElement('img');
   noBooksImage.src = imgBlockBooks;
   noBooksImage.classList.add('empty-list-png');
   noBooksImage.alt = 'Зображення порожнього списку покупок';
+  bookList.appendChild(noBookText);
   bookList.appendChild(noBooksImage);
+  
 }
