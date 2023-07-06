@@ -8,6 +8,10 @@ import ibook from '../img/logo-partners/ibook.png';
 import bookshop from '../img/logo-partners/bookshop.png';
 
 const bookList = document.querySelector('.book-list');
+if (!localStorage.getItem(localStorageKey)) {
+  console.log(Boolean(localStorage.getItem(localStorageKey)));
+  localStorage.setItem(localStorageKey, JSON.stringify([]));
+}
 
 function removeBookElement(element) {
   const bookItem = element.closest('.book-item');
@@ -41,7 +45,7 @@ function removeBookElement(element) {
 const localData = JSON.parse(localStorage.getItem(localStorageKey));
 
 console.log(localData);
-if (localData.length > 0 || !localData) {
+if (localData.length > 0) {
   localData
     .map(book => {
       let titleForRender;
