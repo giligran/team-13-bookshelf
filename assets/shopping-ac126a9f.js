@@ -13,13 +13,13 @@ import{a as c,l as g,m as h}from"./modal-authorization-32aff7bb.js";const n=docu
                 <p class="book-author">${o.author}</p>
                 <ul class="book-retailers">
                   <li>
-                    <a href="${o.amazon_product_url}"><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
+                    <a href="${o.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="../img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
+                    <a href=""><img src="./img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
