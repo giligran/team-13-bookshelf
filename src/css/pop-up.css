@@ -361,15 +361,36 @@
 
 /* Dark theme */
 
-/* .card.dark {
+.dark .card {
   border: 2px solid #fff;
-  background-image: #202024;
+  background: rgb(20, 20, 22);
 }
 
-.book-title.dark {
+.dark .book-title {
   color: #fff;
 }
 
-.author.dark {
-  color: #fff;
-} */
+.dark .author{
+  color: rgba(180, 175, 175, 1);
+}
+
+.dark .text-card{
+  color: rgba(255, 255, 255, 1);
+}
+
+.dark .card-button {
+  background-color: rgb(20, 20, 22);  
+}
+
+.dark .amazon-shop {
+  display: inline-block;
+  width: 62px;
+  height: 19px;
+  background: url('../img/logo-partners/amazon.png'),
+    0.741px 0px / 97.61% 100% no-repeat;
+    filter: brightness(0) saturate(0) invert(1);
+}
+
+.dark .card-close {
+  
+}
