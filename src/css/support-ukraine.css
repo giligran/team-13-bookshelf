@@ -92,6 +92,18 @@
     fill: #4F2EE8;
 }
 
+.support-btn-next:hover,
+.support-btn-next:focus,
+.support-btn-prev:hover,
+.support-btn-prev:focus{
+    background-color: #4F2EE8;
+}
+
+.support-btn-icon:hover,
+.support-btn-icon:focus {
+    fill: #FFFFFF;
+}
+
 
 
 @media screen and (min-width: 480px) {
