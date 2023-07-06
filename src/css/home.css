@@ -146,7 +146,7 @@
 .category-name-book {
   margin-right: auto;
   margin-bottom: 18px;
-  color: #b4afaf;
+  color: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -156,7 +156,7 @@
 .top-book-title {
   margin-top: 14px;
   margin-bottom: 4px;
-  color: #9c9494;
+  color: inherit;
   font-size: 16px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -216,7 +216,7 @@
   list-style: none;
 }
 .category-list-link {
-  color: #b4afaf;
+  color: inherit;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -224,7 +224,7 @@
   letter-spacing: -0.32px;
 }
 .category-all {
-  color: #b4afaf;
+  color: inherit;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -257,7 +257,7 @@
   margin-bottom: 40px;
 }
 .category-item {
-  color: rgba(17, 17, 17, 0.6);
+  color: inherit;
   font-size: 16px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -266,7 +266,7 @@
   letter-spacing: -0.32px;
 }
 .category-title {
-  color: #111;
+  color: inherit;
   font-size: 32px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -359,7 +359,7 @@
     height: 472px;
   }
   .category-item {
-    color: rgba(17, 17, 17, 0.6);
+    /* color: rgba(17, 17, 17, 0.6); */
     font-size: 18px;
     font-family: 'DM Sans';
     font-style: normal;
@@ -371,7 +371,7 @@
     margin-top: 20px;
   }
   .home-title {
-    color: #111;
+    /* color: #111; */
     font-size: 48px;
     font-family: 'DM Sans';
     font-style: normal;
