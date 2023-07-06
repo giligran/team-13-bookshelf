@@ -186,6 +186,7 @@
   white-space: nowrap;
 }
 .top-book-button {
+  color: inherit;
   white-space: nowrap;
   display: flex;
   justify-content: center;
