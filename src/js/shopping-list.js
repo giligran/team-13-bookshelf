@@ -22,7 +22,7 @@ function removeBookElement(element) {
   const remainingBooks = Array.from(document.querySelectorAll('.book-item'));
   if (remainingBooks.length === 0) {
     const noBooksImage = document.createElement('img');
-    noBooksImage.src = '../img/blocks.png';
+    noBooksImage.src = './img/blocks.png';
     noBooksImage.alt = 'Зображення порожнього списку покупок';
     bookList.appendChild(noBooksImage);
   }
