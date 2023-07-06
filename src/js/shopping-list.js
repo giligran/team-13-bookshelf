@@ -68,13 +68,13 @@ if (localData.length > 0 || !localData) {
                 <p class="book-author">${book.author}</p>
                 <ul class="book-retailers">
                   <li>
-                    <a href="${book.amazon_product_url}"><img src="${amazonDark}" class="retailer-logo amazon-dark-logo" /><img src="${amazon}" class="retailer-logo amazon-logo" /></a>
+                    <a href="${book.buy_links[0].url}" target="_blank" rel="noreferrer noopener"><img src="${amazonDark}" class="retailer-logo amazon-dark-logo" /><img src="${amazon}" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="${ibook}" class="retailer-logo ibook-logo" /></a>
+                    <a href="${book.buy_links[1].url}" target="_blank" rel="noreferrer noopener"><img src="${ibook}" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="${bookshop}" class="retailer-logo bookshop-logo" /></a>
+                    <a href="${book.buy_links[4].url}" target="_blank" rel="noreferrer noopener"><img src="${bookshop}" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
