@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/shopping-list.css" />
+    <link rel="icon" type="image/svg+xml" href="./img/logo.svg" />
+
     <title>Shopping list</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,11 +18,202 @@
   <body>
     <load src="./partials/header.html" />
     <main>
-      <div class="shopping-list" id="shopLs">
-        <h1 class="headline-shopping">
-          Shopping <span class="purple-header-word">List</span>
-        </h1>
-        <ul class="book-list"></ul>
+      <div class="shopping-section">
+        <div class="support-container shopping-support">
+          <div class="support-title-wrapper">
+            <h2 class="support-title">Support Ukraine</h2>
+            <svg class="support-icon" width="20px" height="32px">
+              <use href="./img/symbol-defs.svg#icon-emblem-ukr"></use>
+            </svg>
+          </div>
+          <div class="support-slider">
+            <ul class="support-list" id="funds-list">
+              <li class="support-item">
+                <span class="support-number">01</span>
+                <a
+                  href="https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/save-the-children.png    1x,
+                      ./img/logo-partners/save-the-children@2x.png 2x
+                    "
+                    src="./img/logo-partners/save-the-children@2x.png"
+                    alt="Save the Children"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">02</span>
+                <a
+                  href="https://www.projecthope.org/country/ukraine/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/hope@2x.png 1x,
+                      ./img/logo-partners/hope@2x.png 2x
+                    "
+                    src="./img/logo-partners/hope.png"
+                    alt="Project HOPE"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">03</span>
+                <a
+                  class="support-link"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href="https://u24.gov.ua/uk"
+                  ><img
+                    class="support-img"
+                    src="/img/logo-partners/u24@2x.png"
+                    alt="united24-logo"
+                /></a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">04</span>
+                <a
+                  href="https://internationalmedicalcorps.org/country/ukraine/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/imc.png    1x,
+                      ./img/logo-partners/imc@2x.png 2x
+                    "
+                    src="./img/logo-partners/imc@2x.png"
+                    alt="International Medical Corps"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">05</span>
+                <a
+                  href="https://www.msf.org/ukraine"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/msf.png    1x,
+                      ./img/logo-partners/msf@2x.png 2x
+                    "
+                    src="./img/logo-partners/msf.png"
+                    alt="Medicins Sans Frontieres"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">06</span>
+                <a
+                  href="https://www.razomforukraine.org/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/razom.png    1x,
+                      ./img/logo-partners/razom@2x.png 2x
+                    "
+                    src="./img/logo-partners/razom.png"
+                    alt="RAZOM"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">07</span>
+                <a
+                  href="https://www.actionagainsthunger.org/location/europe/ukraine/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/aah.png    1x,
+                      ./img/logo-partners/aah@2x.png 2x
+                    "
+                    src="./img/logo-partners/aah@2x.png"
+                    alt="Action against hunger"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">08</span>
+                <a
+                  href="https://www.wvi.org/emergencies/ukraine"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/world-vision.png    1x,
+                      ./img/logo-partners/world-vision@2x.png 2x
+                    "
+                    src="./img/logo-partners/world-vision@2x.png"
+                    alt="World vision"
+                  />
+                </a>
+              </li>
+              <li class="support-item">
+                <span class="support-number">09</span>
+                <a
+                  href="https://prytulafoundation.org/en"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="support-link"
+                >
+                  <img
+                    class="support-img"
+                    srcset="
+                      ./img/logo-partners/prytula.png    1x,
+                      ./img/logo-partners/prytula@2x.png 2x
+                    "
+                    src="./img/logo-partners/prytula@2x.png"
+                    alt="Serhiy Prytula Charity Foundation"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="support-navigation">
+            <button class="support-btn-prev visually-hidden">
+              <svg class="support-btn-icon" width="20px" height="20px">
+                <use href="./img/symbol-defs.svg#icon-btn-continue"></use>
+              </svg>
+            </button>
+            <button class="support-btn-next">
+              <svg class="support-btn-icon" width="20px" height="20px">
+                <use href="./img/symbol-defs.svg#icon-btn-continue"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="shopping-list" id="shopLs">
+          <h1 class="headline-shopping">
+            Shopping <span class="purple-header-word">List</span>
+          </h1>
+          <ul class="book-list"></ul>
+        </div>
       </div>
     </main>
 
@@ -31,5 +223,6 @@
     <script type="module" src="./js/firebase.js"></script>
     <script type="module" src="./js/menu-shop.js"></script>
     <script type="module" src="./js/modal-authorization.js"></script>
+    <script type="module" src="./js/support.js"></script>
   </body>
 </html>

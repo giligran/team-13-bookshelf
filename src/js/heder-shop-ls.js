@@ -28,6 +28,9 @@ const refs = {
   mobClose: document.querySelector('#m-close'),
   shopLs: document.querySelector('body'),
   bookItem: document.querySelector('.book-list'),
+  modWindow: document.querySelector('.modal-authorization'),
+  submitBtn: document.querySelector('#submit'),
+  modX: document.querySelector('.modal-authorization-close'),
 };
 if (localStorage.getItem('mode') === 'dark') {
   refs.container.classList.add('dark');
@@ -36,6 +39,9 @@ if (localStorage.getItem('mode') === 'dark') {
   refs.x.classList.add('dark');
   refs.shopLs.classList.add('dark');
   refs.bookItem.classList.add('dark');
+  refs.modWindow.classList.add('dark');
+  refs.submitBtn.classList.add('dark');
+  refs.modX.classList.add('dark');
 }
 
 function themasChanger(evt) {
@@ -46,6 +52,9 @@ function themasChanger(evt) {
     refs.x.classList.toggle('dark');
     refs.shopLs.classList.toggle('dark');
     refs.bookItem.classList.toggle('dark');
+    refs.modWindow.classList.toggle('dark');
+    refs.submitBtn.classList.toggle('dark');
+    refs.modX.classList.toggle('dark');
     if (refs.container.classList.contains('dark')) {
       localStorage.setItem('mode', 'dark');
       const theme = localStorage.getItem('mode');

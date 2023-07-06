@@ -8,6 +8,7 @@ const link = {
   open: document.querySelector('.heder-modal-login'),
   close: document.querySelector('.modal-authorization-close'),
   logoutBtn: document.querySelector('#logOut'),
+  modWindow: document.querySelector('.modal-authorization'),
 };
 link.open.addEventListener('click', togleModalAuth);
 link.close.addEventListener('click', togleModalAuth);

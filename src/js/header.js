@@ -1,5 +1,6 @@
 // import { doc } from "firebase/firestore";
 // keep login i
+import { doc } from 'firebase/firestore';
 import { loginCheck } from './firebase.js';
 import { mobileAuthChek } from './menu.js'
 const authExist = localStorage.getItem('exist');
@@ -32,6 +33,9 @@ const refs = {
   home: document.querySelector('.section-home'),
   support: document.querySelector('.support'),
   homeTitle: document.querySelector('.home-title'),
+  modWindow: document.querySelector('.modal-authorization'),
+  submitBtn: document.querySelector('#submit'),
+  modX: document.querySelector('.modal-authorization-close'),
 };
 
 // console.log(localStorage.getItem('mode'));
@@ -45,6 +49,9 @@ if (localStorage.getItem('mode') === 'dark') {
   refs.home.classList.add('dark');
   refs.support.classList.add('dark');
   refs.homeTitle.classList.add('dark');
+  refs.modWindow.classList.add('dark');
+  refs.submitBtn.classList.add('dark');
+  refs.modX.classList.add('dark');
 }
 
 function themasChanger(evt) {
@@ -58,6 +65,9 @@ function themasChanger(evt) {
     refs.home.classList.toggle('dark');
     refs.support.classList.toggle('dark');
     refs.homeTitle.classList.toggle('dark');
+    refs.modWindow.classList.toggle('dark');
+    refs.submitBtn.classList.toggle('dark');
+    refs.modX.classList.toggle('dark');
     if (refs.container.classList.contains('dark')) {
       localStorage.setItem('mode', 'dark');
       const theme = localStorage.getItem('mode');

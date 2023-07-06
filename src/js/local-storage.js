@@ -1,1 +1,0 @@
-const loacalStorageKey = 'User-data';

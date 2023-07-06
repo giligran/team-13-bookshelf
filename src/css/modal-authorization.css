@@ -38,6 +38,9 @@
   border: none;
   background-color: transparent;
 }
+.modal-authorization-close.dark {
+  stroke: #f6f6f6;
+}
 
 .sign-form {
   display: flex;
@@ -105,7 +108,7 @@
 .sign-conteiner input[type='radio'] + label {
   position: relative;
   padding-left: 25px;
-  color: rgba(17, 17, 17, 0.5);
+  color: #b4afaf;
   font-size: 18px;
   font-family: DM Sans;
   font-style: normal;
@@ -177,3 +180,11 @@
 .name.hide {
   display: none;
 } */
+
+.modal-authorization.dark {
+  background: #202024;
+}
+.submit-btn.dark {
+  color: #111;
+  background-color: #f6f6f6;
+}

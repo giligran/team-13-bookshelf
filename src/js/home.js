@@ -1,6 +1,6 @@
 import BookApiService from './fetch-api';
-import Notiflix from 'notiflix';
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { localStorageKey } from './localKey';
 const bookApiService = new BookApiService();
 const popularBooksList = document.querySelector('.popular-books-list');
 const categoryList = document.querySelector('.category-navigation');
@@ -17,18 +17,10 @@ bookApiService.fetchPopularBooks().then(books => {
   hideElement(loader);
 });
 
-const localStorageKey = 'shoping-list';
-
 if (!localStorage.getItem(localStorageKey)) {
   console.log(Boolean(localStorage.getItem(localStorageKey)));
   localStorage.setItem(localStorageKey, JSON.stringify([]));
 }
-// const idForREmove = '643282b1e85766588626a0ba';
-// const data = JSON.parse(localStorage.getItem(localStorageKey));
-// data.map((item, index) => {
-//   console.log(item);
-//   console.log(item._id);
-// });
 
 bookApiService.fetchCategoryList().then(renderListCategory);
 
@@ -155,14 +147,14 @@ const categorysMenu = document.querySelector('.popular-books-list');
 const listByCategory = document.querySelector('.single-category-list');
 
 listByCategory.addEventListener('click', e => {
-  if (e.target.closest('.book-card')) {
-    fetchBook(e.target.closest('.book-card').getAttribute('data-id'));
+  if (e.target.closest('.book-card-home')) {
+    fetchBook(e.target.closest('.book-card-home').getAttribute('data-id'));
   }
 });
 
 categorysMenu.addEventListener('click', e => {
-  if (e.target.closest('.book-card')) {
-    fetchBook(e.target.closest('.book-card').getAttribute('data-id'));
+  if (e.target.closest('.book-card-home')) {
+    fetchBook(e.target.closest('.book-card-home').getAttribute('data-id'));
   }
 });
 
@@ -171,6 +163,19 @@ function fetchBook(id) {
 }
 
 function renderPopUp(item) {
+  console.log(item._id);
+  let btnOption;
+  const localData = localStorage.getItem(localStorageKey);
+  const data = JSON.parse(localData);
+  const foundObject = data.find(check => check._id === item._id);
+  console.log(foundObject);
+  if (foundObject) {
+    btnOption =
+      '<button type="submit" class="card-button card-button-remove">remove from the shopping list</button>';
+  } else {
+    btnOption =
+      '<button type="submit" class="card-button card-button-add">ADD TO SHOPPING LIST</button>';
+  }
   const refForPopUp = document.querySelector('.pop-up');
   refForPopUp.classList.remove('is-hidden');
   refForPopUp.innerHTML = `<div class="card book-select">
@@ -201,9 +206,53 @@ function renderPopUp(item) {
       <ul class="book-shop">
         <li class="amazon-shop"><a href=${item.buy_links[0].url} target="_blank" rel="noreferrer noopener" class='amazon-shop'></a></li>
         <li class="ibook-shop"><a href=${item.buy_links[1].url} target="_blank" rel="noreferrer noopener" class='ibook-shop'></a></li>
-        <li class="bookshop-shop"><a href=${item.buy_links[4].url} target="_blank" rel="noreferrer noopener" class='bookshop-shop></a></li>
+        <li class="bookshop-shop"><a href=${item.buy_links[4].url} target="_blank" rel="noreferrer noopener" class='bookshop-shop'></a></li>
       </ul>
     </div>
-    <button type="submit" class="card-button">ADD TO SHOPPING LIST</button>
+    ${btnOption}
   </div>`;
+  const closeBtn = document.querySelector('.card-close');
+  const cardButtonAdd = document.querySelector('.card-button-add');
+  const cardButtonRemove = document.querySelector('.card-button-remove');
+  console.log(cardButtonRemove);
+  if (cardButtonAdd) {
+    cardButtonAdd.addEventListener('click', function handleClick() {
+      const data = JSON.parse(localStorage.getItem(localStorageKey));
+      data.push(item);
+      localStorage.setItem(localStorageKey, JSON.stringify(data));
+      cardButtonAdd.textContent = 'ADDING A BOOK TO YOUR COLLECTION';
+      cardButtonAdd.disabled = true;
+      cardButtonAdd.removeEventListener('click', handleClick);
+      setTimeout(() => {
+        refForPopUp.classList.add('is-hidden');
+        Notify.success(
+          'THE BOOK HAS BEEN SUCCESSFULLY ADDED TO YOUR COLLECTION'
+        );
+      }, 500);
+    });
+  } else {
+    if (cardButtonRemove) {
+      cardButtonRemove.addEventListener('click', () => {
+        const data = JSON.parse(localStorage.getItem(localStorageKey));
+        cardButtonRemove.textContent = 'REMOVING A BOOK FROM YOUR COLLECTION';
+
+        const indexToDelete = data.findIndex(bookForDelete => {
+          return bookForDelete._id === item._id;
+        });
+        if (indexToDelete !== -1) {
+          data.splice(indexToDelete, 1);
+        }
+        localStorage.setItem(localStorageKey, JSON.stringify(data));
+        setTimeout(() => {
+          refForPopUp.classList.add('is-hidden');
+          Notify.success(
+            'THE BOOK HAS BEEN SUCCESSFULLY REMOVED FROM YOUR COLLECTION'
+          );
+        }, 500);
+      });
+    }
+  }
+  closeBtn.addEventListener('click', () => {
+    refForPopUp.classList.add('is-hidden');
+  });
 }

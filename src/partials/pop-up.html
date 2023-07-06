@@ -1,57 +1,54 @@
-<div class="pop-up is-hidden" data-card>
-  <div class="card book-select">
-    <button type="button" class="card-close" data-card-close>
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M18 6L6 18M6 6L18 18"
-          stroke="#111111"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-    <div class="book-img">
-      <img src="" alt="title" width="287px" height="408px" />
-    </div>
-    <div class="description">
-      <h2 class="book-title">HELLO BEAUTIFUL</h2>
-      <h3 class="author">Ann Napolitano</h3>
-      <p class="text-card info-book">
-        In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark
-        past resurfaces as he gets to the know the family of his college
-        sweetheart.
-      </p>
-      <ul class="book-shop">
-        <li class="amazon-shop">
-          <a href="">
-            <svg>
-              <use></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <svg>
-              <use></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <svg>
-              <use></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <button type="submit" class="card-button">ADD TO SHOPPING LIST</button>
+<div class="card book-select">
+  <button type="button" class="card-close" data-card-close>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6L6 18M6 6L18 18"
+        stroke="#111111"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </button>
+  <div class="book-img">
+    <img src="${item.book_image}" alt="title" width="287px" height="408px" />
   </div>
+  <div class="description">
+    <h2 class="book-title">${item.title}</h2>
+    <h3 class="author">${item.author}</h3>
+    <p class="text-card info-book">${item.description}</p>
+    <ul class="book-shop">
+      <li class="amazon-shop">
+        <a
+          href="${item.buy_links[0].url}"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="amazon-shop"
+        ></a>
+      </li>
+      <li class="ibook-shop">
+        <a
+          href="${item.buy_links[1].url}"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="ibook-shop"
+        ></a>
+      </li>
+      <li class="bookshop-shop">
+        <a
+          href="${item.buy_links[4].url}"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="bookshop-shop"
+        ></a>
+      </li>
+    </ul>
+  </div>
+  <button type="submit" class="card-button">ADD TO SHOPPING LIST</button>
 </div>
