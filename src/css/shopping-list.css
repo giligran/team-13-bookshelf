@@ -195,6 +195,10 @@ body.dark {
   max-width: 349px;
 }
 
+.dark .empty-list-description{
+  color: rgba(255, 255, 255, 0.60);
+}
+
 .remove-book {
   position: absolute;
   display: flex;
