@@ -1,5 +1,6 @@
 import BookApiService from './fetch-api';
 import { localStorageKey } from './localKey';
+import imgBlockBooks from '../img/blocks.png';
 
 const bookList = document.querySelector('.book-list');
 const fetch = new BookApiService();
@@ -22,7 +23,7 @@ function removeBookElement(element) {
   const remainingBooks = Array.from(document.querySelectorAll('.book-item'));
   if (remainingBooks.length === 0) {
     const noBooksImage = document.createElement('img');
-    noBooksImage.src = './img/blocks.png';
+    noBooksImage.src = blocks;
     noBooksImage.alt = 'Зображення порожнього списку покупок';
     bookList.appendChild(noBooksImage);
   }
@@ -96,7 +97,7 @@ if (localData.length > 0) {
     .join('');
 } else {
   const noBooksImage = document.createElement('img');
-  noBooksImage.src = './img/blocks.png';
+  noBooksImage.src = imgBlockBooks;
   noBooksImage.classList.add('empty-list-png');
   noBooksImage.alt = 'Зображення порожнього списку покупок';
   bookList.appendChild(noBooksImage);
