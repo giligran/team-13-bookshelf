@@ -3,12 +3,16 @@ import { localStorageKey } from './localKey';
 import imgBlockBooks from '../img/blocks.png';
 import sprite from '../img/symbol-defs.svg';
 import amazon from '../img/logo-partners/amazon.png';
+import amazonDark from '../img/logo-partners/amazon-dark.png';
+
 import ibook from '../img/logo-partners/ibook.png';
 import bookshop from '../img/logo-partners/bookshop.png';
 
 const bookList = document.querySelector('.book-list');
 const fetch = new BookApiService();
 
+const isDark = document.querySelector('body').classList.contains('dark');
+console.log(isDark);
 function removeBookElement(element) {
   const bookItem = element.closest('.book-item');
   const siblings = Array.from(bookItem.parentNode.children);
@@ -54,7 +58,7 @@ if (localData.length > 0) {
             </div>
             <div class="book-info">
               <h2 class="book-title">${titleForRender}</h2>
-              <h3 class="book-category">${book.category}</h3>
+              <h3 class="book-category">${book.list_name}</h3>
               <p class="book-description">David Burroughs was once a devoted father to his three-year-old son Matthew,
               living a dream life just a short drive away from the working-class suburb where he and his wife,
               Cheryl, first fell in love--until one fateful night when David woke suddenly to discover Matthew had been murdered while David
@@ -63,7 +67,7 @@ if (localData.length > 0) {
                 <p class="book-author">${book.author}</p>
                 <ul class="book-retailers">
                   <li>
-                    <a href="${book.amazon_product_url}"><img src="${amazon}" class="retailer-logo amazon-logo" /></a>
+                    <a href="${book.amazon_product_url}"><img src="${amazonDark}" class="retailer-logo amazon-dark-logo" /><img src="${amazon}" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
                     <a href=""><img src="${ibook}" class="retailer-logo ibook-logo" /></a>
