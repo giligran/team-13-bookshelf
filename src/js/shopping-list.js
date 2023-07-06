@@ -54,7 +54,7 @@ if (localData.length > 0 || !localData) {
       const bookElement = document.createElement('li');
       bookElement.classList.add('book-item');
       bookElement.innerHTML = `
-            <div>
+            <div class='book-image-thimb'>
               <img src="${book.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
             <div class="book-info">
