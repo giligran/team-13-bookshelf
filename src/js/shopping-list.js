@@ -1,7 +1,6 @@
 import BookApiService from './fetch-api';
 import { localStorageKey } from './localKey';
 import imgBlockBooks from '../img/blocks.png';
-import sprite from '../img/symbol-defs.svg';
 import amazon from '../img/logo-partners/amazon.png';
 import amazonDark from '../img/logo-partners/amazon-dark.png';
 
@@ -30,9 +29,14 @@ function removeBookElement(element) {
 
   const remainingBooks = Array.from(document.querySelectorAll('.book-item'));
   if (remainingBooks.length === 0) {
+    const noBookText = document.createElement('p');
+    noBookText.classList.add('empty-list-description');
+    noBookText.innerHTML =
+      'This page is empty, add some books and proceed to order.';
     const noBooksImage = document.createElement('img');
     noBooksImage.src = blocks;
     noBooksImage.alt = 'Зображення порожнього списку покупок';
+    bookList.appendChild(noBookText);
     bookList.appendChild(noBooksImage);
   }
 }
@@ -80,7 +84,7 @@ if (localData.length > 0) {
             </div>
           <button type="button" class="remove-book" data-id=${book._id}>
             <svg class="remove-book-item" width="28" height="28">
-              <use href="${sprite}#icon-dump"></use>
+              <use href="./img/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
         `;
@@ -104,9 +108,14 @@ if (localData.length > 0) {
     })
     .join('');
 } else {
+  const noBookText = document.createElement('p');
+  noBookText.classList.add('empty-list-description');
+  noBookText.innerHTML =
+    'This page is empty, add some books and proceed to order.';
   const noBooksImage = document.createElement('img');
   noBooksImage.src = imgBlockBooks;
   noBooksImage.classList.add('empty-list-png');
   noBooksImage.alt = 'Зображення порожнього списку покупок';
+  bookList.appendChild(noBookText);
   bookList.appendChild(noBooksImage);
 }
