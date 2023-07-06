@@ -1,4 +1,4 @@
-import{B as d,l as m,m as u}from"./modal-authorization-bd221752.js";const r=document.querySelector(".book-list"),g=new d;function h(t){const l=t.closest(".book-item"),o=Array.from(l.parentNode.children),n=o.indexOf(l);if(l.remove(),o.forEach((s,a)=>{a>=n&&(s.style.transform=`translateY(-${l.offsetHeight}px)`)}),Array.from(document.querySelectorAll(".book-item")).length===0){const s=document.createElement("img");s.src="../img/blocks.png",s.alt="Зображення порожнього списку покупок",r.appendChild(s)}}g.fetchBooksByCategory("Young Adult Paperback Monthly").then(t=>{const l=t;if(console.log(t),l.length>0)l.map(o=>{let n;n=o.title.length>16?o.title.slice(0,15)+"...":o.title,window.screen.width>=768&&(n=o.title);const c=document.createElement("li");c.classList.add("book-item"),c.innerHTML=`
+import{B as d,l as m,m as u}from"./modal-authorization-b8c81bf5.js";const r=document.querySelector(".book-list"),g=new d;function h(t){const l=t.closest(".book-item"),o=Array.from(l.parentNode.children),n=o.indexOf(l);if(l.remove(),o.forEach((s,a)=>{a>=n&&(s.style.transform=`translateY(-${l.offsetHeight}px)`)}),Array.from(document.querySelectorAll(".book-item")).length===0){const s=document.createElement("img");s.src="../img/blocks.png",s.alt="Зображення порожнього списку покупок",r.appendChild(s)}}g.fetchBooksByCategory("Young Adult Paperback Monthly").then(t=>{const l=t;if(console.log(t),l.length>0)l.map(o=>{let n;n=o.title.length>16?o.title.slice(0,15)+"...":o.title,window.screen.width>=768&&(n=o.title);const c=document.createElement("li");c.classList.add("book-item"),c.innerHTML=`
             <div>
               <img src="${o.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
@@ -13,13 +13,13 @@ import{B as d,l as m,m as u}from"./modal-authorization-bd221752.js";const r=docu
                 <p class="book-author">${o.author}</p>
                 <ul class="book-retailers">
                   <li>
-                    <a href="${o.amazon_product_url}"><img src="./img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
+                    <a href="${o.amazon_product_url}"><img src="../img/logo-partners/amazon.png" class="retailer-logo amazon-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="./img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
+                    <a href=""><img src="../img/logo-partners/ibook.png" class="retailer-logo ibook-logo" /></a>
                   </li>
                   <li>
-                    <a href=""><img src="./img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
+                    <a href=""><img src="../img/logo-partners/bookshop.png" class="retailer-logo bookshop-logo" /></a>
                   </li>
                 </ul>
               </div>
