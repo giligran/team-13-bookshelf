@@ -1,5 +1,5 @@
 import BookApiService from './fetch-api';
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const bookApiService = new BookApiService();
 const popularBooksList = document.querySelector('.popular-books-list');
@@ -218,16 +218,41 @@ function renderPopUp(item) {
   const cardButtonRemove = document.querySelector('.card-button-remove');
   console.log(cardButtonRemove);
   if (cardButtonAdd) {
-    cardButtonAdd.addEventListener('click', e => {
+    cardButtonAdd.addEventListener('click', function handleClick() {
       const data = JSON.parse(localStorage.getItem(localStorageKey));
       data.push(item);
       localStorage.setItem(localStorageKey, JSON.stringify(data));
-      console.log('passed adding', data);
+      cardButtonAdd.textContent = 'ADDING A BOOK TO YOUR COLLECTION';
+      cardButtonAdd.disabled = true;
+      cardButtonAdd.removeEventListener('click', handleClick);
+      setTimeout(() => {
+        refForPopUp.classList.add('is-hidden');
+        Notify.success(
+          'THE BOOK HAS BEEN SUCCESSFULLY ADDED TO YOUR COLLECTION'
+        );
+      }, 2000);
     });
   } else {
-    cardButtonRemove.addEventListener('click', e => {
-      console.log('passed removing');
-    });
+    if (cardButtonRemove) {
+      cardButtonRemove.addEventListener('click', () => {
+        const data = JSON.parse(localStorage.getItem(localStorageKey));
+        cardButtonRemove.textContent = 'REMOVING A BOOK FROM YOUR COLLECTION';
+
+        const indexToDelete = data.findIndex(bookForDelete => {
+          return bookForDelete._id === item._id;
+        });
+        if (indexToDelete !== -1) {
+          data.splice(indexToDelete, 1);
+        }
+        localStorage.setItem(localStorageKey, JSON.stringify(data));
+        setTimeout(() => {
+          refForPopUp.classList.add('is-hidden');
+          Notify.success(
+            'THE BOOK HAS BEEN SUCCESSFULLY REMOVED FROM YOUR COLLECTION'
+          );
+        }, 2000);
+      });
+    }
   }
   closeBtn.addEventListener('click', () => {
     refForPopUp.classList.add('is-hidden');
