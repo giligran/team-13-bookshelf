@@ -1,5 +1,5 @@
 .support-container {
-    width: 335px;
+    max-width: 335px;
     height: 352px;
     background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
     border-radius: 16px;
@@ -94,10 +94,14 @@
 
 
 
-@media screen and (min-width: 480px) {}
+@media screen and (min-width: 480px) {
+    .support-container {
+        max-width: none;
+        width: 335px;
+    }
+}
 @media screen and (min-width: 768px) {
     .support-container {
-        width: 335px;
         height: 472px;
         padding: 24px 40px 14px 40px;
     }
