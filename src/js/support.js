@@ -1,7 +1,7 @@
 const supportPrevBtn = document.querySelector('.support-btn-prev');
 const supportNextBtn = document.querySelector('.support-btn-next');
 const fundsList = document.getElementById('funds-list');
-const visibleItemCount = window.innerWidth >= 768 ? 6 : 4;
+let visibleItemCount = window.innerWidth >= 768 ? 6 : 4;
 let currentSlideIndex = 0;
 
 function showPreviousItems() {
@@ -38,6 +38,11 @@ function updateButtonVisibility() {
   }
 }
 
+function updateVisibleItemCount() {
+  visibleItemCount = window.innerWidth >= 768 ? 6 : 4;
+  updateButtonVisibility();
+}
+
 supportNextBtn.addEventListener('click', (event) => {
   event.preventDefault();
   showNextItems();
@@ -46,6 +51,10 @@ supportNextBtn.addEventListener('click', (event) => {
 supportPrevBtn.addEventListener('click', (event) => {
   event.preventDefault();
   showPreviousItems();
+});
+
+window.addEventListener('resize', () => {
+  updateVisibleItemCount();
 });
 
 updateButtonVisibility();
