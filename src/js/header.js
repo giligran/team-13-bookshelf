@@ -36,6 +36,7 @@ const refs = {
   modWindow: document.querySelector('.modal-authorization'),
   submitBtn: document.querySelector('#submit'),
   modX: document.querySelector('.modal-authorization-close'),
+  modalWin: document.querySelector('.card'),
 };
 
 // console.log(localStorage.getItem('mode'));
@@ -52,6 +53,7 @@ if (localStorage.getItem('mode') === 'dark') {
   refs.modWindow.classList.add('dark');
   refs.submitBtn.classList.add('dark');
   refs.modX.classList.add('dark');
+  refs.modalWin.classList.add('dark');  
 }
 
 function themasChanger(evt) {
@@ -68,6 +70,7 @@ function themasChanger(evt) {
     refs.modWindow.classList.toggle('dark');
     refs.submitBtn.classList.toggle('dark');
     refs.modX.classList.toggle('dark');
+    refs.modalWin.classList.toggle('dark');
     if (refs.container.classList.contains('dark')) {
       localStorage.setItem('mode', 'dark');
       const theme = localStorage.getItem('mode');
