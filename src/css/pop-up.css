@@ -55,11 +55,13 @@
   padding-right: 24px;
   width: 287px;
   padding-top: 40px;
+  padding-bottom: 14px;
 }
 
 .description {
-  padding: 0 14px;
+  padding: 0 24px;
 }
+
 
 .book-title {
   /* color: #111; */
@@ -97,8 +99,7 @@
   position: relative;
   top: 42px;
   left: 62px;
-  right: 62px;
-  margin: 0 auto;
+  right: 62px;  
   width: 211px;
   height: 46px;
   border: 2px solid #4f2ee8;
@@ -319,6 +320,11 @@
     color: #ffff;
     background: #4f2ee8;
   }
+}
+
+.book-shop {
+  display: inline-flex;
+  gap: 20;
 }
 
 .book-link {
