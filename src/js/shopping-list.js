@@ -96,7 +96,7 @@ if (localData.length > 0) {
     .join('');
 } else {
   const noBooksImage = document.createElement('img');
-  noBooksImage.src = '../img/blocks.png';
+  noBooksImage.src = './img/blocks.png';
   noBooksImage.classList.add('empty-list-png');
   noBooksImage.alt = 'Зображення порожнього списку покупок';
   bookList.appendChild(noBooksImage);
