@@ -55,6 +55,7 @@
   padding-right: 24px;
   width: 287px;
   padding-top: 40px;  
+  padding-bottom: 14px;
 }
 
 .description {
@@ -70,7 +71,8 @@
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.64px;
-  padding-bottom: 2px;
+  padding-bottom: 2px;  
+
 }
 
 .author {
@@ -157,10 +159,11 @@
     padding-top: 5px;
     width: 192px;
     height: 281px;
-    padding-top: 40px;    
+    padding-top: 40px;  
+    padding-bottom: 14px;  
   }
 
-  .book-titel {
+  .book-title {
     color: #111;
     font-size: 16px;
     font-family: DM Sans;
