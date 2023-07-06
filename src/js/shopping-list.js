@@ -1,5 +1,6 @@
 import { localStorageKey } from './localKey';
 import imgBlockBooks from '../img/blocks.png';
+import sprite from '../img/symbol-defs.svg';
 import amazon from '../img/logo-partners/amazon.png';
 import amazonDark from '../img/logo-partners/amazon-dark.png';
 
@@ -80,7 +81,7 @@ if (localData.length > 0 || !localData) {
             </div>
           <button type="button" class="remove-book" data-id=${book._id}>
             <svg class="remove-book-item" width="28" height="28">
-              <use href="./img/symbol-defs.svg#icon-dump"></use>
+              <use href="${sprite}#icon-dump"></use>
             </svg>
           </button>
         `;
