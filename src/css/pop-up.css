@@ -54,8 +54,7 @@
   padding-left: 24px;
   padding-right: 24px;
   width: 287px;
-  padding-top: 40px;
-  padding-bottom: 14px;
+  padding-top: 40px;  
 }
 
 .description {
@@ -113,6 +112,8 @@
   background: #4f2ee8;
 }
 
+
+
 /* Tablet styles */
 @media screen and (min-width: 768px) {
   .card {
@@ -156,7 +157,7 @@
     padding-top: 5px;
     width: 192px;
     height: 281px;
-    padding-top: 40px;
+    padding-top: 40px;    
   }
 
   .book-titel {
@@ -191,14 +192,7 @@
     font-weight: 400;
     line-height: 18px;
     letter-spacing: -0.56px;
-  }
-
-  .book-shop {
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-    gap: 20px;
-  }
+  } 
 
   .card-button {
     position: absolute;
@@ -324,7 +318,9 @@
 
 .book-shop {
   display: inline-flex;
-  gap: 20;
+  align-items: center;
+  gap: 20px;
+  padding-top: 14px;
 }
 
 .book-link {
@@ -341,7 +337,7 @@
   height: 19px;
   background: url('../img/logo-partners/amazon.png'),
     0.741px 0px / 97.61% 100% no-repeat;
-  filter: grayscale(100%);
+  filter: grayscale(100%);  
 }
 
 .ibook-shop {
