@@ -1,6 +1,7 @@
 ul {
   padding-inline-start: 0;
 }
+
 li {
   list-style: none;
 }
@@ -13,12 +14,13 @@ body {
   background-color: #f6f6f6;
   margin: 0;
 }
+
 body.dark {
   background-color: #202024;
   color: #ffffff;
 }
 
-.shopping-section{
+.shopping-section {
   display: flex;
   gap: 40px;
   position: relative;
@@ -26,7 +28,7 @@ body.dark {
   left: 24px;
 }
 
-.shopping-support{
+.shopping-support {
   display: none;
 }
 
@@ -43,8 +45,9 @@ body.dark {
   line-height: 38px;
   letter-spacing: -1.28px;
   text-align: left;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
 }
+
 .purple-header-word {
   color: #4f2ee8;
 }
@@ -57,12 +60,14 @@ body.dark {
   fill: #ffffff;
   box-sizing: border-box;
 }
+
 .book-list.dark {
   background-color: #202024;
   color: #ffffff;
   fill: #4f2ee8;
   stroke: #ffffff;
 }
+
 .book-item {
   margin-bottom: 20px;
   display: flex;
@@ -84,6 +89,7 @@ body.dark {
   flex-direction: row;
   gap: 14px;
 }
+
 .img-title-book {
   border-radius: 12px;
   display: block;
@@ -97,16 +103,20 @@ body.dark {
   flex-direction: row;
   justify-content: space-between;
 }
+
 .retailer-logo {
   filter: grayscale(100%);
 }
+
 .retailer-logo:hover {
   filter: drop-shadow(0px 3px 3px 0px rgba(0, 0, 0, 0.15));
 }
+
 .book-info {
   display: flex;
   flex-direction: column;
 }
+
 .book-title {
   font-family: DM Sans;
   font-weight: 700;
@@ -193,6 +203,7 @@ body.dark {
   line-height: 24px;
   letter-spacing: -0.36px;
   max-width: 349px;
+  margin-top: 80px;
 }
 
 .dark .empty-list-description {
@@ -224,19 +235,21 @@ body.dark {
     max-width: none;
     width: 768px;
   }
+
   .book-description {
     max-width: 508px;
     max-height: 53px;
   }
+
   .book-item {
     width: 704px;
     min-height: 213px;
   }
+
   .headline-shopping {
     font-size: 48px;
     line-height: 52px;
     letter-spacing: -1.92px;
-    margin-bottom: 140px;
   }
 
   .book-card {
@@ -246,10 +259,12 @@ body.dark {
     margin-right: 24px;
     margin-left: 24px;
   }
+
   .img-title-book {
     width: 116px;
     height: 165px;
   }
+
   .amazon-logo {
     margin-top: 8px;
     width: 48px;
@@ -260,13 +275,19 @@ body.dark {
     width: 28px;
     height: 27px;
   }
+
   .bookshop-logo {
     width: 32px;
     height: 30px;
   }
+
   .buying-list {
     margin-top: 60px;
     gap: 300px;
+  }
+
+  .empty-list-description {
+    margin-top: 100px;
   }
 }
 
@@ -282,10 +303,9 @@ body.dark {
   .book-item {
     width: 948px;
   }
+
   .book-description {
     max-width: 808px;
     max-height: 53px;
   }
 }
-
-
