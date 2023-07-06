@@ -228,7 +228,7 @@ function renderPopUp(item) {
         Notify.success(
           'THE BOOK HAS BEEN SUCCESSFULLY ADDED TO YOUR COLLECTION'
         );
-      }, 2000);
+      }, 500);
     });
   } else {
     if (cardButtonRemove) {
@@ -248,7 +248,7 @@ function renderPopUp(item) {
           Notify.success(
             'THE BOOK HAS BEEN SUCCESSFULLY REMOVED FROM YOUR COLLECTION'
           );
-        }, 2000);
+        }, 500);
       });
     }
   }

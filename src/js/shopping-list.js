@@ -1,4 +1,3 @@
-import BookApiService from './fetch-api';
 import { localStorageKey } from './localKey';
 import imgBlockBooks from '../img/blocks.png';
 import amazon from '../img/logo-partners/amazon.png';
@@ -8,10 +7,7 @@ import ibook from '../img/logo-partners/ibook.png';
 import bookshop from '../img/logo-partners/bookshop.png';
 
 const bookList = document.querySelector('.book-list');
-const fetch = new BookApiService();
 
-const isDark = document.querySelector('body').classList.contains('dark');
-console.log(isDark);
 function removeBookElement(element) {
   const bookItem = element.closest('.book-item');
   const siblings = Array.from(bookItem.parentNode.children);
@@ -44,7 +40,7 @@ function removeBookElement(element) {
 const localData = JSON.parse(localStorage.getItem(localStorageKey));
 
 console.log(localData);
-if (localData.length > 0) {
+if (localData.length > 0 || !localData) {
   localData
     .map(book => {
       let titleForRender;
