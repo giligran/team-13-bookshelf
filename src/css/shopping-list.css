@@ -6,12 +6,25 @@ body.dark {
   background-color: #202024;
   color: #ffffff;
 }
+
+.shopping-section{
+  display: flex;
+  position: relative;
+  top: 112px;
+  left: 24px;
+}
+
+.shopping-support{
+  display: none;
+}
+
 .headline-shopping {
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -1.28px;
-  /* margin-top: 40px; */
   margin-bottom: 40px;
+  position: relative;
+  left: 0;
 }
 .purple-header-word {
   color: #4f2ee8;
@@ -219,6 +232,10 @@ li {
 }
 
 @media screen and (min-width: 1440px) {
+  .support-container {
+    display: block;
+  }
+
   .shopping-list {
     max-width: 768px;
   }
@@ -231,3 +248,5 @@ li {
     max-height: 53px;
   }
 }
+
+
