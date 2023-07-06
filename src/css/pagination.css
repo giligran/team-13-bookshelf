@@ -10,8 +10,7 @@
 .pagination a,
 .pagination span {
     display: flex;
-    padding: 5px 10px;
-    margin: 0 2px;
+  
     text-decoration: none;
     color: #000;
     border: 1px solid #000;
@@ -19,7 +18,7 @@
     width: 36px;
     height: 38px;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 15px;
     justify-content: center;
     align-items: center;
     font-weight: 700;
