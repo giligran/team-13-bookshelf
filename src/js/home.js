@@ -1,6 +1,6 @@
 import BookApiService from './fetch-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
+import { localStorageKey } from './localKey';
 const bookApiService = new BookApiService();
 const popularBooksList = document.querySelector('.popular-books-list');
 const categoryList = document.querySelector('.category-navigation');
@@ -16,8 +16,6 @@ bookApiService.fetchPopularBooks().then(books => {
   renderMarkup(books);
   hideElement(loader);
 });
-
-const localStorageKey = 'shoping-list';
 
 if (!localStorage.getItem(localStorageKey)) {
   console.log(Boolean(localStorage.getItem(localStorageKey)));

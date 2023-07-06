@@ -1,4 +1,5 @@
 import BookApiService from './fetch-api';
+import { localStorageKey } from './localKey';
 
 const bookList = document.querySelector('.book-list');
 const fetch = new BookApiService();
@@ -27,26 +28,22 @@ function removeBookElement(element) {
   }
 }
 
-fetch
-  .fetchBooksByCategory('Young Adult Paperback Monthly')
-  .then(data => {
-    const savedBooks = data;
-    console.log(data);
-    if (savedBooks.length > 0) {
-      savedBooks
-        .map(book => {
-          let titleForRender;
-          titleForRender =
-            book.title.length > 16
-              ? book.title.slice(0, 15) + '...'
-              : book.title;
-          if (window.screen.width >= 768) {
-            titleForRender = book.title;
-          }
+const localData = JSON.parse(localStorage.getItem(localStorageKey));
 
-          const bookElement = document.createElement('li');
-          bookElement.classList.add('book-item');
-          bookElement.innerHTML = `
+console.log(localData);
+if (localData.length > 0) {
+  localData
+    .map(book => {
+      let titleForRender;
+      titleForRender =
+        book.title.length > 16 ? book.title.slice(0, 15) + '...' : book.title;
+      if (window.screen.width >= 768) {
+        titleForRender = book.title;
+      }
+
+      const bookElement = document.createElement('li');
+      bookElement.classList.add('book-item');
+      bookElement.innerHTML = `
             <div>
               <img src="${book.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
@@ -72,46 +69,35 @@ fetch
                 </ul>
               </div>
             </div>
-          <button type="button" class="remove-book" data-item-remove>
+          <button type="button" class="remove-book" data-id=${book._id}>
             <svg class="remove-book-item" width="28" height="28">
               <use href="./img/symbol-defs.svg#icon-dump"></use>
             </svg>
           </button>
         `;
 
-          const removeBtn = bookElement.querySelector('.remove-book');
-          removeBtn.addEventListener('click', () => {
-            removeBookElement(removeBtn);
-          });
+      const removeBtn = bookElement.querySelector('.remove-book');
+      removeBtn.addEventListener('click', () => {
+        const idForDelete = removeBtn.getAttribute('data-id');
+        removeBookElement(removeBtn);
+        const localData = JSON.parse(localStorage.getItem(localStorageKey));
 
-          bookList.appendChild(bookElement);
-        })
-        .join('');
-    } else {
-      const noBooksImage = document.createElement('img');
-      noBooksImage.src = '../img/blocks.png';
-      noBooksImage.classList.add('empty-list-png');
-      noBooksImage.alt = 'Зображення порожнього списку покупок';
-      bookList.appendChild(noBooksImage);
-    }
-  })
-  .catch(error => {
-    console.error(error);
-  });
+        const indexToDelete = localData.findIndex(bookForDelete => {
+          return bookForDelete._id === idForDelete;
+        });
+        if (indexToDelete !== -1) {
+          localData.splice(indexToDelete, 1);
+        }
+        localStorage.setItem(localStorageKey, JSON.stringify(localData));
+      });
 
-// const refsShopping = {
-//   switcherRef: document.querySelector('.switch'),
-//   shoppingCard: document.querySelectorAll('.book-card'),
-//   bookTitle: document.querySelectorAll('.book-title'),
-// };
-
-// function colorChanger(evt) {
-//   if (evt.target.nodeName === 'INPUT') {
-//     refsShopping.shoppingCard.forEach(card => {
-//       card.classList.toggle('dark');
-//     });
-//     // refsShopping .shoppingCard.classList.toggle('dark');
-//     // refsShopping .bookTitle.classList.toggle('dark');
-//   }
-// }
-// refsShopping.switcherRef.addEventListener('click', colorChanger);
+      bookList.appendChild(bookElement);
+    })
+    .join('');
+} else {
+  const noBooksImage = document.createElement('img');
+  noBooksImage.src = '../img/blocks.png';
+  noBooksImage.classList.add('empty-list-png');
+  noBooksImage.alt = 'Зображення порожнього списку покупок';
+  bookList.appendChild(noBooksImage);
+}
