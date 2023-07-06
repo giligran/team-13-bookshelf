@@ -10,7 +10,7 @@ body.dark {
   font-size: 32px;
   line-height: 38px;
   letter-spacing: -1.28px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 40px;
 }
 .purple-header-word {
@@ -97,7 +97,6 @@ li {
   flex-direction: column;
 }
 .book-title {
-  color: #111;
   font-family: DM Sans;
   font-weight: 700;
   line-height: 1.125;
