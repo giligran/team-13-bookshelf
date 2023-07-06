@@ -63,7 +63,7 @@
 
 .support-navigation {
     display: flex;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .support-btn-prev {
@@ -98,6 +98,10 @@
     .support-container {
         max-width: none;
         width: 335px;
+    }
+
+    .support-navigation {
+        margin-top: 10px;
     }
 }
 @media screen and (min-width: 768px) {
