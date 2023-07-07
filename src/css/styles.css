@@ -13,6 +13,7 @@
 @import url('./home.css');
 @import url('./support-ukraine.css');
 @import url('./pop-up.css');
+@import url('./pagination-new.css');
 
 :root {
   font-family: 'DM Sans', sans-serif;
