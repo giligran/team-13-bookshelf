@@ -8,6 +8,10 @@ import ibook from '../img/logo-partners/ibook.png';
 import bookshop from '../img/logo-partners/bookshop.png';
 
 const bookList = document.querySelector('.book-list');
+if (!localStorage.getItem(localStorageKey)) {
+  console.log(Boolean(localStorage.getItem(localStorageKey)));
+  localStorage.setItem(localStorageKey, JSON.stringify([]));
+}
 
 function removeBookElement(element) {
   const bookItem = element.closest('.book-item');
@@ -41,7 +45,7 @@ function removeBookElement(element) {
 const localData = JSON.parse(localStorage.getItem(localStorageKey));
 
 console.log(localData);
-if (localData.length > 0 || !localData) {
+if (localData.length > 0) {
   localData
     .map(book => {
       let titleForRender;
@@ -54,7 +58,7 @@ if (localData.length > 0 || !localData) {
       const bookElement = document.createElement('li');
       bookElement.classList.add('book-item');
       bookElement.innerHTML = `
-            <div class='book-image-thimb'>
+            <div class='book-image-thumb'>
               <img src="${book.book_image}" alt="Зображення обгортки книги" class="img-title-book" />
             </div>
             <div class="book-info">
